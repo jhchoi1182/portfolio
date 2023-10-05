@@ -1,0 +1,4 @@
+.shrink {
+  transition: width 1s ease-in-out;
+  width: 48px !important;
+}
