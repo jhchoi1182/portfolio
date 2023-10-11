@@ -25,7 +25,7 @@ function LogoEyes() {
       setToggleAnimation(true);
       timeout = setTimeout(() => {
         setToggleAnimation(false);
-      }, 1000);
+      }, 1050);
     }
     return () => clearTimeout(timeout);
   }, [isScrolled]);
@@ -37,8 +37,8 @@ function LogoEyes() {
           ref={(ref) => setContainerRef(ref)}
           className={`${center} w-12 h-full bg-black rounded-md`}
         >
-          <div className="" ref={(ref) => setEyesRef(ref)}>
-            <span className="">' '</span>
+          <div ref={(ref) => setEyesRef(ref)}>
+            <span className="animate-fadeIn">' '</span>
           </div>
         </div>
       ) : (
@@ -47,8 +47,16 @@ function LogoEyes() {
             toggleAnimation ? "shrink" : ""
           }`}
         >
-          <span>JIHYEON</span>
-          <span>:</span>
+          <div>
+            {Array.from("JIHYEON").map((char, index) => (
+              <span
+                className={`${toggleAnimation ? `charFadeOut-${index}` : ""}`}
+              >
+                {char}
+              </span>
+            ))}
+          </div>
+          {/* <span>:</span> */}
         </div>
       )}
     </div>

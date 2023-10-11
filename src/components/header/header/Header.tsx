@@ -1,6 +1,6 @@
-import DarkmodeToggle from "./elements/DarkmodeToggle";
-import LogoEyes from "./elements/LogoEyes";
-import NavTab from "./elements/NavTab";
+import DarkmodeToggle from "../elements/DarkmodeToggle";
+import LogoEyes from "../elements/LogoEyes";
+import NavTab from "../elements/NavTab";
 
 function Header() {
   return (
