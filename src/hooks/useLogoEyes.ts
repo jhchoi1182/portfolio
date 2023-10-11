@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { eyeRefAtom } from "../../libs/atom";
+import { eyeRefAtom } from "../libs/atom";
 
 const useLogoEyes = () => {
   const [{ containerRef, eyesRef }, setRef] = useRecoilState(eyeRefAtom);

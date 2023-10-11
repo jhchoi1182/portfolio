@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { center } from "../../../css/layout";
-import "../../../css/animation.css";
-import useLogoEyes from "../../../utils/hook/useLogoEyes";
+import useLogoEyes from "../../../hooks/useLogoEyes";
+import { center } from "../../../styles/layout";
+import "../css/animation.css";
 
 function LogoEyes() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +31,7 @@ function LogoEyes() {
   }, [isScrolled]);
 
   return (
-    <div className="w-44 h-12 mr-[45%] text-white text-2xl font-semibold">
+    <div className="w-36 h-12 mr-[35%] text-white text-2xl font-semibold">
       {toggleAnimation === false ? (
         <div
           ref={(ref) => setContainerRef(ref)}

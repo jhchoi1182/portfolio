@@ -1,5 +1,5 @@
+import useLogoEyes from "./hooks/useLogoEyes";
 import Router from "./Router";
-import useLogoEyes from "./utils/hook/useLogoEyes";
 
 function App() {
   const { handleMouseMove } = useLogoEyes();
