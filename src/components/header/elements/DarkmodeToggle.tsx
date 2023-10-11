@@ -19,7 +19,20 @@ function DarkmodeToggle() {
       className="flex items-center gap-[5px] text-lg"
       onClick={toggleDarkMode}
     >
-      <span className="font-semibold">B</span>
+      <div className="flex flex-col h-7 overflow-hidden">
+        <span
+          className={`font-semibold slidingText ${JdarkMode ? "moveUp" : ""}`}
+        >
+          W
+        </span>
+        <span
+          className={`font-semibold slidingText ${
+            JdarkMode ? "moveUp" : "moveDown"
+          }`}
+        >
+          B
+        </span>
+      </div>
       <FiCircle />
     </button>
   );

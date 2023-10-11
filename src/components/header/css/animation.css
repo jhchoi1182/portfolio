@@ -70,3 +70,13 @@
   transform: translate(0, 0);
   transition: transform 0.3s ease-out;
 }
+
+.slidingText {
+  transition: transform 0.3s;
+}
+.moveUp {
+  transform: translateY(-100%);
+}
+.moveDown {
+  transform: translateY(0%);
+}
