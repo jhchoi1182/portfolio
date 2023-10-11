@@ -17,6 +17,17 @@
     <title>Jihyeon's Portfolio</title>
   </head>
   <body>
+    <script>
+      function getCookie(name) {
+        const cookies = document.cookie;
+        const cookiesArray = cookies.split("; ");
+        return cookiesArray.some((cookie) => cookie.includes("JdarkMode"));
+      }
+
+      const jDarkModeCookie = getCookie("JdarkMode");
+
+      if (jDarkModeCookie) document.documentElement.classList.add("dark");
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

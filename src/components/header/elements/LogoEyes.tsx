@@ -31,11 +31,11 @@ function LogoEyes() {
   }, [isScrolled]);
 
   return (
-    <div className="w-36 h-12 mr-[35%] text-white text-2xl font-semibold">
+    <div className="w-36 h-12 mr-[25%] text-white dark:text-black text-2xl font-semibold">
       {toggleAnimation === false ? (
         <div
           ref={(ref) => setContainerRef(ref)}
-          className={`${center} w-12 h-full bg-black rounded-md`}
+          className={`${center} w-12 h-full bg-black dark:bg-[#f1f1f1] rounded-md`}
         >
           <div ref={(ref) => setEyesRef(ref)}>
             <span className="animate-fadeIn">' '</span>
@@ -43,7 +43,7 @@ function LogoEyes() {
         </div>
       ) : (
         <div
-          className={`${center} w-full h-full bg-black rounded-md ${
+          className={`${center} w-full h-full bg-black dark:bg-[#f1f1f1] rounded-md ${
             toggleAnimation ? "shrink" : ""
           }`}
         >
@@ -56,7 +56,6 @@ function LogoEyes() {
               </span>
             ))}
           </div>
-          {/* <span>:</span> */}
         </div>
       )}
     </div>
