@@ -1,0 +1,41 @@
+@keyframes slideToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-80px);
+  }
+}
+.slideToLeftAfter1000ms {
+  animation: slideToLeft 0.75s ease-in-out 1s forwards;
+}
+.slideToLeftAfter1250ms {
+  animation: slideToLeft 0.75s ease-in-out 1.25s forwards;
+}
+.slideToLeftAfter1500ms {
+  animation: slideToLeft 0.75s ease-in-out 1.5s forwards;
+}
+
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.revealTextAfter1250ms {
+  animation: reveal 1s linear 1.25s backwards;
+}
+.revealTextAfter1500ms {
+  animation: reveal 0.25s linear 1.5s backwards;
+}
+.revealTextAfter1600ms {
+  animation: reveal 0.25s linear 1.6s backwards;
+}
+.revealTextAfter1700ms {
+  animation: reveal 0.25s linear 1.7s backwards;
+}
+.revealTextAfter1750ms {
+  animation: reveal 0.75s linear 1.75s backwards;
+}

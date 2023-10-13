@@ -31,7 +31,7 @@ function LogoEyes() {
   }, [isScrolled]);
 
   return (
-    <div className="w-36 h-12 mr-[25%] text-white dark:text-black text-2xl font-semibold">
+    <div className="w-36 h-12 text-white dark:text-black text-2xl font-semibold">
       {toggleAnimation === false ? (
         <div
           ref={(ref) => setContainerRef(ref)}

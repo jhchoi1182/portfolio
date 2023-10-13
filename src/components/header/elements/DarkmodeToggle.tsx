@@ -16,7 +16,7 @@ function DarkmodeToggle() {
 
   return (
     <button
-      className="flex items-center gap-[5px] text-lg"
+      className="flex items-center gap-[5px] text-lg -ml-[25%]"
       onClick={toggleDarkMode}
     >
       <div className="flex flex-col h-7 overflow-hidden">
