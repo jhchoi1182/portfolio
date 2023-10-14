@@ -1,4 +1,4 @@
-import MainBanner from "../components/banner/MainBanner";
+import MainBanner from "../components/mainBanner/index/MainBanner";
 
 function Home() {
   return (
