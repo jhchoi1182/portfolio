@@ -9,7 +9,7 @@ function App() {
       className="bg-[#f1f1f1] dark:bg-[#0E0E0E] text-black dark:text-white"
       onMouseMove={handleMouseMove}
     >
-      <Router />;
+      <Router />
     </div>
   );
 }

@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
+        notoSans: ["Noto Sans KR", "sans-serif"],
       },
       keyframes: {
         fadeIn: {

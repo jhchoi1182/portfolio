@@ -1,10 +1,14 @@
-import MainBanner from "../components/mainBanner/index/MainBanner";
+import Banner from "../components/mainBanner/index/Banner";
+import Overview from "../components/mainBanner/index/Overview";
 
 function Home() {
   return (
-    <div className="w-full h-screen flex justify-center pt-[10%]">
-      <MainBanner />
-    </div>
+    <main>
+      <section>
+        <Banner />
+        <Overview />
+      </section>
+    </main>
   );
 }
 
