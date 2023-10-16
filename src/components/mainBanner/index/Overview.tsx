@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "../css/animation.css";
 import DeepDive from "../elements/DeepDive";
+import HeartBeat from "../elements/HeartBeat";
 import Perseverance from "../elements/Perseverance";
 
 const Overview: React.FC = () => {
@@ -34,9 +35,10 @@ const Overview: React.FC = () => {
   }, [showElements]);
 
   return (
-    <div className="w-full h-screen text-3xl">
+    <div className="relative w-full h-screen text-3xl select-none">
       <DeepDive showElements={showElements} refs={refs} />
       <Perseverance showElements={showElements} refs={refs} />
+      <HeartBeat />
     </div>
   );
 };

@@ -1,14 +1,18 @@
 import { useCookies } from "react-cookie";
 import { FiCircle } from "react-icons/fi";
+import { useSetRecoilState } from "recoil";
+import { darkModeAtom } from "../../../libs/atoms";
 
 const oneWeekFromNow = new Date();
 oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7);
 
 function DarkmodeToggle() {
   const [{ JdarkMode }, setCookie, removeCookie] = useCookies(["JdarkMode"]);
+  const setDarkMode = useSetRecoilState(darkModeAtom);
 
   const toggleDarkMode = () => {
     document.documentElement.classList.toggle("dark");
+    setDarkMode((prev) => (prev ? false : true));
     JdarkMode
       ? removeCookie("JdarkMode")
       : setCookie("JdarkMode", true, { path: "/", expires: oneWeekFromNow });

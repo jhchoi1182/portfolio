@@ -7,10 +7,10 @@ interface props {
 
 function DeepDive({ showElements, refs }: props) {
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="relative flex flex-col items-center gap-5 z-20">
       <div
         ref={refs[0]}
-        className={`fadeInUpAfter250ms font-bold ${
+        className={`fadeInUpAfter250ms text-4xl font-bold ${
           showElements[0] ? "show" : ""
         }`}
       >

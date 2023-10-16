@@ -17,6 +17,10 @@ export default {
       animation: {
         fadeIn: "fadeIn 0.1s linear forwards",
       },
+      boxShadow: {
+        lightWindow: "0 0 0 2000px #f1f1f1",
+        darkWindow: "0 0 0 2000px #0E0E0E",
+      },
     },
   },
   plugins: [],

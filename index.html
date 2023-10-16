@@ -18,13 +18,13 @@
   </head>
   <body>
     <script>
-      function getCookie(name) {
+      function getCookie() {
         const cookies = document.cookie;
         const cookiesArray = cookies.split("; ");
         return cookiesArray.some((cookie) => cookie.includes("JdarkMode"));
       }
 
-      const jDarkModeCookie = getCookie("JdarkMode");
+      const jDarkModeCookie = getCookie();
 
       if (jDarkModeCookie) document.documentElement.classList.add("dark");
     </script>

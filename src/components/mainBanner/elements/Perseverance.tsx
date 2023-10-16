@@ -7,10 +7,10 @@ interface props {
 
 function Perseverance({ showElements, refs }: props) {
   return (
-    <div className="flex flex-col items-center gap-5 mt-40">
+    <div className="relative flex flex-col items-center gap-5 mt-40 z-20">
       <div
         ref={refs[2]}
-        className={`fadeInUpAfter650ms font-bold ${
+        className={`fadeInUpAfter650ms text-4xl font-bold ${
           showElements[2] ? "show" : ""
         }`}
       >
