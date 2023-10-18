@@ -1,3 +1,4 @@
+import Experience from "../components/experience/index/Experience";
 import Banner from "../components/mainBanner/index/Banner";
 import Overview from "../components/mainBanner/index/Overview";
 import Skill from "../components/skill/index/Skill";
@@ -13,8 +14,9 @@ function About() {
         <Skill />
       </section>
       <section>
-        <div className="h-screen"></div>
+        <Experience />
       </section>
+      <div className="h-screen">안녕</div>
     </main>
   );
 }

@@ -9,11 +9,8 @@ function Router() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path={`${process.env.PUBLIC_URL}/`} element={<About />} />
-        <Route
-          path={`${process.env.PUBLIC_URL}/project`}
-          element={<Project />}
-        />
+        <Route path={`/`} element={<About />} />
+        <Route path={`/project`} element={<Project />} />
       </Routes>
     </BrowserRouter>
   );

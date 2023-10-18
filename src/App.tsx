@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div
-      className="bg-[#f1f1f1] dark:bg-[#0E0E0E] text-black dark:text-white"
+      className="bg-[#f1f1f1] dark:bg-[#0E0E0E] text-black dark:text-white scroll-hidden"
       onMouseMove={handleMouseMove}
     >
       <Router />
