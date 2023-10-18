@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
-import heartBeatDark from "../../../../public/heartBeat_dark.webp";
-import heartBeatLight from "../../../../public/heartBeat_light.webp";
+import heartBeatDark from "../../../assets/images/heartBeat_dark.webp";
+import heartBeatLight from "../../../assets/images/heartBeat_light.webp";
 import { darkModeAtom } from "../../../libs/atoms";
 
 const HeartBeat = () => {

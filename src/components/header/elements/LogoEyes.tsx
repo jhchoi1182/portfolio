@@ -48,9 +48,10 @@ function LogoEyes() {
           }`}
         >
           <div>
-            {Array.from("JIHYEON").map((char, index) => (
+            {Array.from("JIHYEON").map((char, i) => (
               <span
-                className={`${toggleAnimation ? `charFadeOut-${index}` : ""}`}
+                key={i}
+                className={`${toggleAnimation ? `charFadeOut-${i}` : ""}`}
               >
                 {char}
               </span>
