@@ -1,16 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import "../css/animation.css";
+import useScrollFadeInUp from "../../../hooks/useScrollFadeInUp";
 import DeepDive from "../elements/DeepDive";
 import HeartBeat from "../elements/HeartBeat";
 import Perseverance from "../elements/Perseverance";
 
 const Overview: React.FC = () => {
-  const [showElements, setShowElements] = useState([
-    false,
-    false,
-    false,
-    false,
-  ]);
+  const [showElements, setShowElements] = useState(Array(4).fill(null));
   const refs = [
     useRef<HTMLDivElement | null>(null),
     useRef<HTMLDivElement | null>(null),
@@ -18,21 +14,7 @@ const Overview: React.FC = () => {
     useRef<HTMLDivElement | null>(null),
   ];
 
-  useEffect(() => {
-    const checkScroll = () => {
-      const newShowElements = showElements.map((isShown, index) => {
-        if (isShown) return true;
-        const currentRef = refs[index].current;
-        if (!currentRef) return false;
-        const rect = currentRef.getBoundingClientRect();
-        return rect.top <= window.innerHeight - rect.height / 2;
-      });
-      setShowElements(newShowElements);
-    };
-
-    window.addEventListener("scroll", checkScroll);
-    return () => window.removeEventListener("scroll", checkScroll);
-  }, [showElements]);
+  useScrollFadeInUp(showElements, setShowElements, refs);
 
   return (
     <div className="relative w-full h-screen text-3xl select-none">

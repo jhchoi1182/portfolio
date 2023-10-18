@@ -1,10 +1,10 @@
-import { useEffect, MutableRefObject, Dispatch } from "react";
+import { useEffect } from "react";
 
 const useScrollSvgStroke = (
-  containerRef: MutableRefObject<HTMLDivElement | null>,
-  pathRef: MutableRefObject<SVGPathElement | null>,
+  containerRef: React.MutableRefObject<HTMLDivElement | null>,
+  pathRef: React.MutableRefObject<SVGPathElement | null>,
   length: number,
-  setLength: Dispatch<React.SetStateAction<number>>,
+  setLength: React.Dispatch<React.SetStateAction<number>>,
 ) => {
   const calcDashoffset = () => {
     const scrolledHeight = window.scrollY + window.innerHeight * 0.8;

@@ -16,7 +16,7 @@ function Perseverance({ showElements, refs }: Props) {
     <div className="relative flex flex-col items-center gap-5 mt-40 z-20">
       <div
         ref={refs[2]}
-        className={`fadeInUpAfter650ms text-4xl font-bold ${
+        className={`fadeInUpAfter250ms text-4xl font-bold ${
           showElements[2] ? "show" : ""
         }`}
       >
@@ -26,7 +26,7 @@ function Perseverance({ showElements, refs }: Props) {
         <div
           key={i}
           ref={refs[3]}
-          className={`fadeInUpAfter450ms ${showElements[3] ? "show" : ""}`}
+          className={`fadeInUpAfter250ms ${showElements[3] ? "show" : ""}`}
         >
           {text}
         </div>

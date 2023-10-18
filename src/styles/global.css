@@ -1,0 +1,11 @@
+.fadeInUpAfter250ms {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1s 0.25s,
+    transform 1s 0.25s;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}

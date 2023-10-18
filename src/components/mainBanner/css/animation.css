@@ -56,39 +56,6 @@
   animation: reveal 0.75s linear 1.75s backwards;
 }
 
-.fadeInUpAfter250ms {
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s 0.25s,
-    transform 1s 0.25s;
-}
-.fadeInUpAfter450ms {
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s 0.45s,
-    transform 1s 0.45s;
-}
-.fadeInUpAfter650ms {
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s 0.45s,
-    transform 1s 0.45s;
-}
-.fadeInUpAfter850ms {
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s 0.45s,
-    transform 1s 0.45s;
-}
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @keyframes moveWindow {
   0% {
     left: -100px;

@@ -26,7 +26,7 @@ function DeepDive({ showElements, refs }: Props) {
         <div
           key={i}
           ref={refs[1]}
-          className={`fadeInUpAfter450ms ${showElements[1] ? "show" : ""}`}
+          className={`fadeInUpAfter250ms ${showElements[1] ? "show" : ""}`}
         >
           {text}
         </div>
