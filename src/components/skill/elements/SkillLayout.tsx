@@ -1,11 +1,16 @@
 interface Props {
   title: string;
   li: string[];
+  showElement: boolean;
+  divRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
-function SkillLayout({ title, li }: Props) {
+function SkillLayout({ title, li, showElement, divRef }: Props) {
   return (
-    <div className="flex">
+    <div
+      ref={divRef}
+      className={`flex fadeInUpAfter250ms ${showElement ? "show" : ""}`}
+    >
       <div className="w-[290px] text-2xl font-semibold">{title}</div>
       <ul className="ml-10 text-xl list-disc space-y-4">
         {li.map((v, i) => (

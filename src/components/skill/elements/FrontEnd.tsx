@@ -1,5 +1,10 @@
 import SkillLayout from "./SkillLayout";
 
+interface Props {
+  showElement: boolean;
+  divRef: React.MutableRefObject<HTMLDivElement | null>;
+}
+
 const frontEnd = {
   title: `Front-End`,
   li: [
@@ -9,8 +14,15 @@ const frontEnd = {
   ],
 };
 
-function FrontEnd() {
-  return <SkillLayout title={frontEnd.title} li={frontEnd.li} />;
+function FrontEnd({ showElement, divRef }: Props) {
+  return (
+    <SkillLayout
+      title={frontEnd.title}
+      li={frontEnd.li}
+      showElement={showElement}
+      divRef={divRef}
+    />
+  );
 }
 
 export default FrontEnd;
