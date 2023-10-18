@@ -1,6 +1,6 @@
 import React from "react";
 
-interface props {
+interface Props {
   showElements: boolean[];
   refs: React.MutableRefObject<HTMLDivElement | null>[];
 }
@@ -11,7 +11,7 @@ const texts = [
   `로직이나 문제가 복잡하다면, 오히려 더 깊게 파고들 수 있는 기회라고 생각합니다.`,
 ];
 
-function DeepDive({ showElements, refs }: props) {
+function DeepDive({ showElements, refs }: Props) {
   return (
     <div className="relative flex flex-col items-center gap-5 z-20">
       <div

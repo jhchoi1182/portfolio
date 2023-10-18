@@ -1,6 +1,6 @@
 import React from "react";
 
-interface props {
+interface Props {
   showElements: boolean[];
   refs: React.MutableRefObject<HTMLDivElement | null>[];
 }
@@ -11,7 +11,7 @@ const texts = [
   `이 과정에서 배운 것들을 기록하는 습관이 있습니다.`,
 ];
 
-function Perseverance({ showElements, refs }: props) {
+function Perseverance({ showElements, refs }: Props) {
   return (
     <div className="relative flex flex-col items-center gap-5 mt-40 z-20">
       <div
