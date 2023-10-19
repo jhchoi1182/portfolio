@@ -7,7 +7,7 @@ interface Props {
 
 const cloudAndDeployment = {
   title: `Cloud & Deployment`,
-  li: [`AWS EC2, Amplify`, `Vercel`, `Github.io`],
+  li: [`AWS EC2, Amplify`, `Vercel`, `GitHub Pages`],
 };
 
 function CloudAndDeployment({ showElement, divRef }: Props) {

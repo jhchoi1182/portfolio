@@ -16,8 +16,8 @@ const useScrollX = (
     };
   }, []);
 
-  const sectionStart = containerRef.current?.offsetTop ?? 0;
-  const sectionEnd = sectionStart + window.innerHeight * 4;
+  const sectionStart = (containerRef.current?.offsetTop ?? 0) + 100;
+  const sectionEnd = sectionStart + window.innerHeight * 4 - 200;
   const isOutsideSection = scrollY + window.innerHeight >= sectionEnd;
 
   const sectionHeight = sectionEnd - sectionStart;

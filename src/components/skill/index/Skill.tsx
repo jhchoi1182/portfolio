@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import useScrollFadeInUp from "../../../hooks/useScrollFadeInUp";
-import CloudAndDeployment from "../elements/CloudAnd\u2028Deployment";
+import CloudAndDeployment from "../elements/CloudAndDeployment";
 import Collaboration from "../elements/Collaboration";
 import Curve from "../elements/Curve";
 import Data from "../elements/Data";
