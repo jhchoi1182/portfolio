@@ -24,7 +24,7 @@ function Skill() {
   return (
     <div
       ref={containerRef}
-      className="relative flex flex-col items-center w-full h-screen font-notoSans"
+      className="relative flex flex-col items-center w-full h-screen font-notoSans z-20"
     >
       <h1
         ref={refs[0]}

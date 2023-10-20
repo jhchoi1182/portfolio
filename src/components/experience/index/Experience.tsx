@@ -13,7 +13,7 @@ function Experience() {
 
   return (
     <div ref={containerRef} className="h-[400vh]">
-      <div className="relative h-[100%]">
+      <div className="relative h-[100%] z-20">
         <div className="sticky top-0 flex overflow-x-auto h-screen scroll-hidden">
           <h1 className="absolute top-[15%] left-1/2 -translate-x-1/2 text-4xl font-bold z-10">
             Experience

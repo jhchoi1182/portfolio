@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { darkModeAtom } from "../../libs/atoms";
 
-function ParticlesComponent() {
+function ParticlesBackground() {
   const isDark = useRecoilValue(darkModeAtom);
+
   useEffect(() => {
     if (window.particlesJS) {
       window.particlesJS("particles-js", {
@@ -117,14 +118,15 @@ function ParticlesComponent() {
         retina_detect: true,
       });
     }
-  }, []);
+  }, [isDark]);
+
   return (
     <div
       id="particles-js"
-      className="sticky inset-0 w-full h-full bg-center bg-no-repeat bg-cover bg-[#f1f1f1] dark:bg-[#0e0e0e] z-0"
+      className="fixed inset-0 w-full h-full bg-center bg-no-repeat bg-cover bg-[#f1f1f1] dark:bg-[#0e0e0e] z-10"
       style={{ backgroundImage: 'url("")' }}
     ></div>
   );
 }
 
-export default ParticlesComponent;
+export default ParticlesBackground;

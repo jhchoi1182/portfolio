@@ -1,3 +1,4 @@
+import Footer from "../components/common/Footer";
 import Experience from "../components/experience/index/Experience";
 import Banner from "../components/mainBanner/index/Banner";
 import Overview from "../components/mainBanner/index/Overview";
@@ -16,7 +17,9 @@ function About() {
       <section>
         <Experience />
       </section>
-      <div className="h-screen">안녕</div>
+      <section className="pt-[10%]">
+        <Footer />
+      </section>
     </main>
   );
 }

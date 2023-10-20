@@ -1,9 +1,9 @@
-import "../css/animation.css"
+import "../css/animation.css";
 import { BsArrowRightShort } from "react-icons/bs";
 
 function End() {
   return (
-    <div className="relative flex text-xl">
+    <div className="relative flex text-xl z-20">
       <div className="text-9xl slideToLeftAfter1250ms">-End</div>
       <div className="absolute top-7 -right-40 flex flex-col justify-center">
         <div className="flex items-center revealTextAfter1500ms">

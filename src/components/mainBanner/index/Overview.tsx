@@ -17,7 +17,7 @@ const Overview: React.FC = () => {
   useScrollFadeIn(showElements, setShowElements, refs);
 
   return (
-    <div className="relative w-full h-screen text-3xl">
+    <div className="relative w-full h-screen text-3xl z-20">
       <DeepDive showElements={showElements} refs={refs} />
       <Perseverance showElements={showElements} refs={refs} />
       <HeartBeat />

@@ -13,7 +13,7 @@ const texts = [
 
 function Perseverance({ showElements, refs }: Props) {
   return (
-    <div className="relative flex flex-col items-center gap-5 mt-40 z-20">
+    <div className="relative flex flex-col items-center gap-5 mt-40 z-10">
       <div
         ref={refs[2]}
         className={`fadeInUpAfter250ms text-4xl font-bold ${
