@@ -1,13 +1,23 @@
+import { useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
 import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
 import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
 import userTest from "../../../assets/images/userTest.webp";
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
 import { center } from "../../../styles/layout";
 
 function UserFeedback() {
   const isDark = useRecoilValue(darkModeAtom);
+
+  const [showElements, setShowElements] = useState(Array(2).fill(null));
+  const refs = [
+    useRef<HTMLImageElement | null>(null),
+    useRef<HTMLImageElement | null>(null),
+  ];
+
+  useScrollFadeIn(showElements, setShowElements, refs, true);
   return (
     <ExperienceLayout
       title="유저 테스트"
@@ -28,7 +38,10 @@ function UserFeedback() {
                 2주간의 45개 피드백을 통한 UI/UX 개선
               </span>
               <img
-                className="absolute -top-4 left-0 z-0"
+                ref={refs[0]}
+                className={`absolute -top-4 left-0 z-0 hiddenInitially ${
+                  showElements[0] ? "revealBrushAfter250ms" : ""
+                }`}
                 src={isDark ? highlightLongDark : highlightLongLight}
                 alt="highlightLong"
               />

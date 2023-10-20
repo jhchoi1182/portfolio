@@ -9,9 +9,9 @@ function Router() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path={`${process.env.PUBLIC_URL}/`} element={<About />} />
+        <Route path={`/`} element={<About />} />
         <Route
-          path={`${process.env.PUBLIC_URL}/project`}
+          path={`/project`}
           element={<Project />}
         />
       </Routes>

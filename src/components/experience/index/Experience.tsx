@@ -4,6 +4,7 @@ import CICD from "../elements/CICD";
 import PerformanceOptimizer from "../elements/PerformanceOptimizer";
 import UIDesign from "../elements/UIDesign";
 import UserFeedback from "../elements/UserFeedback";
+import "../css/animation.css";
 
 function Experience() {
   const containerRef = useRef<HTMLDivElement | null>(null);

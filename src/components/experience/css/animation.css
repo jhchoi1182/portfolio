@@ -1,0 +1,22 @@
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.hiddenInitially {
+  clip-path: inset(0 100% 0 0);
+}
+
+.revealBrushAfter250ms {
+  animation: reveal 0.25s ease-in-out 0.25s forwards;
+}
+.revealBrushAfter450ms {
+  animation: reveal 0.25s ease-in-out 0.45s forwards;
+}
+.revealBrushAfter650ms {
+  animation: reveal 0.25s ease-in-out 0.65s forwards;
+}

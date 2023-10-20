@@ -1,13 +1,23 @@
+import { useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
 import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
 import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
 import netflixClone from "../../../assets/images/netflixClone.webp";
 import velogClone from "../../../assets/images/velogClone.webp";
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
 
 function UIDesign() {
   const isDark = useRecoilValue(darkModeAtom);
+  const [showElements, setShowElements] = useState(Array(2).fill(null));
+  const refs = [
+    useRef<HTMLImageElement | null>(null),
+    useRef<HTMLImageElement | null>(null),
+  ];
+
+  useScrollFadeIn(showElements, setShowElements, refs, true);
+
   return (
     <ExperienceLayout
       title="디테일한 UI"
@@ -31,7 +41,10 @@ function UIDesign() {
             <span className="relative">
               <span className="relative z-10">1px단위까지 </span>
               <img
-                className="absolute -top-3 -left-3 z-0"
+                ref={refs[0]}
+                className={`absolute -top-3 -left-3 z-0 hiddenInitially ${
+                  showElements[0] ? "revealBrushAfter250ms" : ""
+                }`}
                 src={isDark ? highlightShortDark : highlightShortLight}
                 alt="highlightShort"
               />
@@ -43,7 +56,10 @@ function UIDesign() {
             <span className="relative">
               <span className="relative z-10"> 반응형 웹 </span>
               <img
-                className="absolute -top-2 left-0 z-0"
+                ref={refs[1]}
+                className={`absolute -top-2 left-0 z-0 hiddenInitially ${
+                  showElements[1] ? "revealBrushAfter450ms" : ""
+                }`}
                 src={isDark ? highlightShortDark : highlightShortLight}
                 alt="highlightShort"
               />

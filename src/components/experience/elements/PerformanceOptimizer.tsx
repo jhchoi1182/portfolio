@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
 import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
@@ -7,10 +8,20 @@ import highlightShortLight from "../../../assets/images/highlights/highlight_sho
 import profiler from "../../../assets/images/profiler.webp";
 import profiler2 from "../../../assets/images/profiler2.webp";
 import webVitals from "../../../assets/images/webVitals.webp";
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
 
 function PerformanceOptimizer() {
   const isDark = useRecoilValue(darkModeAtom);
+  const [showElements, setShowElements] = useState(Array(3).fill(null));
+  const refs = [
+    useRef<HTMLImageElement | null>(null),
+    useRef<HTMLImageElement | null>(null),
+    useRef<HTMLImageElement | null>(null),
+  ];
+
+  useScrollFadeIn(showElements, setShowElements, refs, true);
+
   return (
     <ExperienceLayout
       title="성능 최적화"
@@ -40,7 +51,10 @@ function PerformanceOptimizer() {
             <span className="relative">
               <span className="relative z-10"> 53% 개선</span>
               <img
-                className="absolute -top-2 left-0 z-0"
+                ref={refs[0]}
+                className={`absolute -top-2 left-0 z-0 hiddenInitially ${
+                  showElements[0] ? "revealBrushAfter250ms" : ""
+                }`}
                 src={isDark ? highlightShortDark : highlightShortLight}
                 alt="highlightShort"
               />
@@ -51,7 +65,10 @@ function PerformanceOptimizer() {
             <span className="relative">
               <span className="relative z-10"> 80.61% 단축</span>
               <img
-                className="absolute -top-4 left-0 z-0"
+                ref={refs[1]}
+                className={`absolute -top-4 left-0 z-0 hiddenInitially ${
+                  showElements[1] ? "revealBrushAfter450ms" : ""
+                }`}
                 src={isDark ? highlightShortDark : highlightShortLight}
                 alt="highlightShort"
               />
@@ -61,7 +78,10 @@ function PerformanceOptimizer() {
             <span className="relative">
               <span className="relative z-10">Web Vitals 성능 향상</span>
               <img
-                className="absolute -top-0 left-0 z-0"
+                ref={refs[2]}
+                className={`absolute -top-0 left-0 z-0 hiddenInitially ${
+                  showElements[2] ? "revealBrushAfter650ms" : ""
+                }`}
                 src={isDark ? highlightLongDark : highlightLongLight}
                 alt="highlightLong"
               />

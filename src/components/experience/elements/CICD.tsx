@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
 import cicd from "../../../assets/images/cicd.svg";
@@ -5,11 +6,20 @@ import highlightLongDark from "../../../assets/images/highlights/highlight_long_
 import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
 import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
 import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
 import { center } from "../../../styles/layout";
 
 function CICD() {
   const isDark = useRecoilValue(darkModeAtom);
+  const [showElements, setShowElements] = useState(Array(2).fill(null));
+  const refs = [
+    useRef<HTMLImageElement | null>(null),
+    useRef<HTMLImageElement | null>(null),
+  ];
+
+  useScrollFadeIn(showElements, setShowElements, refs, true);
+
   return (
     <ExperienceLayout
       title="CI/CD 파이프라인 구축"
@@ -29,7 +39,10 @@ function CICD() {
             <span className="relative">
               <span className="relative z-10"> 테스트 자동화</span>
               <img
-                className="absolute -top-4 left-0 z-0"
+                ref={refs[0]}
+                className={`absolute -top-4 left-0 z-0 hiddenInitially ${
+                  showElements[0] ? "revealBrushAfter250ms" : ""
+                }`}
                 src={isDark ? highlightShortDark : highlightShortLight}
                 alt="highlightShort"
               />
@@ -42,7 +55,10 @@ function CICD() {
             <span className="relative">
               <span className="relative z-10">개발 생산성 개선</span>
               <img
-                className="absolute -top-0 left-0 z-0"
+                ref={refs[1]}
+                className={`absolute -top-0 left-0 z-0 hiddenInitially ${
+                  showElements[1] ? "revealBrushAfter450ms" : ""
+                }`}
                 src={isDark ? highlightLongDark : highlightLongLight}
                 alt="highlightLong"
               />

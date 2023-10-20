@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import "../css/animation.css";
-import useScrollFadeInUp from "../../../hooks/useScrollFadeInUp";
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import DeepDive from "../elements/DeepDive";
 import HeartBeat from "../elements/HeartBeat";
 import Perseverance from "../elements/Perseverance";
@@ -14,10 +14,10 @@ const Overview: React.FC = () => {
     useRef<HTMLDivElement | null>(null),
   ];
 
-  useScrollFadeInUp(showElements, setShowElements, refs);
+  useScrollFadeIn(showElements, setShowElements, refs);
 
   return (
-    <div className="relative w-full h-screen text-3xl select-none">
+    <div className="relative w-full h-screen text-3xl">
       <DeepDive showElements={showElements} refs={refs} />
       <Perseverance showElements={showElements} refs={refs} />
       <HeartBeat />

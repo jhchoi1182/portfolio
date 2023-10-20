@@ -5,7 +5,7 @@ import Skill from "../components/skill/index/Skill";
 
 function About() {
   return (
-    <main>
+    <main className="select-none">
       <section>
         <Banner />
         <Overview />

@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 
-const useScrollFadeInUp = (
+const useScrollFadeIn = (
   showElements: boolean[],
   setShowElements: React.Dispatch<React.SetStateAction<boolean[]>>,
   refs: React.MutableRefObject<HTMLDivElement | null>[],
+  xAxis?: boolean,
 ) => {
   useEffect(() => {
     const checkScroll = () => {
@@ -12,7 +13,14 @@ const useScrollFadeInUp = (
         const currentRef = refs[index].current;
         if (!currentRef) return false;
         const rect = currentRef.getBoundingClientRect();
-        return rect.top <= window.innerHeight - rect.height / 2;
+        const isVerticallyHalfVisible =
+          rect.top <= window.innerHeight - rect.height / 2;
+        const isHorizontallyHalfVisible =
+          rect.left <= window.innerWidth - rect.width / 2;
+        if (xAxis) {
+          return isVerticallyHalfVisible && isHorizontallyHalfVisible;
+        }
+        return isVerticallyHalfVisible;
       });
       setShowElements(newShowElements);
     };
@@ -22,4 +30,4 @@ const useScrollFadeInUp = (
   }, [showElements]);
 };
 
-export default useScrollFadeInUp;
+export default useScrollFadeIn;
