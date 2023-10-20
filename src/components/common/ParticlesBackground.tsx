@@ -10,7 +10,7 @@ function ParticlesBackground() {
       window.particlesJS("particles-js", {
         particles: {
           number: {
-            value: 600,
+            value: 300,
             density: {
               enable: true,
               value_area: 4419.226793140727,

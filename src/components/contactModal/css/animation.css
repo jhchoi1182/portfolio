@@ -1,0 +1,45 @@
+@keyframes increaseOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes decreaseOpacity {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fadeInOpacity {
+  animation: increaseOpacity 1s forwards;
+}
+.fadeOutOpacity {
+  animation: decreaseOpacity 1s forwards;
+}
+
+@keyframes slideToTop {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes slideToDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+.slideToTop {
+  animation: slideToTop 1s forwards;
+}
+.slideToDown {
+  animation: slideToDown 1s forwards;
+}

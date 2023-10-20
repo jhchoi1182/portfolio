@@ -22,3 +22,8 @@ export const darkModeAtom = atom({
   key: "darkModeAtom",
   default: getCookie() ? true : false,
 });
+
+export const contactModalAtom = atom({
+  key: "contactModalAtom",
+  default: false,
+});

@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
+        chosunilbo: ["Chosunilbo_myungjo", "sans-serif"],
         notoSans: ["Noto Sans KR", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
