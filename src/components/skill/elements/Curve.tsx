@@ -38,9 +38,9 @@ const Curve = ({ containerRef }: Props) => {
             y2="835.5"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#680CFF" />
-            <stop offset="0.473958" stop-color="#778DFF" />
-            <stop offset="1" stop-color="#778DFF" />
+            <stop stopColor="#680CFF" />
+            <stop offset="0.473958" stopColor="#778DFF" />
+            <stop offset="1" stopColor="#778DFF" />
           </linearGradient>
         ) : (
           <linearGradient
