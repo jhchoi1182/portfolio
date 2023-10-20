@@ -56,14 +56,16 @@
   animation: reveal 0.75s linear 1.75s backwards;
 }
 
-@keyframes moveWindow {
-  0% {
-    left: -100px;
+@keyframes draw {
+  to {
+    stroke-dashoffset: -3291;
   }
-  100% {
-    left: 100%;
+  from {
+    stroke-dashoffset: 0;
   }
 }
 .heartbeat {
-  animation: moveWindow 3s infinite;
+  stroke-dasharray: 200 3291;
+  stroke-dashoffset: 3491;
+  animation: draw 2s ease-in-out infinite;
 }
