@@ -1,7 +1,7 @@
 import { useCookies } from "react-cookie";
 import { FiCircle } from "react-icons/fi";
 import { useSetRecoilState } from "recoil";
-import { darkModeAtom } from "../../../libs/atoms";
+import { darkModeAtom } from "../../../../libs/atoms";
 
 const oneWeekFromNow = new Date();
 oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7);
