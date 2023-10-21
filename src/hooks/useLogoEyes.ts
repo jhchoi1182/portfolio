@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { eyeRefAtom } from "../libs/atoms";
 
 const useLogoEyes = () => {
+  const [isBottom, setIsBottom] = useState(false);
   const [{ containerRef, eyesRef }, setRef] = useRecoilState(eyeRefAtom);
 
   const setContainerRef = (ref: HTMLDivElement | null) => {
@@ -14,6 +16,7 @@ const useLogoEyes = () => {
   };
 
   const handleMouseMove = (e: { clientX: number; clientY: number }) => {
+    if (isBottom) return;
     if (!containerRef || !eyesRef) return;
 
     const rect = containerRef.getBoundingClientRect();
@@ -29,7 +32,7 @@ const useLogoEyes = () => {
 
     const baseRangeX = ((rect.width * 10) / 100) * distanceScale;
     const baseRangeY = ((rect.height * 10) / 100) * distanceScale;
-    
+
     const offsetX = Math.min(
       Math.max(x * resistanceScale, -baseRangeX),
       baseRangeX,
@@ -42,7 +45,31 @@ const useLogoEyes = () => {
     eyesRef.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isBottom) return;
+      const scrollTop = document.documentElement.scrollTop;
+      const innerHeight = window.innerHeight;
+      const scrollHeight = document.body.scrollHeight;
+
+      if (scrollTop + innerHeight >= scrollHeight) {
+        setIsBottom(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!eyesRef) return;
+    eyesRef.style.transform = `translate(0px, 0px)`;
+  }, [isBottom]);
+
   return {
+    isBottom,
     setContainerRef,
     setEyesRef,
     handleMouseMove,

@@ -80,3 +80,48 @@
 .moveDown {
   transform: translateY(0%);
 }
+
+@keyframes crouchDown {
+  to {
+    transform: translate(-5px, 18px);
+    width: 60px;
+    height: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+.crouchDown {
+  animation: crouchDown 0.5s ease-out forwards;
+}
+@keyframes trampoline {
+  0% {
+    transform: translate(-5px, 13px);
+    width: 60px;
+    height: 35px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  50% {
+    transform: translate(0, -40px);
+    width: 48px;
+    height: 48px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+  }
+  100% {
+    transform: translate(-5px, 13px);
+    width: 60px;
+    height: 35px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+.trampoline {
+  animation: trampoline 0.65s ease forwards infinite;
+}
