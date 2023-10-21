@@ -20,20 +20,16 @@ const useLogoEyes = () => {
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
 
-    // 거리에 따른 스케일을 계산합니다. 이 값은 미세하게 범위를 늘릴 때 사용합니다.
     const distanceFromCenter = Math.sqrt(x * x + y * y);
     const maxDistance = Math.sqrt(
       (rect.width / 2) ** 2 + (rect.height / 2) ** 2,
     );
     const distanceScale = 1 + 0.025 * (distanceFromCenter / maxDistance);
-
-    // 기본 범위는 containerRef의 10%입니다.
-    const baseRangeX = ((rect.width * 10) / 100) * distanceScale;
-    const baseRangeY = ((rect.height * 10) / 100) * distanceScale;
-
-    // 일정한 저항감을 위한 스케일을 정의합니다.
     const resistanceScale = 0.025;
 
+    const baseRangeX = ((rect.width * 10) / 100) * distanceScale;
+    const baseRangeY = ((rect.height * 10) / 100) * distanceScale;
+    
     const offsetX = Math.min(
       Math.max(x * resistanceScale, -baseRangeX),
       baseRangeX,
