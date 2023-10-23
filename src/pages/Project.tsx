@@ -1,7 +1,5 @@
-import Experience from "../components/experience/index/Experience";
-
 function Project() {
-  return <Experience />;
+  return <div>프로젝트</div>;
 }
 
 export default Project;

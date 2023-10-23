@@ -17,23 +17,23 @@ function HeartBeat() {
         <>
           <path
             d="M0 323.805H980.555L1047.73 80.5745L1136.96 529L1244.74 2L1317.43 430.907L1381.6 219.206L1426.72 323.805H1919"
-            stroke="url(#paint0_radial_49_41)"
-            strokeWidth="20"
+            stroke="url(#paint0_linear_52_2)"
+            stroke-width="20"
           />
           <defs>
-            <radialGradient
-              id="paint0_radial_49_41"
-              cx="0"
-              cy="0"
-              r="1"
+            <linearGradient
+              id="paint0_linear_52_2"
+              x1="-1920.5"
+              y1="529.5"
+              x2="1919.5"
+              y2="529.5"
               gradientUnits="userSpaceOnUse"
-              gradientTransform="translate(-0.501279 529.5) scale(1920 6968.26)"
             >
-              <stop stopColor="#778DFF" />
-              <stop offset="0.536458" stopColor="#0D0B97" />
-              <stop offset="0.692708" stopColor="#0D0B97" />
+              <stop offset="0.197917" stopColor="#0D0B97" />
+              <stop offset="0.679836" stopColor="#2EB7E1" />
+              <stop offset="0.84375" stopColor="#5D2BB0" />
               <stop offset="1" stopColor="#778DFF" />
-            </radialGradient>
+            </linearGradient>
           </defs>
         </>
       ) : (

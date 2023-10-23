@@ -43,3 +43,6 @@
 .slideToDown {
   animation: slideToDown 1s forwards;
 }
+.slideToDownAfter500ms {
+  animation: slideToDown 1s 0.5s forwards;
+}

@@ -1,4 +1,4 @@
-import Footer from "../components/common/Footer";
+import Footer from "../components/common/index/Footer";
 import Experience from "../components/experience/index/Experience";
 import Banner from "../components/mainBanner/index/Banner";
 import Overview from "../components/mainBanner/index/Overview";

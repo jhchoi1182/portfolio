@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
-import { darkModeAtom } from "../../libs/atoms";
+import { darkModeAtom } from "../../../libs/atoms";
 
 function ParticlesBackground() {
   const isDark = useRecoilValue(darkModeAtom);

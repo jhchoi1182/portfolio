@@ -11,7 +11,7 @@ function NavTab() {
           <Link to={"/"}>ABOUT</Link>
         </li>
         <li className="navHover">
-          <Link to={"/"}>PROJECT</Link>
+          <Link to={"/project"}>PROJECT</Link>
         </li>
         <ContactButton />
         <li className="navHover">
