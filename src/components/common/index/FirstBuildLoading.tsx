@@ -37,7 +37,7 @@ function FirstBuildLoading() {
 
   return (
     <div
-      className={`fixed z-50 w-full h-full bg-white dark:bg-black ${
+      className={`fixed z-[9999] w-full h-full bg-white dark:bg-black ${
         isHundredPercent ? "slideToDownAfter500ms" : ""
       }`}
     >

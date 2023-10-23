@@ -1,5 +1,18 @@
+import { useEffect, useState } from "react";
+import MountLoading from "../components/common/index/MountLoading";
+
 function Project() {
-  return <div>프로젝트</div>;
+  const [toggleLoading, setToggleLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setToggleLoading((prev) => !prev);
+    }, 1500);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return <div>{toggleLoading && <MountLoading />}</div>;
 }
 
 export default Project;

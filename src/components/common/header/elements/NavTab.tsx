@@ -1,17 +1,34 @@
+import { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../css/animation.css";
 import ContactButton from "./ContactButton";
+import UnmountLoading from "../../index/UnmountLoading";
 
 function NavTab() {
+  const [toggleLoading, setToggleLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const navigateAfterLoaidng = (pathname: string) => {
+    setToggleLoading((prev) => !prev);
+    const timeout = setTimeout(() => {
+      setToggleLoading((prev) => !prev);
+      navigate(pathname);
+    }, 1500);
+
+    return () => clearTimeout(timeout);
+  };
+
   return (
     <>
       <ul className="flex gap-10 text-lg">
         <li className="navHover">
-          <Link to={"/"}>ABOUT</Link>
+          <button onClick={() => navigateAfterLoaidng("/")}>ABOUT</button>
         </li>
         <li className="navHover">
-          <Link to={"/project"}>PROJECT</Link>
+          <button onClick={() => navigateAfterLoaidng("/project")}>
+            PROJECT
+          </button>
         </li>
         <ContactButton />
         <li className="navHover">
@@ -37,6 +54,7 @@ function NavTab() {
           </a>
         </li>
       </ul>
+      {toggleLoading && <UnmountLoading />}
     </>
   );
 }
