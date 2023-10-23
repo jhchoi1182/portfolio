@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function FirstBuildLoading() {
+function  StartupLoading() {
   const [count, setCount] = useState(0);
   const isHundredPercent = count === 99;
 
@@ -67,4 +67,4 @@ function FirstBuildLoading() {
   );
 }
 
-export default FirstBuildLoading;
+export default StartupLoading;

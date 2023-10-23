@@ -1,6 +1,6 @@
-import DarkmodeToggle from "../header/elements/DarkmodeToggle";
-import Logo from "../header/elements/Logo";
-import NavTab from "../header/elements/NavTab";
+import DarkmodeToggle from "../elements/DarkmodeToggle";
+import Logo from "../elements/Logo";
+import NavTab from "../elements/NavTab";
 
 function Header() {
   return (

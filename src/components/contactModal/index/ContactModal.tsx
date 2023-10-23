@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useSetRecoilState } from "recoil";
 import { contactModalAtom } from "../../../libs/atoms";
-import Footer from "../../common/index/Footer";
+import Footer from "../../common/Footer";
 import Backdrop from "../elements/Backdrop";
 import "../css/animation.css";
 

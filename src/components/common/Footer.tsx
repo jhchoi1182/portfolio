@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
-import logoDark from "../../../assets/images/logo_dark.png";
-import logoLight from "../../../assets/images/logo_light.png";
-import { darkModeAtom } from "../../../libs/atoms";
+import logoDark from "../../assets/images/logo_dark.png";
+import logoLight from "../../assets/images/logo_light.png";
+import { darkModeAtom } from "../../libs/atoms";
 
 const styles = {
   subheading: `flex text-sm text-[#95918c] mb-7 font-normal font-notoSans`,

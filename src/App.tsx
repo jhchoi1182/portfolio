@@ -1,5 +1,5 @@
-import FirstBuildLoading from "./components/common/index/FirstBuildLoading";
-import ParticlesComponent from "./components/common/index/ParticlesBackground";
+import ParticlesComponent from "./components/common/ParticlesBackground";
+import StartupLoading from "./components/common/StartupLoading";
 import useLogoEyes from "./hooks/useLogoEyes";
 import Router from "./Router";
 
@@ -11,7 +11,7 @@ function App() {
       className="text-black dark:text-white scroll-hidden"
       onMouseMove={handleMouseMove}
     >
-      <FirstBuildLoading />
+      <StartupLoading />
       <ParticlesComponent />
       <Router />
     </div>

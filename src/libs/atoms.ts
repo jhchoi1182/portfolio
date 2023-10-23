@@ -27,3 +27,8 @@ export const contactModalAtom = atom({
   key: "contactModalAtom",
   default: false,
 });
+
+export const toggleLoadingAtom = atom({
+  key: "toggleLoadingAtom",
+  default: false,
+});

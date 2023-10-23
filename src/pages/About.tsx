@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
-import Footer from "../components/common/index/Footer";
-import MountLoading from "../components/common/index/MountLoading";
+import Footer from "../components/common/Footer";
 import Experience from "../components/experience/index/Experience";
 import Banner from "../components/mainBanner/index/Banner";
 import Overview from "../components/mainBanner/index/Overview";
 import Skill from "../components/skill/index/Skill";
 
 function About() {
-  const [toggleLoading, setToggleLoading] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setToggleLoading((prev) => !prev);
-    }, 1500);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
   return (
     <main className="select-none">
-      {toggleLoading && <MountLoading />}
       <section>
         <Banner />
         <Overview />

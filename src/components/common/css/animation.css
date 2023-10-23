@@ -1,24 +1,16 @@
-@keyframes unmountLoading {
-  from {
+@keyframes loading {
+  0% {
     transform: translateY(-110%) rotate(-6deg);
   }
-  to {
+  50% {
     transform: translateY(-30%) rotate(-6deg);
   }
-}
-.unmountLoading {
-  animation: unmountLoading 1.5s ease-in-out forwards;
-}
-@keyframes mountLoading {
-  from {
-    transform: translateY(-20%) rotate(-6deg);
-  }
-  to {
+  100% {
     transform: translateY(60%) rotate(-6deg);
   }
 }
-.mountLoading {
-  animation: mountLoading 1.5s ease-in-out forwards;
+.loading {
+  animation: loading 3s ease-in-out forwards;
 }
 
 @keyframes topLineScaling {
@@ -44,6 +36,9 @@
 .topLineScaling {
   animation: topLineScaling 1.5s linear forwards;
 }
+.topLineScalingAfter1500ms {
+  animation: topLineScaling 1.5s 1.5s linear forwards;
+}
 @keyframes bottomLineScaling {
   0% {
     height: 20px;
@@ -66,4 +61,7 @@
 }
 .bottomLineScaling {
   animation: bottomLineScaling 1.5s linear forwards;
+}
+.bottomLineScalingAfter1500ms {
+  animation: bottomLineScaling 1.5s 1.5s linear forwards;
 }
