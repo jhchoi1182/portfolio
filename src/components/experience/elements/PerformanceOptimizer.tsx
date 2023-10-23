@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
+import profiler from "../../../assets/images/about/profiler.webp";
+import profiler2 from "../../../assets/images/about/profiler2.webp";
+import webVitals from "../../../assets/images/about/webVitals.webp";
 import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
 import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
 import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
 import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
-import profiler from "../../../assets/images/profiler.webp";
-import profiler2 from "../../../assets/images/profiler2.webp";
-import webVitals from "../../../assets/images/webVitals.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
 

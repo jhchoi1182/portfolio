@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
+import userTest from "../../../assets/images/about/userTest.webp";
 import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
 import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
-import userTest from "../../../assets/images/userTest.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
-import { center } from "../../../styles/layout";
+import { center } from "../../../styles/classNames";
 
 function UserFeedback() {
   const isDark = useRecoilValue(darkModeAtom);

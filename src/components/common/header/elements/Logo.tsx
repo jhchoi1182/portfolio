@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import LogoEyes from "./LogoEyes";
-import { center } from "../../../../styles/layout";
+import { center } from "../../../../styles/classNames";
 import "../css/animation.css";
 
 function Logo() {

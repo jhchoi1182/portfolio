@@ -1,14 +1,14 @@
 import { useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
-import cicd from "../../../assets/images/cicd.svg";
+import cicd from "../../../assets/images/about/cicd.svg";
 import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
 import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
 import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
 import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
-import { center } from "../../../styles/layout";
+import { center } from "../../../styles/classNames";
 
 function CICD() {
   const isDark = useRecoilValue(darkModeAtom);

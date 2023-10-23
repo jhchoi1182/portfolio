@@ -3,8 +3,8 @@ import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
 import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
 import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
-import netflixClone from "../../../assets/images/netflixClone.webp";
-import velogClone from "../../../assets/images/velogClone.webp";
+import consolog from "../../../assets/images/project/consolog.webp";
+import jjabflix from "../../../assets/images/project/jjabflix.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { darkModeAtom } from "../../../libs/atoms";
 
@@ -25,13 +25,13 @@ function UIDesign() {
         <div className="relative w-[700px] h-[400px]">
           <img
             className="w-[500px] absolute inset-0 shadow-xl"
-            src={velogClone}
-            alt="velogClone"
+            src={consolog}
+            alt="consolog"
           />
           <img
             className="w-[500px] absolute bottom-0 right-0 shadow-xl"
-            src={netflixClone}
-            alt="netflixClone"
+            src={jjabflix}
+            alt="jjabflix"
           />
         </div>
       }

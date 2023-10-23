@@ -10,7 +10,7 @@
   }
 }
 .loading {
-  animation: loading 3s ease-in-out forwards;
+  animation: loading 2s ease-in-out forwards;
 }
 
 @keyframes topLineScaling {
@@ -34,10 +34,10 @@
   }
 }
 .topLineScaling {
-  animation: topLineScaling 1.5s linear forwards;
+  animation: topLineScaling 1s linear forwards;
 }
 .topLineScalingAfter1500ms {
-  animation: topLineScaling 1.5s 1.5s linear forwards;
+  animation: topLineScaling 1s 1s linear forwards;
 }
 @keyframes bottomLineScaling {
   0% {
@@ -60,8 +60,8 @@
   }
 }
 .bottomLineScaling {
-  animation: bottomLineScaling 1.5s linear forwards;
+  animation: bottomLineScaling 1s linear forwards;
 }
 .bottomLineScalingAfter1500ms {
-  animation: bottomLineScaling 1.5s 1.5s linear forwards;
+  animation: bottomLineScaling 1s 1s linear forwards;
 }

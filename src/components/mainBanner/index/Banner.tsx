@@ -1,4 +1,4 @@
-import { center } from "../../../styles/layout";
+import { center } from "../../../styles/classNames";
 import Developer from "../elements/Developer";
 import End from "../elements/End";
 import Front from "../elements/Front";

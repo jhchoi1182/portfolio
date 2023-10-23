@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import useLogoEyes from "../../../../hooks/useLogoEyes";
-import { center } from "../../../../styles/layout";
+import { center } from "../../../../styles/classNames";
 
 const styles = {
   box: `${center} w-12 h-full bg-black dark:bg-[#f1f1f1] rounded-md select-none`,

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-function  StartupLoading() {
+function StartupLoading() {
   const [count, setCount] = useState(0);
   const isHundredPercent = count === 99;
 
   useEffect(() => {
-    const duration = 1000;
+    const duration = 1500;
     const totalCount = 99;
     const intervalTime = duration / totalCount;
 
@@ -30,7 +30,7 @@ function  StartupLoading() {
     if (isHundredPercent) {
       timeout = setTimeout(() => {
         document.body.style.overflow = "auto";
-      }, 1000);
+      }, 1500);
     }
     return () => clearTimeout(timeout);
   }, [isHundredPercent]);
