@@ -37,7 +37,11 @@ const css: CssType = {
   },
 };
 
-function ProjectCard({ path, exp, date, title, img, techs }: projectCard) {
+function ProjectCard({
+  data: { path, exp, date, title, img, techs },
+}: {
+  data: projectCard;
+}) {
   const [isHovered, setIsHovered] = useState(false);
   const { startLoadingAfterNavigation } = useLoading();
 

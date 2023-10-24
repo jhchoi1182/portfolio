@@ -12,7 +12,7 @@ export const projectCards = [
     date: "진행 중",
     title: "Jihyeon's Portfolio",
     img: portfolioIcon,
-    techs: ["React"],
+    techs: ["React", "TypeScript"],
   },
   {
     path: "gaebal-log",
@@ -52,6 +52,6 @@ export const projectCards = [
     date: "2022.12",
     title: "Consolog",
     img: consolog,
-    techs: ["React", "React-Query"],
+    techs: ["React", "Redux"],
   },
 ];

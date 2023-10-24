@@ -1,8 +1,8 @@
 import React from "react";
+import { useRecoilState } from "recoil";
+import { toggleProjectTypeAtom } from "../../../libs/atoms";
 
 interface Props {
-  toggleType: "GRID" | "LIST";
-  setToggleType: React.Dispatch<React.SetStateAction<"GRID" | "LIST">>;
   setToggleAnimation: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -11,16 +11,21 @@ const styles = {
   text: `text-black dark:text-white`,
 };
 
-function TypeToggle({ toggleType, setToggleType, setToggleAnimation }: Props) {
+function TypeToggle({ setToggleAnimation }: Props) {
+  const [toggleProjectType, setToggleProjectType] = useRecoilState(
+    toggleProjectTypeAtom,
+  );
   const GRID = "GRID";
   const LIST = "LIST";
 
   const toggle = () => {
     setToggleAnimation((prev) => !prev);
     setTimeout(() => {
-      setToggleType((prev) => (prev === GRID ? LIST : GRID));
-      setToggleAnimation((prev) => !prev);
+      setToggleProjectType((prev) => (prev === GRID ? LIST : GRID));
     }, 500);
+    setTimeout(() => {
+      setToggleAnimation((prev) => !prev);
+    }, 1000);
   };
 
   return (
@@ -31,21 +36,21 @@ function TypeToggle({ toggleType, setToggleType, setToggleAnimation }: Props) {
       >
         <span
           className={`z-10  ${
-            toggleType === GRID ? styles.selectedText : styles.text
+            toggleProjectType === GRID ? styles.selectedText : styles.text
           }`}
         >
           {GRID}
         </span>
         <span
           className={`z-10  ${
-            toggleType === LIST ? styles.selectedText : styles.text
+            toggleProjectType === LIST ? styles.selectedText : styles.text
           }`}
         >
           {LIST}
         </span>
         <div
           className={`absolute top-0 ${
-            toggleType === GRID ? "left-0" : "left-[calc(100%-52px)]"
+            toggleProjectType === GRID ? "left-0" : "left-[calc(100%-52px)]"
           } transition-left duration-300 ease-in-out w-[52px] h-full bg-black dark:bg-white rounded-full`}
         />
       </button>

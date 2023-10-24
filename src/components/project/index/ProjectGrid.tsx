@@ -2,6 +2,7 @@ import "../css/animation.css";
 import { useRef, useState } from "react";
 import { projectCards } from "../../../assets/contents/projectCard";
 import useInfiniteScroll from "../../../hooks/useInfiniteScroll";
+import useScrollToTop from "../../../hooks/useScrollToTop";
 import ProjectCard from "../elements/ProjectCard";
 
 const projectList = projectCards;
@@ -11,19 +12,13 @@ function ProjectGrid() {
   const listRef = useRef<HTMLUListElement | null>(null);
 
   useInfiniteScroll(setProjectArray, projectList, listRef);
+  useScrollToTop();
 
   return (
     <ul className="flex flex-wrap justify-between" ref={listRef}>
-      {projectArray.map(({ path, exp, date, title, img, techs }, i) => (
+      {projectArray.map((project, i) => (
         <li key={i}>
-          <ProjectCard
-            path={path}
-            exp={exp}
-            date={date}
-            title={title}
-            img={img}
-            techs={techs}
-          />
+          <ProjectCard data={project} />
         </li>
       ))}
     </ul>
