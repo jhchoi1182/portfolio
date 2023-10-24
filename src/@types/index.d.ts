@@ -1,3 +1,13 @@
+interface projectCard {
+  path: string;
+  exp: string;
+  date: string;
+  title: string;
+  img: string;
+  techs: string[];
+}
+
+// particlesJS 타입
 interface Window {
   particlesJS: {
     (tagId: string, params: ParticlesConfig): void;

@@ -3,15 +3,6 @@ import { GoArrowUpRight } from "react-icons/go";
 import useLoading from "../../../hooks/useLoading";
 import { center, customDot } from "../../../styles/classNames";
 
-interface Props {
-  path: string;
-  exp: string;
-  date: string;
-  title: string;
-  img: string;
-  techs: string[];
-}
-
 type CssType = {
   [key: string]: {
     size: string;
@@ -46,7 +37,7 @@ const css: CssType = {
   },
 };
 
-function ProjectCard({ path, exp, date, title, img, techs }: Props) {
+function ProjectCard({ path, exp, date, title, img, techs }: projectCard) {
   const [isHovered, setIsHovered] = useState(false);
   const { startLoadingAfterNavigation } = useLoading();
 

@@ -24,6 +24,7 @@ function StartupLoading() {
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.body.style.overflow = "hidden";
 
     let timeout: ReturnType<typeof setTimeout>;
