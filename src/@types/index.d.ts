@@ -1,3 +1,8 @@
+declare module "*.md" {
+  const content: string;
+  export default content;
+}
+
 interface projectCard {
   path: string;
   exp: string;
@@ -6,6 +11,27 @@ interface projectCard {
   img: string;
   techs: string[];
 }
+
+interface projectData {
+  exp: string;
+  title: string;
+  projectType: "team" | "solo";
+  contribution?: string;
+  member?: { FE: number; BE: number; DE: number };
+  date: {
+    start: string;
+    end: string;
+  };
+  github: string[];
+  service: string[];
+  introduce: string;
+  tech: string[];
+  roleOrGoal: { main: string; sub?: string[] }[];
+  feature: { main: string; sub?: string[] }[];
+  lessonsLearned: { main: string; sub?: string[] }[];
+}
+
+interface projectData {}
 
 // particlesJS 타입
 interface Window {

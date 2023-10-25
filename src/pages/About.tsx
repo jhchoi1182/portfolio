@@ -6,7 +6,7 @@ import Skill from "../components/skill/index/Skill";
 
 function About() {
   return (
-    <main className="select-none">
+    <main className="select-none pt-[6%]">
       <section>
         <Banner />
         <Overview />
@@ -14,10 +14,10 @@ function About() {
       <section>
         <Skill />
       </section>
-      <section>
+      <section className="relative z-30 pb-[10%]">
         <Experience />
       </section>
-      <section className="pt-[10%]">
+      <section>
         <hr className="relative w-full h-[2px] bg-gray-300 dark:bg-zinc-900 z-20" />
         <Footer />
       </section>

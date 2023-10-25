@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { projectCards } from "../../../assets/data/projectCard";
+import useNavigateWithLoading from "../../../hooks/useNavigateWithLoading";
 import useScrollToTop from "../../../hooks/useScrollToTop";
 import { center } from "../../../styles/classNames";
 import ProjectList from "../elements/ProjectList";
@@ -9,6 +9,8 @@ const projectList = projectCards;
 
 function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
+  const navigateAfter500ms = useNavigateWithLoading();
   useScrollToTop();
 
   return (
@@ -24,23 +26,26 @@ function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
         </div>
         <ul className="pt-[1%]" onMouseLeave={() => setHoveredItem(null)}>
           {projectList.map((project, i) => (
-            <li key={i}>
-              <Link to={`/project/${project.path}`}>
-                <ProjectList
-                  data={project}
-                  hoveredItem={hoveredItem}
-                  setHoveredItem={toggleAnimation ? () => {} : setHoveredItem}
-                />
-                <hr
-                  className={`w-full h-[2px] ${
-                    hoveredItem === null
-                      ? "bg-gray-300 dark:bg-zinc-900"
-                      : hoveredItem === project.exp
-                      ? "bg-zinc-900 dark:bg-gray-300"
-                      : "bg-gray-300 dark:bg-zinc-900"
-                  }`}
-                />
-              </Link>
+            <li
+              key={i}
+              onClick={() =>
+                navigateAfter500ms(`/portfolio/project/${project.path}`)
+              }
+            >
+              <ProjectList
+                data={project}
+                hoveredItem={hoveredItem}
+                setHoveredItem={toggleAnimation ? () => {} : setHoveredItem}
+              />
+              <hr
+                className={`w-full h-[2px] ${
+                  hoveredItem === null
+                    ? "bg-gray-300 dark:bg-zinc-900"
+                    : hoveredItem === project.exp
+                    ? "bg-zinc-900 dark:bg-gray-300"
+                    : "bg-gray-300 dark:bg-zinc-900"
+                }`}
+              />
             </li>
           ))}
         </ul>

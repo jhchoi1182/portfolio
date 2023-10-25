@@ -4,7 +4,7 @@ import NavTab from "../elements/NavTab";
 
 function Header() {
   return (
-    <nav className="sticky top-0 flex items-center justify-between py-11 px-24 font-montserrat z-40">
+    <nav className="fixed w-full top-0 flex items-center justify-between py-11 px-24 font-montserrat z-40">
       <Logo />
       <NavTab />
       <DarkmodeToggle />

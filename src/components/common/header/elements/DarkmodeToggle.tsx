@@ -11,15 +11,14 @@ function DarkmodeToggle() {
   const setDarkMode = useSetRecoilState(darkModeAtom);
   console.log(JdarkMode);
   const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
-    setDarkMode((prev) => (prev ? false : true));
-
     JdarkMode
-      ? removeCookie("JdarkMode")
+      ? removeCookie("JdarkMode", { path: "/" })
       : setCookie("JdarkMode", true, {
-          path: "/portfolio",
+          path: "/",
           expires: oneWeekFromNow,
         });
+    document.documentElement.classList.toggle("dark");
+    setDarkMode((prev) => (prev ? false : true));
   };
 
   return (
