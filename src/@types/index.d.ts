@@ -17,7 +17,7 @@ interface projectMetaData {
   title: string;
   projectType: "team" | "solo";
   contribution?: string;
-  member?: { FE: number; BE: number; DE: number };
+  member?: { FE: number; BE: number; DE?: number };
   date: {
     start: string;
     end: string;
