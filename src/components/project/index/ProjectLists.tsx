@@ -7,9 +7,8 @@ import ProjectList from "../elements/ProjectList";
 
 const projectList = projectCards;
 
-function ProjectLists() {
+function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-
   useScrollToTop();
 
   return (
@@ -30,7 +29,7 @@ function ProjectLists() {
                 <ProjectList
                   data={project}
                   hoveredItem={hoveredItem}
-                  setHoveredItem={setHoveredItem}
+                  setHoveredItem={toggleAnimation ? () => {} : setHoveredItem}
                 />
                 <hr
                   className={`w-full h-[2px] ${
@@ -46,7 +45,7 @@ function ProjectLists() {
           ))}
         </ul>
       </div>
-      {hoveredItem !== null && (
+      {hoveredItem !== null && !toggleAnimation && (
         <img
           className="fixed z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[700px] object-contain opacity-90"
           src={projectCards[+hoveredItem - 1].img}
