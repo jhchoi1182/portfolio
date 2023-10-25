@@ -12,7 +12,7 @@ interface projectCard {
   techs: string[];
 }
 
-interface projectData {
+interface projectMetaData {
   exp: string;
   title: string;
   projectType: "team" | "solo";
@@ -24,14 +24,7 @@ interface projectData {
   };
   github: string[];
   service: string[];
-  introduce: string;
-  tech: string[];
-  roleOrGoal: { main: string; sub?: string[] }[];
-  feature: { main: string; sub?: string[] }[];
-  lessonsLearned: { main: string; sub?: string[] }[];
 }
-
-interface projectData {}
 
 // particlesJS 타입
 interface Window {

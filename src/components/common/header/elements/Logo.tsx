@@ -35,7 +35,7 @@ function Logo() {
         <LogoEyes />
       ) : (
         <div
-          className={`${center} w-full h-full bg-black dark:bg-[#f1f1f1] rounded-md ${
+          className={`${center} w-full h-full bg-inverse dark:bg-primary rounded-md ${
             toggleAnimation ? "shrink" : ""
           }`}
         >

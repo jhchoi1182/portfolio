@@ -20,7 +20,7 @@ Next.js / TypeScript / React-query / Recoil / Tailwind CSS / React Testing Libra
 - 키워드 입력에 따른 실시간 검색어 추천 모달 컴포넌트 개발
 - 영역 내 랜덤한 요소의 개수를 계산한 페이지네이션 기능 구현
 
-[**Lessons Learned**]
+**[Lessons Learned]**
 
 - **Jest 숙련도 향상**
   - 리팩토링 과정에서 기능이 망가지는 일 발생 → 기능 + 유닛 단위의 TDD 방식을 적용

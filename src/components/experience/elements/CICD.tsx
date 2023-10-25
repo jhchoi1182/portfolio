@@ -26,7 +26,7 @@ function CICD() {
       img={
         <div className={`relative ${center} w-[700px] h-[600px]`}>
           <img
-            className="w-[500px] h-[250px] bg-[#F1F1F1] shadow-xl z-10"
+            className="w-[500px] h-[250px] bg-primary shadow-xl z-10"
             src={cicd}
             alt="cicd"
           />

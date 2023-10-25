@@ -123,7 +123,7 @@ function ParticlesBackground() {
   return (
     <div
       id="particles-js"
-      className="fixed inset-0 w-full h-full bg-center bg-no-repeat bg-cover bg-[#f1f1f1] dark:bg-[#0e0e0e] z-10"
+      className="fixed inset-0 w-full h-full bg-center bg-no-repeat bg-cover bg-primary dark:bg-inverse z-10"
       style={{ backgroundImage: 'url("")' }}
     ></div>
   );

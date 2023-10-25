@@ -19,7 +19,7 @@ function ContactModal() {
     <div className="fixed z-50 inset-0 w-full h-full">
       <Backdrop isVisible={isVisible} handleClose={handleClose} />
       <div
-        className={`absolute bottom-0 w-full bg-[#f1f1f1] text-black font-chosunilbo ${
+        className={`absolute bottom-0 w-full bg-primary text-black font-chosunilbo ${
           isVisible ? "slideToTop" : "slideToDown"
         }`}
       >

@@ -18,7 +18,11 @@ function Contents() {
         className="prose dark:prose-invert max-w-none"
         components={{
           img: (image) => (
-            <img className="rounded-2xl" src={image.src} alt={image.alt} />
+            <img
+              className="object-cover rounded-2xl"
+              src={image.src}
+              alt={image.alt}
+            />
           ),
           h2: ({ children }) => <h2>{children}</h2>,
           a: ({ children, href }) => (

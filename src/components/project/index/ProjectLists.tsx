@@ -19,7 +19,7 @@ function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
         <div className="flex gap-2 items-center">
           <span className="text-2xl font-bold">All</span>
           <div
-            className={`${center} w-10 h-6 rounded-full text-xl font-bold bg-black dark:bg-white text-white dark:text-black`}
+            className={`${center} w-10 h-6 rounded-full text-xl font-bold bg-inverse dark:bg-primary text-white dark:text-black`}
           >
             {projectList.length}
           </div>

@@ -6,6 +6,10 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundColor: {
+        primary: "#f1f1f1",
+        inverse: "#0e0e0e",
+      },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         chosunilbo: ["Chosunilbo_myungjo", "sans-serif"],
