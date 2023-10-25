@@ -9,10 +9,12 @@ function NavTab() {
     <>
       <ul className="flex gap-10 text-lg">
         <li className="navHover">
-          <button onClick={() => navigateAfter500ms("/about")}>ABOUT</button>
+          <button onClick={() => navigateAfter500ms("/portfolio/about")}>
+            ABOUT
+          </button>
         </li>
         <li className="navHover">
-          <button onClick={() => navigateAfter500ms("/project")}>
+          <button onClick={() => navigateAfter500ms("/portfolio/project")}>
             PROJECT
           </button>
         </li>

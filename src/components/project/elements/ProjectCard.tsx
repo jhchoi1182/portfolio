@@ -47,7 +47,7 @@ function ProjectCard({
 
   return (
     <li
-      onClick={() => navigateAfter500ms(`/project/${path}`)}
+      onClick={() => navigateAfter500ms(`/portfolio/project/${path}`)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`relative z-30 overflow-hidden ${css[title].size} rounded-2xl cursor-pointer mb-40 p-10 select-none`}

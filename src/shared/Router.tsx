@@ -11,10 +11,13 @@ function Router() {
       <Header />
       <Routes>
         <Route element={<Context />}>
-          <Route path="/" element={<Navigate to={`/about`} replace />} />
-          <Route path={`/about`} element={<About />} />
-          <Route path={`/project`} element={<Project />} />
-          <Route path={`/project`}>
+          <Route
+            path="/portfolio"
+            element={<Navigate to={`/portfolio/about`} replace />}
+          />
+          <Route path={`/portfolio/about`} element={<About />} />
+          <Route path={`/portfolio/project`} element={<Project />} />
+          <Route path={`/portfolio/project`}>
             <Route path={`:id`} element={<Detail />} />
           </Route>
         </Route>
