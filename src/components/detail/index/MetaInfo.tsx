@@ -56,7 +56,7 @@ function MetaInfo() {
                   <AiFillGithub className="w-6 h-6" />
                 </button>
               </a>
-              <a href={data.github[0]} rel="noreferrer" target="_blank">
+              <a href={data.service[i]} rel="noreferrer" target="_blank">
                 <button
                   className={`${center} gap-5 w-32 h-11 bg-inverse dark:bg-primary rounded-full`}
                   onMouseEnter={() => setIsHovered(true)}

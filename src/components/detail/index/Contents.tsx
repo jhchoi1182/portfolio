@@ -13,7 +13,7 @@ function Contents() {
   }, []);
 
   return (
-    <div className="w-1/2 h-[2000px] pt-[15%]">
+    <div className="w-1/2 pt-[15%]">
       <Markdown
         className="prose dark:prose-invert max-w-none"
         components={{
@@ -24,7 +24,7 @@ function Contents() {
               alt={image.alt}
             />
           ),
-          h2: ({ children }) => <h2>{children}</h2>,
+          h2: ({ children }) => <h2 className="">{children}</h2>,
           a: ({ children, href }) => (
             <a className="text-river" href={href}>
               {children}
@@ -33,6 +33,7 @@ function Contents() {
           strong: ({ children }) => (
             <strong className="font-bold">{children}</strong>
           ),
+          p: ({ children }) => <p className="">{children}</p>,
         }}
       >
         {markdown}
