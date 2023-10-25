@@ -1,21 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { toggleLoadingAtom } from "../libs/atoms";
 
-const useLoading = () => {
-  const setToggleLoading = useSetRecoilState(toggleLoadingAtom);
+const useNavigateWithLoading = () => {
+  const [toggleLoading, setToggleLoading] = useRecoilState(toggleLoadingAtom);
   const navigate = useNavigate();
 
-  const startLoadingAfterNavigation = (pathname: string) => {
-    setToggleLoading((prev) => !prev);
+  const navigateAfter500ms = (pathname: string) => {
+    if (toggleLoading) return;
+    setToggleLoading(true);
 
     const navigateTimeout = setTimeout(() => {
       navigate(pathname);
-    }, 1500);
-
+    }, 500);
     const loadingTimeout = setTimeout(() => {
       setToggleLoading(false);
-    }, 3000);
+    }, 2000);
 
     return () => {
       clearTimeout(navigateTimeout);
@@ -23,7 +23,7 @@ const useLoading = () => {
     };
   };
 
-  return { startLoadingAfterNavigation };
+  return navigateAfter500ms;
 };
 
-export default useLoading;
+export default useNavigateWithLoading;

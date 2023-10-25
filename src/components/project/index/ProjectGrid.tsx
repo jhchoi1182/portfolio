@@ -1,6 +1,5 @@
-import "../css/animation.css";
 import { useRef, useState } from "react";
-import { projectCards } from "../../../assets/contents/projectCard";
+import { projectCards } from "../../../assets/data/projectCard";
 import useInfiniteScroll from "../../../hooks/useInfiniteScroll";
 import useScrollToTop from "../../../hooks/useScrollToTop";
 import ProjectCard from "../elements/ProjectCard";
@@ -17,9 +16,7 @@ function ProjectGrid() {
   return (
     <ul className="flex flex-wrap justify-between" ref={listRef}>
       {projectArray.map((project, i) => (
-        <li key={i}>
-          <ProjectCard data={project} />
-        </li>
+        <ProjectCard key={i} data={project} />
       ))}
     </ul>
   );

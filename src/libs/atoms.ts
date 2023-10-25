@@ -33,9 +33,7 @@ export const toggleLoadingAtom = atom({
   default: false,
 });
 
-
-
-export const toggleProjectTypeAtom = atom<"GRID" | "LIST">({
-  key: "toggleProjectTypeAtom",
+export const toggleProjectViewAtom = atom<"GRID" | "LIST">({
+  key: "toggleProjectViewAtom",
   default: "GRID",
 });

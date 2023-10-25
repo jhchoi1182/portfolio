@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
-import TypeToggle from "../components/project/elements/TypeToggle";
+import ProjectViewToggle from "../components/project/elements/ProjectViewToggle";
 import ProjectGrid from "../components/project/index/ProjectGrid";
 import ProjectLists from "../components/project/index/ProjectLists";
-import "../components/project/css/animation.css";
-import { toggleProjectTypeAtom } from "../libs/atoms";
+import { toggleProjectViewAtom as toggleProjectViewAtom } from "../libs/atoms";
 
 function Project() {
-  const toggleProjectType = useRecoilValue(toggleProjectTypeAtom);
+  const toggleProjectView = useRecoilValue(toggleProjectViewAtom);
   const [toggleAnimation, setToggleAnimation] = useState(false);
 
   useEffect(() => {
@@ -25,9 +24,9 @@ function Project() {
 
   return (
     <div className="w-full px-[5%] pt-[5%]">
-      <TypeToggle setToggleAnimation={setToggleAnimation} />
-      <div className={toggleAnimation ? "relative z-30 fadeOutIn" : ""}>
-        {toggleProjectType === "GRID" ? <ProjectGrid /> : <ProjectLists />}
+      <ProjectViewToggle setToggleAnimation={setToggleAnimation} />
+      <div className={toggleAnimation ? "relative z-30 animate-fadeOutIn" : ""}>
+        {toggleProjectView === "GRID" ? <ProjectGrid /> : <ProjectLists />}
       </div>
     </div>
   );

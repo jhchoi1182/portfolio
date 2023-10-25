@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
-import useLoading from "../../../hooks/useLoading";
+import useNavigateWithLoading from "../../../hooks/useNavigateWithLoading";
 import { center, customDot } from "../../../styles/classNames";
 
 type CssType = {
@@ -12,27 +12,27 @@ type CssType = {
 
 const css: CssType = {
   "Jihyeon's Portfolio": {
-    size: "w-[700px] h-[600px]",
+    size: "w-[40%] h-[600px]",
     textColor: "text-black",
   },
   개발로그: {
-    size: "w-[800px] h-[800px]",
+    size: "w-[45%] h-[800px]",
     textColor: "text-black",
   },
   "개인 기술 블로그 & Next Todo List": {
-    size: "w-[800px] h-[600px]",
+    size: "w-[45%] h-[600px]",
     textColor: "text-black",
   },
   Jjabflix: {
-    size: "w-[700px] h-[900px]",
+    size: "w-[40%] h-[900px]",
     textColor: "text-white",
   },
   쓰곰그리곰: {
-    size: "w-[800px] h-[700px]",
+    size: "w-[45%] h-[700px]",
     textColor: "text-black",
   },
   Consolog: {
-    size: "w-[800px] h-[500px]",
+    size: "w-[45%] h-[500px]",
     textColor: "text-white",
   },
 };
@@ -43,11 +43,11 @@ function ProjectCard({
   data: projectCard;
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const { startLoadingAfterNavigation } = useLoading();
+  const navigateAfter500ms = useNavigateWithLoading();
 
   return (
-    <div
-      onClick={() => startLoadingAfterNavigation(`/project/${path}`)}
+    <li
+      onClick={() => navigateAfter500ms(`/project/${path}`)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`relative z-30 overflow-hidden ${css[title].size} rounded-2xl cursor-pointer mb-40 p-10 select-none`}
@@ -96,7 +96,7 @@ function ProjectCard({
           </ul>
         </div>
       </div>
-    </div>
+    </li>
   );
 }
 

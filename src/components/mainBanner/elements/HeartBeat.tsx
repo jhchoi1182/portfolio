@@ -18,7 +18,7 @@ function HeartBeat() {
           <path
             d="M0 323.805H980.555L1047.73 80.5745L1136.96 529L1244.74 2L1317.43 430.907L1381.6 219.206L1426.72 323.805H1919"
             stroke="url(#paint0_linear_52_2)"
-            stroke-width="20"
+            strokeWidth="20"
           />
           <defs>
             <linearGradient

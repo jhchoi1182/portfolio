@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { toggleProjectTypeAtom } from "../../../libs/atoms";
+import { toggleProjectViewAtom } from "../../../libs/atoms";
 
 interface Props {
   setToggleAnimation: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,9 +11,9 @@ const styles = {
   text: `text-black dark:text-white`,
 };
 
-function TypeToggle({ setToggleAnimation }: Props) {
-  const [toggleProjectType, setToggleProjectType] = useRecoilState(
-    toggleProjectTypeAtom,
+function ProjectViewToggle({ setToggleAnimation }: Props) {
+  const [toggleProjectView, setToggleProjectView] = useRecoilState(
+    toggleProjectViewAtom,
   );
   const GRID = "GRID";
   const LIST = "LIST";
@@ -21,7 +21,7 @@ function TypeToggle({ setToggleAnimation }: Props) {
   const toggle = () => {
     setToggleAnimation((prev) => !prev);
     setTimeout(() => {
-      setToggleProjectType((prev) => (prev === GRID ? LIST : GRID));
+      setToggleProjectView((prev) => (prev === GRID ? LIST : GRID));
     }, 500);
     setTimeout(() => {
       setToggleAnimation((prev) => !prev);
@@ -36,21 +36,21 @@ function TypeToggle({ setToggleAnimation }: Props) {
       >
         <span
           className={`z-10  ${
-            toggleProjectType === GRID ? styles.selectedText : styles.text
+            toggleProjectView === GRID ? styles.selectedText : styles.text
           }`}
         >
           {GRID}
         </span>
         <span
           className={`z-10  ${
-            toggleProjectType === LIST ? styles.selectedText : styles.text
+            toggleProjectView === LIST ? styles.selectedText : styles.text
           }`}
         >
           {LIST}
         </span>
         <div
           className={`absolute top-0 ${
-            toggleProjectType === GRID ? "left-0" : "left-[calc(100%-52px)]"
+            toggleProjectView === GRID ? "left-0" : "left-[calc(100%-52px)]"
           } transition-left duration-300 ease-in-out w-[52px] h-full bg-black dark:bg-white rounded-full`}
         />
       </button>
@@ -58,4 +58,4 @@ function TypeToggle({ setToggleAnimation }: Props) {
   );
 }
 
-export default TypeToggle;
+export default ProjectViewToggle;

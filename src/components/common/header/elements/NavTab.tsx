@@ -1,21 +1,18 @@
 import { GoArrowUpRight } from "react-icons/go";
 import "../css/animation.css";
 import ContactButton from "./ContactButton";
-import useLoading from "../../../../hooks/useLoading";
+import useNavigateWithLoading from "../../../../hooks/useNavigateWithLoading";
 
 function NavTab() {
-  const { startLoadingAfterNavigation } = useLoading();
-
+  const navigateAfter500ms = useNavigateWithLoading();
   return (
     <>
       <ul className="flex gap-10 text-lg">
         <li className="navHover">
-          <button onClick={() => startLoadingAfterNavigation("/about")}>
-            ABOUT
-          </button>
+          <button onClick={() => navigateAfter500ms("/about")}>ABOUT</button>
         </li>
         <li className="navHover">
-          <button onClick={() => startLoadingAfterNavigation("/project")}>
+          <button onClick={() => navigateAfter500ms("/project")}>
             PROJECT
           </button>
         </li>

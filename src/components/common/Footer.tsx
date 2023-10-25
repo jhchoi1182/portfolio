@@ -11,7 +11,7 @@ function Footer() {
   const isDark = useRecoilValue(darkModeAtom);
 
   return (
-    <div className="w-full h-[450px] px-[5%] pb-10 select-text">
+    <div className="w-full h-[450px] px-[5%] pb-10 select-text font-chosunilbo">
       <div className="flex h-full justify-between">
         <div className="relative my-auto pb-20 z-20 text-5xl font-bold">
           <span className={styles.subheading}>PORTFOLIO</span>

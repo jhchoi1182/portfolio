@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { projectCards } from "../../../assets/contents/projectCard";
+import { projectCards } from "../../../assets/data/projectCard";
 import useScrollToTop from "../../../hooks/useScrollToTop";
 import { center } from "../../../styles/classNames";
 import ProjectList from "../elements/ProjectList";

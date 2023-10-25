@@ -1,7 +1,7 @@
 import ParticlesComponent from "./components/common/ParticlesBackground";
 import StartupLoading from "./components/common/StartupLoading";
 import useLogoEyes from "./hooks/useLogoEyes";
-import Router from "./Router";
+import Router from "./shared/Router";
 
 function App() {
   const { handleMouseMove } = useLogoEyes();

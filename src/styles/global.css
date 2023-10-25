@@ -9,3 +9,21 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+@keyframes fadeOutInLoading {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeOutInLoading {
+  animation: fadeOutInLoading 2s linear forwards;
+}

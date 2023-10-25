@@ -15,9 +15,15 @@ export default {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
+        fadeOutIn: {
+          "0%": { opacity: 1 },
+          "50%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.1s linear forwards",
+        fadeOutIn: "fadeOutIn 1s linear forwards",
       },
       boxShadow: {
         lightWindow: "0 0 0 2000px #f1f1f1",

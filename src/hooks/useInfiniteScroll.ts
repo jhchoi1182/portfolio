@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const useInfiniteScroll = (
   setProjectArray: React.Dispatch<React.SetStateAction<projectCard[]>>,
   projectList: projectCard[],
   listRef: React.MutableRefObject<HTMLUListElement | null>,
 ) => {
+  const isFetching = useRef(false);
+
   const setScroll = (addedElementHeight: number) => {
     window.scrollTo({
       top: window.scrollY + addedElementHeight,
@@ -21,7 +23,8 @@ const useInfiniteScroll = (
       if (!listRef.current) return;
       const newHeight = listRef.current.getBoundingClientRect().height;
       setScroll(newHeight - previousHeight);
-    });
+      isFetching.current = false;
+    }, 0);
   };
 
   useEffect(() => {
@@ -31,10 +34,14 @@ const useInfiniteScroll = (
       const clientHeight = document.documentElement.clientHeight;
       const scrollPosition = (scrollTop + clientHeight) / totalHeight;
 
-      if (scrollPosition > 0.2 && scrollPosition < 0.3) {
+      if (scrollPosition > 0.2 && scrollPosition < 0.3 && !isFetching.current) {
+        isFetching.current = true;
         moveScrollAfterAdd();
-      } else if (scrollPosition >= 0.8) {
+      } else if (scrollPosition >= 0.8 && !isFetching.current) {
         setProjectArray((prev) => [...prev, ...projectList]);
+        setTimeout(() => {
+          isFetching.current = false;
+        }, 0);
       }
     };
 

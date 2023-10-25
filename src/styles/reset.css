@@ -113,7 +113,7 @@ section {
   display: block;
 }
 body {
-  font-family: "Chosunilbo_myungjo", sans-serif;
+  font-family: "inter", sans-serif;
   line-height: 1;
   &::-webkit-scrollbar {
     display: none;
