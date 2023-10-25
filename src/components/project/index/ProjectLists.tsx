@@ -25,8 +25,8 @@ function ProjectLists() {
         </div>
         <ul className="pt-[1%]" onMouseLeave={() => setHoveredItem(null)}>
           {projectList.map((project, i) => (
-            <Link to={`/project/${project.path}`}>
-              <li key={i}>
+            <li key={i}>
+              <Link to={`/project/${project.path}`}>
                 <ProjectList
                   data={project}
                   hoveredItem={hoveredItem}
@@ -41,8 +41,8 @@ function ProjectLists() {
                       : "bg-gray-300 dark:bg-zinc-900"
                   }`}
                 />
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>

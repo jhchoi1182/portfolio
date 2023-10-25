@@ -31,7 +31,7 @@ function ProjectViewToggle({ setToggleAnimation }: Props) {
   return (
     <div className="fixed top-[13%] right-[10%] z-40">
       <button
-        className={`relative flex justify-between items-center w-[100px] h-8 border border-black dark:border-white px-2 font-bold rounded-full`}
+        className={`relative flex justify-between items-center w-[105px] h-8 border border-black dark:border-white px-2 font-bold rounded-full`}
         onClick={toggle}
       >
         <span
@@ -50,8 +50,8 @@ function ProjectViewToggle({ setToggleAnimation }: Props) {
         </span>
         <div
           className={`absolute top-0 ${
-            toggleProjectView === GRID ? "left-0" : "left-[calc(100%-52px)]"
-          } transition-left duration-300 ease-in-out w-[52px] h-full bg-black dark:bg-white rounded-full`}
+            toggleProjectView === GRID ? "left-0" : "left-[calc(100%-53px)]"
+          } transition-left duration-300 ease-in-out w-[53px] h-full bg-black dark:bg-white rounded-full`}
         />
       </button>
     </div>

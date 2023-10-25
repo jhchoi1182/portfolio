@@ -12,6 +12,7 @@ const useNavigateWithLoading = () => {
 
     const navigateTimeout = setTimeout(() => {
       navigate(pathname);
+      window.scrollTo(0, 0);
     }, 500);
     const loadingTimeout = setTimeout(() => {
       setToggleLoading(false);

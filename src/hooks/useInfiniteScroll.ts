@@ -34,7 +34,11 @@ const useInfiniteScroll = (
       const clientHeight = document.documentElement.clientHeight;
       const scrollPosition = (scrollTop + clientHeight) / totalHeight;
 
-      if (scrollPosition > 0.2 && scrollPosition < 0.3 && !isFetching.current) {
+      if (
+        scrollPosition > 0.35 &&
+        scrollPosition < 0.4 &&
+        !isFetching.current
+      ) {
         isFetching.current = true;
         moveScrollAfterAdd();
       } else if (scrollPosition >= 0.8 && !isFetching.current) {
