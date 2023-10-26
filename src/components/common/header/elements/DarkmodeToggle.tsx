@@ -9,7 +9,7 @@ oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7);
 function DarkmodeToggle() {
   const [{ JdarkMode }, setCookie, removeCookie] = useCookies(["JdarkMode"]);
   const setDarkMode = useSetRecoilState(darkModeAtom);
-  console.log(JdarkMode);
+
   const toggleDarkMode = () => {
     JdarkMode
       ? removeCookie("JdarkMode", { path: "/" })

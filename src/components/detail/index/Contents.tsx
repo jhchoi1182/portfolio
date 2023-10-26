@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { useParams } from "react-router-dom";
+import test from "../../../../public/data/gaebal-log.md";
 
 function Contents() {
   const [markdown, setMarkdown] = useState("");
@@ -24,7 +25,7 @@ function Contents() {
               alt={image.alt}
             />
           ),
-          h2: ({ children }) => <h2 className="">{children}</h2>,
+          h3: ({ children }) => <h2 className="text-3xl">{children}</h2>,
           a: ({ children, href }) => (
             <a className="text-river" href={href}>
               {children}
@@ -33,7 +34,11 @@ function Contents() {
           strong: ({ children }) => (
             <strong className="font-bold">{children}</strong>
           ),
-          p: ({ children }) => <p className="">{children}</p>,
+          p: ({ children }) => <p className="text-xl">{children}</p>,
+          ul: ({ children }) => (
+            <ul className="text-xl list-disc">{children}</ul>
+          ),
+          li: ({ children }) => <li className="list-disc">{children}</li>,
         }}
       >
         {markdown}

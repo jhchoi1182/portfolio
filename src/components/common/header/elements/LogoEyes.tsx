@@ -10,7 +10,6 @@ function LogoEyes() {
   const [crouchDownAnimation, setCrouchDownAnimation] = useState(false);
   const [isHappy, setIsHappy] = useState(false);
   const { isBottom, setContainerRef, setEyesRef } = useLogoEyes();
-  console.log(isBottom);
 
   useEffect(() => {
     if (!isBottom) {

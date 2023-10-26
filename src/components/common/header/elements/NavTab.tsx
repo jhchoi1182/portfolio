@@ -1,19 +1,35 @@
+import { useState, useEffect } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import "../css/animation.css";
+import { useLocation } from "react-router-dom";
 import ContactButton from "./ContactButton";
 import useNavigateWithLoading from "../../../../hooks/useNavigateWithLoading";
 
+const textColor = "text-[#90999c] dark:text-[#b2bec3]";
+
 function NavTab() {
+  const [currentPath, setCurrentPath] = useState("about");
+  const { pathname } = useLocation();
+
   const navigateAfter500ms = useNavigateWithLoading();
+
+  useEffect(() => {
+    if (pathname === "/portfolio/about") return setCurrentPath("about");
+    if (pathname.startsWith("/portfolio/project"))
+      return setCurrentPath("project");
+  }, [pathname]);
+
   return (
     <>
       <ul className="flex gap-10 text-lg">
-        <li className="navHover">
+        <li className={`navHover ${currentPath === "about" ? textColor : ""}`}>
           <button onClick={() => navigateAfter500ms("/portfolio/about")}>
             ABOUT
           </button>
         </li>
-        <li className="navHover">
+        <li
+          className={`navHover ${currentPath === "project" ? textColor : ""}`}
+        >
           <button onClick={() => navigateAfter500ms("/portfolio/project")}>
             PROJECT
           </button>

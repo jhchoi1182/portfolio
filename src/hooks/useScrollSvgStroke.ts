@@ -7,7 +7,7 @@ const useScrollSvgStroke = (
   setLength: React.Dispatch<React.SetStateAction<number>>,
 ) => {
   const calcDashoffset = () => {
-    const scrolledHeight = window.scrollY + window.innerHeight * 0.9;
+    const scrolledHeight = window.scrollY + window.innerHeight * 0.8;
     if (containerRef.current) {
       const ratio =
         (scrolledHeight - containerRef.current.offsetTop) /
