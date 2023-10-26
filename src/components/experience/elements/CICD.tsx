@@ -50,7 +50,7 @@ function CICD() {
           </li>
           <li></li>
           <li>자동 병합 설정</li>
-          <li>정적 배포(Vercel)를 통한 CI/CD 프로세스</li>
+          <li>정적 배포를 통한 CI/CD</li>
           <li>
             <span className="relative">
               <span className="relative z-10">개발 생산성 개선</span>

@@ -22,14 +22,14 @@
     transform: translateX(-60px);
   }
 }
-.slideToLeftAfter1000ms {
-  animation: slideToLeft80px 0.75s ease-in-out 1s forwards;
+.slideToLeftAfter2500ms {
+  animation: slideToLeft80px 0.5s ease-in-out 2.5s forwards;
 }
-.slideToLeftAfter1250ms {
-  animation: slideToLeft100px 0.75s ease-in-out 1.25s forwards;
+.slideToLeftAfter2750ms {
+  animation: slideToLeft100px 0.5s ease-in-out 2.75s forwards;
 }
-.slideToLeftAfter1500ms {
-  animation: slideToLeft60px 0.75s ease-in-out 1.5s forwards;
+.slideToLeftAfter3000ms {
+  animation: slideToLeft60px 0.5s ease-in-out 3s forwards;
 }
 
 @keyframes reveal {
@@ -40,20 +40,20 @@
     clip-path: inset(0 0 0 0);
   }
 }
-.revealTextAfter1250ms {
-  animation: reveal 1s linear 1.25s backwards;
+.revealTextAfter2750ms {
+  animation: reveal 1s linear 2.75s backwards;
 }
-.revealTextAfter1500ms {
-  animation: reveal 0.25s linear 1.5s backwards;
+.revealTextAfter3000ms {
+  animation: reveal 0.25s linear 3s backwards;
 }
-.revealTextAfter1600ms {
-  animation: reveal 0.25s linear 1.6s backwards;
+.revealTextAfter3100ms {
+  animation: reveal 0.25s linear 3.1s backwards;
 }
-.revealTextAfter1700ms {
-  animation: reveal 0.25s linear 1.7s backwards;
+.revealTextAfter3200ms {
+  animation: reveal 0.25s linear 3.2s backwards;
 }
-.revealTextAfter1750ms {
-  animation: reveal 0.75s linear 1.75s backwards;
+.revealTextAfter3250ms {
+  animation: reveal 0.75s linear 3.25s backwards;
 }
 
 @keyframes draw {

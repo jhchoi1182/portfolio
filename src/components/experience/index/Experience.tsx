@@ -25,8 +25,8 @@ function Experience() {
             }}
           >
             <PerformanceOptimizer />
-            <UIDesign />
             <CICD />
+            <UIDesign />
             <UserFeedback />
           </div>
         </div>
