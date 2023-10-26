@@ -47,14 +47,14 @@ const useLogoEyes = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isBottom) return;
+      // if (isBottom) return;
       const scrollTop = document.documentElement.scrollTop;
       const innerHeight = window.innerHeight;
       const scrollHeight = document.body.scrollHeight;
 
       if (scrollTop + innerHeight >= scrollHeight) {
         setIsBottom(true);
-      }
+      } else return setIsBottom(false);
     };
 
     window.addEventListener("scroll", handleScroll);

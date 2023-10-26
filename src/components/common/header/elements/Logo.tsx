@@ -5,7 +5,7 @@ import "../css/animation.css";
 
 function Logo() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [toggleAnimation, setToggleAnimation] = useState<boolean | null>(null);
+  const [eyeMode, setEyeMode] = useState<boolean | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +21,9 @@ function Logo() {
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
     if (isScrolled) {
-      setToggleAnimation(true);
+      setEyeMode(false);
       timeout = setTimeout(() => {
-        setToggleAnimation(false);
+        setEyeMode(true);
       }, 1050);
     }
     return () => clearTimeout(timeout);
@@ -31,19 +31,19 @@ function Logo() {
 
   return (
     <div className="w-36 h-12 text-white dark:text-black text-2xl font-semibold">
-      {toggleAnimation === false ? (
+      {eyeMode ? (
         <LogoEyes />
       ) : (
         <div
           className={`${center} w-full h-full bg-inverse dark:bg-primary rounded-md ${
-            toggleAnimation ? "shrink" : ""
+            eyeMode === false ? "shrink" : ""
           }`}
         >
           <div>
             {Array.from("JIHYEON").map((char, i) => (
               <span
                 key={i}
-                className={`${toggleAnimation ? `charFadeOut-${i}` : ""}`}
+                className={`${eyeMode === false ? `charFadeOut-${i}` : ""}`}
               >
                 {char}
               </span>

@@ -7,20 +7,25 @@ const styles = {
 };
 
 function LogoEyes() {
-  const [toggleAnimation, setToggleAnimation] = useState(false);
-  const [eyeMode, setEyeMode] = useState(false);
+  const [crouchDownAnimation, setCrouchDownAnimation] = useState(false);
+  const [isHappy, setIsHappy] = useState(false);
   const { isBottom, setContainerRef, setEyesRef } = useLogoEyes();
+  console.log(isBottom);
 
   useEffect(() => {
-    if (!isBottom) return;
-    setToggleAnimation(true);
-    const timeout = setTimeout(() => setEyeMode(true), 500);
+    if (!isBottom) {
+      setCrouchDownAnimation(false);
+      setIsHappy(false);
+      return;
+    }
+    setCrouchDownAnimation(true);
+    const timeout = setTimeout(() => setIsHappy(true), 500);
     return () => clearTimeout(timeout);
   }, [isBottom]);
 
   return (
     <>
-      {eyeMode ? (
+      {isHappy ? (
         <div className={`${styles.box} trampoline`}>
           <div className="pb-3">
             <span className="text-lg">^ ^</span>
@@ -29,10 +34,10 @@ function LogoEyes() {
       ) : (
         <div
           ref={(ref) => setContainerRef(ref)}
-          className={`${styles.box} ${toggleAnimation ? "crouchDown" : ""}`}
+          className={`${styles.box} ${crouchDownAnimation ? "crouchDown" : ""}`}
         >
           <div ref={(ref) => setEyesRef(ref)}>
-            {toggleAnimation ? (
+            {crouchDownAnimation ? (
               <span className="text-lg">^ ^</span>
             ) : (
               <span className="animate-fadeIn">' '</span>
