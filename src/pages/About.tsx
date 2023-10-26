@@ -14,11 +14,13 @@ function About() {
       <section>
         <Skill />
       </section>
-      <section className="relative z-30 pb-[10%]">
+      <section>
         <Experience />
       </section>
       <section>
-        <hr className="relative w-full h-[2px] bg-gray-300 dark:bg-zinc-900 z-20" />
+        <div className="relative z-20 pt-[10%]">
+          <hr className="w-full h-[2px] bg-gray-300 dark:bg-zinc-900" />
+        </div>
         <Footer />
       </section>
     </main>
