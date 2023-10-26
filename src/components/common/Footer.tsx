@@ -22,8 +22,22 @@ function Footer() {
         <div className="ml-48 mt-auto">
           <div className="relative z-20 mb-20 text-2xl font-bold">
             <span className={styles.subheading}>FOLLOW</span>
-            <h3>BLOG</h3>
-            <h3>GITHUB</h3>
+            <a
+              href="https://jhchoi1182.tistory.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="flex items-center"
+            >
+              <h3>BLOG</h3>
+            </a>
+            <a
+              href="https://github.com/jhchoi1182"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="flex items-center"
+            >
+              <h3>GITHUB</h3>
+            </a>
           </div>
           <div className="relative z-20 text-2xl font-bold">
             <span className={styles.subheading}>CONTACT</span>
