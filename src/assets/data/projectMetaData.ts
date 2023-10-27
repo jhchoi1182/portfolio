@@ -50,7 +50,7 @@ export const projectMetaDatas: projectMetaDatasType = {
   },
   jjabflix: {
     exp: "4",
-    title: "넷플릭스 클론 프로젝트",
+    title: "Jjabflix",
     projectType: "solo",
     date: {
       start: "23. 04",
