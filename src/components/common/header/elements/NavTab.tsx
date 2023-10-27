@@ -13,6 +13,9 @@ function NavTab() {
 
   const navigateAfter500ms = useNavigateWithLoading();
 
+  const isAbout = currentPath === "about";
+  const isProject = currentPath === "project";
+
   useEffect(() => {
     if (pathname === "/portfolio/about") return setCurrentPath("about");
     if (pathname.startsWith("/portfolio/project"))
@@ -22,15 +25,19 @@ function NavTab() {
   return (
     <>
       <ul className="flex gap-10 text-lg">
-        <li className={`navHover ${currentPath === "about" ? textColor : ""}`}>
-          <button onClick={() => navigateAfter500ms("/portfolio/about")}>
+        <li className={`navHover ${isAbout ? textColor : ""}`}>
+          <button
+            onClick={() => !isAbout && navigateAfter500ms("/portfolio/about")}
+          >
             ABOUT
           </button>
         </li>
-        <li
-          className={`navHover ${currentPath === "project" ? textColor : ""}`}
-        >
-          <button onClick={() => navigateAfter500ms("/portfolio/project")}>
+        <li className={`navHover ${isProject ? textColor : ""}`}>
+          <button
+            onClick={() =>
+              !isProject && navigateAfter500ms("/portfolio/project")
+            }
+          >
             PROJECT
           </button>
         </li>

@@ -4,7 +4,7 @@ import ProjectCard from "../../project/elements/ProjectCard";
 
 function More() {
   const { id } = useParams();
-  const data = projectCards.filter((project) => project.title !== id);
+  const data = projectCards.filter((project) => project.path !== id);
 
   return (
     <div className="flex flex-col">
