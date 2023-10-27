@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { useParams } from "react-router-dom";
 
+const baseURL =
+  process.env.NODE_ENV === "production"
+    ? "https://jhchoi1182.github.io/portfolio"
+    : "";
+
 function Contents() {
   const [markdown, setMarkdown] = useState("");
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`/data/${id}.md`)
+    fetch(`${baseURL}/data/${id}.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, [id]);
