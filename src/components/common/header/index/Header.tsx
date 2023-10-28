@@ -7,7 +7,6 @@ import NavTab from "../elements/NavTab";
 
 function Header() {
   const [isContactModal, setIsContactModal] = useState(false);
-  console.log(isContactModal);
 
   return (
     <>

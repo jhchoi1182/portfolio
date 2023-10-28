@@ -7,12 +7,6 @@ import Footer from "../../common/Footer";
 import Backdrop from "../elements/Backdrop";
 import "../css/animation.css";
 
-const styles = {
-  li: `flex items-center justify-between px-[5%] py-5 transition-colors duration-300 hover:text-[#90999c] cursor-pointer`,
-  h3: `text-3xl font-bold`,
-  hr: `w-full h-[2px] bg-[#b2bec3]`,
-};
-
 function ContactModal({
   setIsContactModal,
 }: {
@@ -33,6 +27,17 @@ function ContactModal({
     navigateAfter500ms(pathname);
   };
 
+  const links = [
+    {
+      text: "About",
+      onClick: () => !isAbout && handleNavigation("/portfolio/about"),
+    },
+    {
+      text: "Project",
+      onClick: () => !isProject && handleNavigation("/portfolio/project"),
+    },
+  ];
+
   return (
     <div className="fixed z-50 inset-0 w-full h-full">
       <Backdrop isVisible={isVisible} handleClose={handleClose} />
@@ -42,22 +47,19 @@ function ContactModal({
         }`}
       >
         <ul className="hidden lg:block">
-          <li
-            className={styles.li}
-            onClick={() => !isAbout && handleNavigation("/portfolio/about")}
-          >
-            <h3 className={styles.h3}>About</h3>
-            <GoArrowRight className="text-4xl" />
-          </li>
-          <hr className={styles.hr} />
-          <li
-            className={styles.li}
-            onClick={() => !isProject && handleNavigation("/portfolio/project")}
-          >
-            <h3 className={styles.h3}>Project</h3>
-            <GoArrowRight className="text-4xl" />
-          </li>
-          <hr className={styles.hr} />
+          {links.map(({ text, onClick }, i) => (
+            <>
+              <li
+                key={i}
+                className="flex items-center justify-between px-[5%] py-5 transition-colors duration-300 hover:text-[#90999c] cursor-pointer"
+                onClick={onClick}
+              >
+                <h3 className="text-3xl font-bold">{text}</h3>
+                <GoArrowRight className="text-4xl" />
+              </li>
+              <hr className="w-full h-[2px] bg-[#b2bec3]" />
+            </>
+          ))}
         </ul>
         <AiOutlineClose
           className={`absolute top-8 right-8 lg:-top-10 lg:text-white ${

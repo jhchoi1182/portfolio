@@ -4,6 +4,16 @@ import useNavigateWithLoading from "../../../../hooks/useNavigateWithLoading";
 import useRouteNavigate from "../../../../hooks/useRouteNavigation";
 
 const textColor = "text-[#90999c] dark:text-[#b2bec3]";
+const links = [
+  {
+    text: "BLOG",
+    href: "https://jhchoi1182.tistory.com/",
+  },
+  {
+    text: "GITHUB",
+    href: "https://github.com/jhchoi1182",
+  },
+];
 
 function NavTab({
   setIsContactModal,
@@ -35,28 +45,19 @@ function NavTab({
         <li className="navHover">
           <button onClick={() => setIsContactModal(true)}>CONTACT</button>
         </li>
-        <li className="navHover">
-          <a
-            href="https://jhchoi1182.tistory.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="flex items-center"
-          >
-            <span>BLOG</span>
-            <GoArrowUpRight className="liftOnHover" />
-          </a>
-        </li>
-        <li className="navHover">
-          <a
-            href="https://github.com/jhchoi1182"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="flex items-center"
-          >
-            <span>GITHUB</span>
-            <GoArrowUpRight className="liftOnHover" />
-          </a>
-        </li>
+        {links.map(({ text, href }, i) => (
+          <li key={i} className="navHover">
+            <a
+              href={href}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="flex items-center"
+            >
+              <span>{text}</span>
+              <GoArrowUpRight className="liftOnHover" />
+            </a>
+          </li>
+        ))}
       </ul>
     </>
   );
