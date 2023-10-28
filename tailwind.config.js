@@ -35,6 +35,13 @@ export default {
         lightWindow: "0 0 0 2000px #f1f1f1",
         darkWindow: "0 0 0 2000px #0E0E0E",
       },
+      screens: {
+        "2xl": { max: "1535px" },
+        xl: { max: "1279px" },
+        lg: { max: "880px" },
+        md: { max: "740px" },
+        sm: { max: "460px" },
+      },
     },
   },
   plugins: [
