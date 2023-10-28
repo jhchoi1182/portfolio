@@ -15,11 +15,14 @@ function Header() {
         <div className="lg:hidden">
           <NavTab setIsContactModal={setIsContactModal} />
         </div>
-        <div className="lg:hidden -ml-[25%] xl:ml-0">
-          <DarkmodeToggle />
-        </div>
-        <div className="hidden lg:flex" onClick={() => setIsContactModal(true)}>
-          <BsList className="text-4xl cursor-pointer" />
+        <div className="-ml-[25%] xl:ml-0 lg:flex lg:w-full">
+          <div className="flex lg:ml-auto">
+            <DarkmodeToggle />
+          </div>
+          <BsList
+            className="hidden lg:block ml-[5%] text-4xl cursor-pointer"
+            onClick={() => setIsContactModal(true)}
+          />
         </div>
       </nav>
       {isContactModal && <ContactModal setIsContactModal={setIsContactModal} />}
