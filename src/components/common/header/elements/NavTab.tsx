@@ -1,26 +1,17 @@
-import { useState, useEffect } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import "../css/animation.css";
-import { useLocation } from "react-router-dom";
-import ContactButton from "./ContactButton";
 import useNavigateWithLoading from "../../../../hooks/useNavigateWithLoading";
+import useRouteNavigate from "../../../../hooks/useRouteNavigation";
 
 const textColor = "text-[#90999c] dark:text-[#b2bec3]";
 
-function NavTab() {
-  const [currentPath, setCurrentPath] = useState("about");
-  const { pathname } = useLocation();
-
+function NavTab({
+  setIsContactModal,
+}: {
+  setIsContactModal: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const { isAbout, isProject } = useRouteNavigate();
   const navigateAfter500ms = useNavigateWithLoading();
-
-  const isAbout = currentPath === "about";
-  const isProject = currentPath === "project";
-
-  useEffect(() => {
-    if (pathname === "/portfolio/about") return setCurrentPath("about");
-    if (pathname.startsWith("/portfolio/project"))
-      return setCurrentPath("project");
-  }, [pathname]);
 
   return (
     <>
@@ -41,7 +32,9 @@ function NavTab() {
             PROJECT
           </button>
         </li>
-        <ContactButton />
+        <li className="navHover">
+          <button onClick={() => setIsContactModal(true)}>CONTACT</button>
+        </li>
         <li className="navHover">
           <a
             href="https://jhchoi1182.tistory.com/"

@@ -1,18 +1,36 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { useSetRecoilState } from "recoil";
-import { contactModalAtom } from "../../../libs/atoms";
+import { GoArrowRight } from "react-icons/go";
+import useNavigateWithLoading from "../../../hooks/useNavigateWithLoading";
+import useRouteNavigation from "../../../hooks/useRouteNavigation";
 import Footer from "../../common/Footer";
 import Backdrop from "../elements/Backdrop";
 import "../css/animation.css";
 
-function ContactModal() {
+const styles = {
+  li: `flex items-center justify-between px-[5%] py-5 transition-colors duration-300 hover:text-[#90999c] cursor-pointer`,
+  h3: `text-3xl font-bold`,
+  hr: `w-full h-[2px] bg-[#b2bec3]`,
+};
+
+function ContactModal({
+  setIsContactModal,
+}: {
+  setIsContactModal: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [isVisible, setIsVisible] = useState(true);
-  const setIsContactModal = useSetRecoilState(contactModalAtom);
+
+  const { isAbout, isProject } = useRouteNavigation();
+  const navigateAfter500ms = useNavigateWithLoading();
 
   const handleClose = () => {
     setIsVisible(false);
     setTimeout(() => setIsContactModal(false), 1000);
+  };
+  const handleNavigation = (pathname: string) => {
+    setIsVisible(false);
+    setTimeout(() => setIsContactModal(false), 1000);
+    navigateAfter500ms(pathname);
   };
 
   return (
@@ -23,8 +41,28 @@ function ContactModal() {
           isVisible ? "slideToTop" : "slideToDown"
         }`}
       >
+        <ul className="hidden lg:block">
+          <li
+            className={styles.li}
+            onClick={() => !isAbout && handleNavigation("/portfolio/about")}
+          >
+            <h3 className={styles.h3}>About</h3>
+            <GoArrowRight className="text-4xl" />
+          </li>
+          <hr className={styles.hr} />
+          <li
+            className={styles.li}
+            onClick={() => !isProject && handleNavigation("/portfolio/project")}
+          >
+            <h3 className={styles.h3}>Project</h3>
+            <GoArrowRight className="text-4xl" />
+          </li>
+          <hr className={styles.hr} />
+        </ul>
         <AiOutlineClose
-          className="absolute top-8 right-8 w-5 h-5 cursor-pointer"
+          className={`absolute top-8 right-8 lg:-top-10 lg:text-white ${
+            !isVisible ? "lg:hidden" : ""
+          } w-5 h-5 cursor-pointer`}
           onClick={handleClose}
         />
         <Footer />

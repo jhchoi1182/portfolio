@@ -11,7 +11,6 @@ function Logo() {
     const handleScroll = () => {
       if (window.scrollY > 10) return setIsScrolled(true);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
