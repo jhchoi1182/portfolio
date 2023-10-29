@@ -1,3 +1,4 @@
+import ToTopButton from "../components/detail/elements/ToTopButton";
 import Contents from "../components/detail/index/Contents";
 import MetaInfo from "../components/detail/index/MetaInfo";
 import More from "../components/detail/index/More";
@@ -13,6 +14,7 @@ function Detail() {
       <div className="px-[5%]">
         <More />
       </div>
+      <ToTopButton />
     </div>
   );
 }

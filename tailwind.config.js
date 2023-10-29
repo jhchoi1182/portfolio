@@ -21,6 +21,10 @@ export default {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
         fadeOutIn: {
           "0%": { opacity: 1 },
           "50%": { opacity: 0 },
@@ -29,6 +33,8 @@ export default {
       },
       animation: {
         fadeIn: "fadeIn 0.1s linear forwards",
+        fadeIn250ms: "fadeIn 0.25s linear forwards",
+        fadeOut250ms: "fadeOut 0.25s linear forwards",
         fadeOutIn: "fadeOutIn 1s linear forwards",
       },
       boxShadow: {

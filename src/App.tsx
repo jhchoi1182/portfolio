@@ -11,7 +11,7 @@ function App() {
       className="text-black dark:text-white scroll-hidden"
       onMouseMove={handleMouseMove}
     >
-      {/* <StartupLoading /> */}
+      <StartupLoading />
       <ParticlesComponent />
       <Router />
     </div>
