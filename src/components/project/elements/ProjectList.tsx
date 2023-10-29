@@ -14,7 +14,7 @@ function ProjectList({
 }: Props) {
   return (
     <div
-      className={`flex justify-between items-center py-12 text-lg font-notoSans cursor-pointer ${
+      className={`flex justify-between items-center py-12 text-base font-notoSans cursor-pointer lg:text-lg ${
         hoveredItem === null
           ? "opacity-100"
           : hoveredItem === exp
@@ -23,14 +23,18 @@ function ProjectList({
       }`}
       onMouseEnter={() => setHoveredItem(exp)}
     >
-      <div className="flex gap-[5%] w-full">
-        <div className="flex gap-2">
-          <h3>EXP</h3>
-          <h3>{`00${exp}`}</h3>
+      <div className="block items-center gap-[5%] w-full md:flex">
+        <div className="flex">
+          <div className="flex gap-2 pr-[5vw] mb-10 md:mb-0">
+            <h3>EXP</h3>
+            <h3>{`00${exp}`}</h3>
+          </div>
+          <div className="w-[65px]">{date}</div>
         </div>
-        <div className="w-[100px]">{date}</div>
-        <div className="w-[400px] text-xl font-semibold">{title}</div>
-        <ul className="flex gap-[10px]">
+        <div className="w-auto h-auto text-lg font-semibold lg:text-xl lg:w-[25%]">
+          {title}
+        </div>
+        <ul className="hidden gap-[10px] lg:flex">
           {techs.map((tech, i) => (
             <li
               key={i}

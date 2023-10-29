@@ -23,7 +23,7 @@ function Project() {
   }, []);
 
   return (
-    <div className="w-full px-[5%] pt-[11%]">
+    <div className="w-full px-[5%] pt-[210px]">
       <ProjectViewToggle setToggleAnimation={setToggleAnimation} />
       <div className={toggleAnimation ? "relative z-30 animate-fadeOutIn" : ""}>
         {toggleProjectView === "GRID" ? (
