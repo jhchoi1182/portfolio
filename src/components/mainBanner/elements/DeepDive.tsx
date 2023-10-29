@@ -13,10 +13,10 @@ const texts = [
 
 function DeepDive({ showElements, refs }: Props) {
   return (
-    <div className="relative flex flex-col items-center gap-5 z-10">
+    <div className="relative z-10 text-center px-[2%]">
       <div
         ref={refs[0]}
-        className={`fadeInUpAfter250ms text-4xl font-bold ${
+        className={`fadeInUpAfter250ms text-3xl font-bold mb-3 md:text-4xl ${
           showElements[0] ? "show" : ""
         }`}
       >

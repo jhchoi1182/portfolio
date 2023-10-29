@@ -52,7 +52,7 @@ function UIDesign() {
             기울이는 웹 개발
           </li>
           <li>
-            미디어 쿼리, rem, %를 활용한
+            미디어 쿼리, vw, rem, %를 활용한
             <span className="relative">
               <span className="relative z-10"> 반응형 웹 </span>
               <img
