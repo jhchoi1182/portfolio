@@ -12,15 +12,15 @@ function Header() {
     <>
       <nav className="fixed w-full top-0 flex items-center justify-between py-11 px-[5%] font-montserrat z-40">
         <Logo />
-        <div className="lg:hidden">
+        <div className="hidden lg:block">
           <NavTab setIsContactModal={setIsContactModal} />
         </div>
-        <div className="-ml-[25%] xl:ml-0 lg:flex lg:w-full">
-          <div className="flex lg:ml-auto">
+        <div className="flex w-full lg:w-auto lg:ml-0 xl:-ml-[25%]">
+          <div className="flex ml-auto">
             <DarkmodeToggle />
           </div>
           <BsList
-            className="hidden lg:block ml-[5%] text-4xl cursor-pointer"
+            className="block ml-[5%] text-4xl cursor-pointer lg:hidden"
             onClick={() => setIsContactModal(true)}
           />
         </div>

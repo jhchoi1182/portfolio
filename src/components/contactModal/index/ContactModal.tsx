@@ -46,7 +46,7 @@ function ContactModal({
           isVisible ? "slideToTop" : "slideToDown"
         }`}
       >
-        <ul className="hidden lg:block">
+        <ul className="block lg:hidden">
           {links.map(({ text, onClick }, i) => (
             <>
               <li
@@ -62,8 +62,8 @@ function ContactModal({
           ))}
         </ul>
         <AiOutlineClose
-          className={`absolute top-8 right-8 lg:-top-10 lg:text-white ${
-            !isVisible ? "lg:hidden" : ""
+          className={`absolute -top-10 right-8 text-white lg:text-black lg:top-8 ${
+            !isVisible ? "hidden lg:block" : ""
           } w-5 h-5 cursor-pointer`}
           onClick={handleClose}
         />
