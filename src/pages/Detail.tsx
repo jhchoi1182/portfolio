@@ -5,7 +5,7 @@ import More from "../components/detail/index/More";
 function Detail() {
   return (
     <div className="relative z-30 w-full">
-      <div className="flex w-full min-h-screen px-[5%]">
+      <div className="w-full min-h-screen px-[5%] lg:flex">
         <MetaInfo />
         <Contents />
       </div>

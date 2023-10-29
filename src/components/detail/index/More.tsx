@@ -9,12 +9,12 @@ function More() {
   return (
     <div className="flex flex-col">
       <h1 className="text-5xl">Explore More</h1>
-      <ul className="grid grid-cols-3 gap-y-28 my-10">
+      <ul className="grid grid-cols-1 gap-[5%] gap-y-28 my-10 3xl:grid-cols-3 lg:grid-cols-2">
         {data.map((project, i) => (
           <ProjectCard
             key={i}
             isDetailPage
-            size={`w-[85%] h-[600px]`}
+            size={`w-full h-[600px]`}
             data={project}
           />
         ))}

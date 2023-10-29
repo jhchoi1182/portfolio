@@ -6,19 +6,21 @@ import { projectMetaDatas } from "../../../assets/data/projectMetaData";
 import { center } from "../../../styles/classNames";
 
 function MetaInfo() {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setHoveredButton] = useState<string | null>(null);
   const { id } = useParams();
   const data = projectMetaDatas[id ?? "portfolio"];
   const isTeamProject = data.projectType === "team";
   const isTwoProject = data.title.split("&").length !== 1;
 
   return (
-    <div className="sticky top-0 flex flex-col justify-between w-1/2 h-screen pt-[15%] font-notoSans">
+    <div className="flex flex-col justify-between w-full pt-[200px] font-notoSans lg:sticky lg:top-0 lg:w-1/2 lg:h-screen lg:pt-[15%]">
       <div>
         <h5 className="text-xl mb-5">{`EXP 00${data.exp}`}</h5>
-        <h1 className=" text-8xl">{data.title}</h1>
+        <h1 className="text-6xl mb-5 pr-5 3xl:text-8xl xl:text-7xl">
+          {data.title}
+        </h1>
       </div>
-      <div className="flex flex-col gap-8 pb-[5%]">
+      <div className="flex flex-col gap-8 pb-[32px]">
         <div className="flex gap-3">
           <h3 className="text-3xl font-semibold">
             {isTeamProject ? "팀 프로젝트" : "개인 프로젝트"}
@@ -59,15 +61,15 @@ function MetaInfo() {
               <a href={data.service[i]} rel="noreferrer" target="_blank">
                 <button
                   className={`${center} gap-5 w-32 h-11 bg-inverse dark:bg-primary rounded-full`}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
+                  onMouseEnter={() => setHoveredButton(title)}
+                  onMouseLeave={() => setHoveredButton(null)}
                 >
-                  {isHovered ? (
+                  {isHovered === title ? (
                     <GoArrowUpRight className="w-5 h-5 -ml-1 -mr-1 text-white dark:text-black" />
                   ) : (
                     <div className="w-3 h-3 bg-white dark:bg-black rounded-full" />
                   )}
-                  <span className="text-xl font-semibold text-white dark:text-dark">
+                  <span className="text-xl font-semibold text-white dark:text-black">
                     View
                   </span>
                 </button>

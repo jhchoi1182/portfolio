@@ -18,7 +18,7 @@ function Contents() {
   }, [id]);
 
   return (
-    <div className="w-1/2 pt-[15%] font-notoSans">
+    <div className="w-full pt-[100px] font-notoSans lg:w-1/2 lg:pt-[15%]">
       <Markdown
         className="prose dark:prose-invert max-w-none text-black dark:text-white"
         components={{
@@ -30,7 +30,9 @@ function Contents() {
             />
           ),
           h3: ({ children }) => <h2 className="text-3xl">{children}</h2>,
-          h4: ({ children }) => <h4 className="text-2xl">{children}</h4>,
+          h4: ({ children }) => (
+            <h4 className="text-xl sm:text-2xl">{children}</h4>
+          ),
           h5: ({ children }) => (
             <li className="list-none text-2xl font-montserrat">{children}</li>
           ),
@@ -47,9 +49,11 @@ function Contents() {
           strong: ({ children }) => (
             <strong className="font-bold">{children}</strong>
           ),
-          p: ({ children }) => <p className="text-xl mb-10">{children}</p>,
+          p: ({ children }) => (
+            <p className="text-lg mb-10 sm:text-xl">{children}</p>
+          ),
           ul: ({ children }) => (
-            <ul className="text-xl list-disc">{children}</ul>
+            <ul className="text-lg list-disc sm:text-xl">{children}</ul>
           ),
           li: ({ children }) => <li>{children}</li>,
         }}
