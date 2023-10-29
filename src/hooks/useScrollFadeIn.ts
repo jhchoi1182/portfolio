@@ -22,6 +22,11 @@ const useScrollFadeIn = (
         }
         return isVerticallyHalfVisible;
       });
+      if (
+        showElements.every((value) => value === true) ||
+        newShowElements.every((value) => value === null)
+      )
+        return;
       setShowElements(newShowElements);
     };
 

@@ -47,7 +47,6 @@ const useLogoEyes = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // if (isBottom) return;
       const scrollTop = document.documentElement.scrollTop;
       const innerHeight = window.innerHeight;
       const scrollHeight = document.body.scrollHeight;
