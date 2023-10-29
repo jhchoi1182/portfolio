@@ -40,7 +40,7 @@ function CICD() {
               <span className="relative z-10"> 테스트 자동화</span>
               <img
                 ref={refs[0]}
-                className={`absolute -top-4 left-0 z-0 block hiddenInitially 2xl:block xl:hidden ${
+                className={`absolute -top-4 left-0 z-0 block hiddenInitially 3xl:block 2xl:hidden ${
                   showElements[0] ? "revealBrushAfter250ms" : ""
                 }`}
                 src={isDark ? highlightShortDark : highlightShortLight}

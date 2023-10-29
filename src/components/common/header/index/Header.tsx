@@ -15,7 +15,7 @@ function Header() {
         <div className="hidden lg:block">
           <NavTab setIsContactModal={setIsContactModal} />
         </div>
-        <div className="flex w-full lg:w-auto lg:ml-0 xl:-ml-[25%]">
+        <div className="flex w-full lg:w-auto lg:ml-0 2xl:-ml-[25%]">
           <div className="flex ml-auto">
             <DarkmodeToggle />
           </div>

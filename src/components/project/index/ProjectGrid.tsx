@@ -10,12 +10,13 @@ type Sizes = {
 
 const projectList = projectCards;
 const sizes: Sizes = {
-  "Jihyeon's Portfolio": "w-[40%] h-[600px]",
-  개발로그: "w-[45%] h-[800px]",
-  "개인 기술 블로그 & Next Todo List": "w-[45%] h-[600px]",
-  Jjabflix: "w-[40%] h-[900px]",
-  쓰곰그리곰: "w-[45%] h-[700px]",
-  Consolog: "w-[45%] h-[500px]",
+  "Jihyeon's Portfolio": "w-full h-[600px] 2xl:w-[40%] xl:w-[42.5%]",
+  개발로그: "w-full h-[800px] 2xl:w-[45%] xl:w-[47.5%]",
+  "개인 기술 블로그 & Next Todo List":
+    "w-full h-[600px] 2xl:w-[45%] xl:w-[47.5%]",
+  Jjabflix: "w-full h-[900px] 2xl:w-[40%] xl:w-[42.5%]",
+  쓰곰그리곰: "w-full h-[700px] 2xl:w-[45%] xl:w-[47.5%]",
+  Consolog: "w-full h-[500px] 2xl:w-[45%] xl:w-[47.5%]",
 };
 
 function ProjectGrid() {

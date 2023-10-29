@@ -10,14 +10,14 @@ function SkillLayout({ title, li, showElement, divRef }: Props) {
     <>
       <div
         ref={divRef}
-        className={`block w-[400px] fadeInUpAfter250ms xl:w-[910px] lg:flex lg:w-[810px] md:w-[520px] ${
+        className={`block w-[400px] fadeInUpAfter250ms 2xl:w-[910px] lg:flex lg:w-[810px] md:w-[520px] ${
           showElement ? "show" : ""
         }`}
       >
-        <div className="w-[290px] mb-5 text-xl font-semibold xl:text-2xl lg:mb-0">
+        <div className="w-[290px] mb-5 text-xl font-semibold 2xl:text-2xl lg:mb-0">
           {title}
         </div>
-        <ul className="text-sm list-disc space-y-4 xl:text-xl xl:ml-10 md:text-lg">
+        <ul className="text-sm list-disc space-y-4 2xl:text-xl 2xl:ml-10 md:text-lg">
           {li.map((v, i) => (
             <li key={i}>{v}</li>
           ))}

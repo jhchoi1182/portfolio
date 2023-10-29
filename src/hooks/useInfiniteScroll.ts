@@ -29,12 +29,22 @@ const useInfiniteScroll = (
 
   useEffect(() => {
     const handleScroll = () => {
+      const viewportWidth = window.innerWidth;
       const scrollTop = document.documentElement.scrollTop;
       const totalHeight = document.documentElement.scrollHeight;
       const clientHeight = document.documentElement.clientHeight;
       const scrollPosition = (scrollTop + clientHeight) / totalHeight;
+      console.log(scrollPosition);
 
       if (
+        viewportWidth < 1000 &&
+        scrollPosition > 0.2 &&
+        scrollPosition < 0.25 &&
+        !isFetching.current
+      ) {
+        isFetching.current = true;
+        moveScrollAfterAdd();
+      } else if (
         scrollPosition > 0.35 &&
         scrollPosition < 0.4 &&
         !isFetching.current
