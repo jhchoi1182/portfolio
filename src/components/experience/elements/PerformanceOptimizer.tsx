@@ -47,9 +47,9 @@ function PerformanceOptimizer() {
       descriptions={
         <>
           <li>
-            렌더링 속도
+            초기 렌더링 속도
             <span className="relative">
-              <span className="relative z-10"> 53% 개선</span>
+              <span className="relative z-10"> 53% 단축</span>
               <img
                 ref={refs[0]}
                 className={`absolute -top-2 left-0 z-0 hiddenInitially ${
@@ -61,9 +61,9 @@ function PerformanceOptimizer() {
             </span>
           </li>
           <li>
-            초기 렌더링 시간
+            리렌더링 시간
             <span className="relative">
-              <span className="relative z-10"> 80.61% 단축</span>
+              <span className="relative z-10"> 80.61% 개선</span>
               <img
                 ref={refs[1]}
                 className={`absolute -top-4 left-0 z-0 hiddenInitially ${

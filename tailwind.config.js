@@ -36,6 +36,7 @@ export default {
         darkWindow: "0 0 0 2000px #0E0E0E",
       },
       screens: {
+        "2xl": { min: "1517px" },
         xl: { min: "1279px" },
         lg: { min: "880px" },
         md: { min: "630px" },

@@ -15,11 +15,11 @@ function Experience() {
     <div ref={containerRef} className="h-[400vh]">
       <div className="relative h-[100%] z-20">
         <div className="sticky top-0 flex overflow-x-auto h-screen scroll-hidden">
-          <h1 className="absolute top-[15%] left-1/2 -translate-x-1/2 text-4xl font-bold z-10">
+          <h1 className="absolute top-[15%] left-1/2 -translate-x-1/2 text-3xl font-bold z-10 md:text-4xl">
             Experience
           </h1>
           <div
-            className="flex h-full pt-[5%]"
+            className="flex h-full pt-[95px]"
             style={{
               transform: `translateX(-${translatePercentage}%)`,
             }}

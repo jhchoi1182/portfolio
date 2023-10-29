@@ -9,11 +9,15 @@ interface props {
 function ExperienceLayout({ title, img, descriptions }: props) {
   return (
     <div className={`${center} flex-col w-screen h-full`}>
-      <div className="flex w-3/4 h-2/3 pt-[4%]">
-        <div className={`${center} w-2/3 h-full`}>{img}</div>
-        <div className="flex flex-col w-1/3 h-full">
-          <h1 className="text-3xl font-bold mb-10">{title}</h1>
-          <ul className="text-2xl space-y-8">{descriptions}</ul>
+      <div className="flex justify-center w-3/4 h-2/3 pt-[80px]">
+        <div className={`${center} hidden w-[55%] h-full xl:flex`}>{img}</div>
+        <div className="flex flex-col w-[100%] h-full text-center xl:w-[45%] xl:text-start xl:pl-20">
+          <h1 className="text-xl font-bold mb-6 lg:text-3xl lg:mb-10 md:text-2xl md:mb-8">
+            {title}
+          </h1>
+          <ul className="text-lg space-y-4 lg:text-2xl lg:space-y-8 md:text-xl md:space-y-6">
+            {descriptions}
+          </ul>
         </div>
       </div>
     </div>
