@@ -34,7 +34,6 @@ const useInfiniteScroll = (
       const totalHeight = document.documentElement.scrollHeight;
       const clientHeight = document.documentElement.clientHeight;
       const scrollPosition = (scrollTop + clientHeight) / totalHeight;
-      console.log(scrollPosition);
 
       if (
         viewportWidth < 1000 &&
