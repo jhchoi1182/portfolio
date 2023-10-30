@@ -10,12 +10,8 @@ import { center } from "../../../styles/classNames";
 
 function UserFeedback() {
   const isDark = useRecoilValue(darkModeAtom);
-
-  const [showElements, setShowElements] = useState(Array(2).fill(null));
-  const refs = [
-    useRef<HTMLImageElement | null>(null),
-    useRef<HTMLImageElement | null>(null),
-  ];
+  const [showElements, setShowElements] = useState(Array(1).fill(null));
+  const refs = [useRef<HTMLImageElement | null>(null)];
 
   useScrollFadeIn(showElements, setShowElements, refs, true);
   return (
