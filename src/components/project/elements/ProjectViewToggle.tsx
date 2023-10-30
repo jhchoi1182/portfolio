@@ -29,7 +29,7 @@ function ProjectViewToggle({ setToggleAnimation }: Props) {
   };
 
   return (
-    <div className="fixed top-[13%] right-[10%] z-40">
+    <div className="fixed top-[13%] right-[5%] z-40 lg:right-[10%]">
       <button
         className={`relative flex justify-between items-center w-[105px] h-8 border border-black dark:border-white px-2 font-bold rounded-full`}
         onClick={toggle}

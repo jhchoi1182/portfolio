@@ -45,7 +45,9 @@ function ProjectList({
           ))}
         </ul>
       </div>
-      <div className={`${center} w-14 h-14 bg-black rounded-full`}>
+      <div
+        className={`hidden ${center} w-12 h-12 bg-black rounded-full lg:w-14 lg:h-14 md:flex`}
+      >
         {hoveredItem === exp ? (
           <GoArrowUpRight className="w-6 h-6 text-white" />
         ) : (
