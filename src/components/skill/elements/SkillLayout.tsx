@@ -10,7 +10,7 @@ function SkillLayout({ title, li, showElement, divRef }: Props) {
     <>
       <div
         ref={divRef}
-        className={`block w-[400px] fadeInUpAfter250ms 2xl:w-[910px] lg:flex lg:w-[810px] md:w-[520px] ${
+        className={`block w-[250px] fadeInUpAfter250ms 2xl:w-[910px] lg:flex lg:w-[810px] md:w-[520px] sm:w-[400px] ${
           showElement ? "show" : ""
         }`}
       >

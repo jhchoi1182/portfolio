@@ -17,7 +17,7 @@ const Overview: React.FC = () => {
   useScrollFadeIn(showElements, setShowElements, refs);
 
   return (
-    <div className="relative w-full h-screen text-xl leading-[40px] z-20 font-chosunilbo overflow-hidden lg:text-3xl lg:leading-[55px] md:text-2xl md:leading-[45px]">
+    <div className="relative w-full h-screen text-base leading-[20px] z-20 font-chosunilbo overflow-hidden lg:text-3xl lg:leading-[55px] md:text-2xl md:leading-[45px] sm:text-xl sm:leading-[40px]">
       <DeepDive showElements={showElements} refs={refs} />
       <Perseverance showElements={showElements} refs={refs} />
       <HeartBeat />

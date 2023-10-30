@@ -38,29 +38,29 @@ function StartupLoading() {
 
   return (
     <div
-      className={`fixed z-[9999] w-full h-full bg-white dark:bg-black ${
+      className={`fixed z-[9999] w-full h-full bg-white dark:bg-black text-[100px] sm:text-[200px] ${
         isHundredPercent ? "slideToDownAfter500ms" : ""
       }`}
     >
       <div className="flex items-center w-full h-full px-12">
-        <div className="flex justify-between w-full h-[200px] overflow-hidden">
+        <div className="flex justify-between w-full h-[100px] overflow-hidden sm:h-[200px]">
           <div
             className={`slidingText ${
               isHundredPercent ? "moveUp" : "moveDown"
             }`}
           >
-            <h1 className="text-[200px] font-extrabold font-notoSans">0</h1>
-            <h1 className="text-[200px] font-extrabold font-notoSans">1</h1>
+            <h1 className="font-extrabold font-notoSans">0</h1>
+            <h1 className="font-extrabold font-notoSans">1</h1>
           </div>
           <div
             className={`slidingText ${
               isHundredPercent ? "moveUp" : "moveDown"
             }`}
           >
-            <h1 className="text-[200px] font-extrabold font-notoSans">
+            <h1 className="font-extrabold font-notoSans">
               {count < 10 ? `0${count}` : count}
             </h1>
-            <h1 className="text-[200px] font-extrabold font-notoSans">00</h1>
+            <h1 className="font-extrabold font-notoSans">00</h1>
           </div>
         </div>
       </div>

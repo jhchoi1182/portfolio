@@ -13,10 +13,10 @@ const texts = [
 
 function Perseverance({ showElements, refs }: Props) {
   return (
-    <div className="relative text-center mt-40 z-10">
+    <div className="relative text-center mt-24 z-10 sm:mt-40">
       <div
         ref={refs[2]}
-        className={`fadeInUpAfter250ms text-3xl font-bold mb-3 md:text-4xl ${
+        className={`fadeInUpAfter250ms text-2xl font-bold mb-3 md:text-4xl sm:text-3xl ${
           showElements[2] ? "show" : ""
         }`}
       >

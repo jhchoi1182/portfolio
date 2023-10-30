@@ -16,7 +16,7 @@ function DeepDive({ showElements, refs }: Props) {
     <div className="relative z-10 text-center px-[2%]">
       <div
         ref={refs[0]}
-        className={`fadeInUpAfter250ms text-3xl font-bold mb-3 md:text-4xl ${
+        className={`fadeInUpAfter250ms text-2xl font-bold mb-3 md:text-4xl sm:text-3xl ${
           showElements[0] ? "show" : ""
         }`}
       >

@@ -22,6 +22,32 @@
     transform: translateX(-60px);
   }
 }
+@media (max-width: 550px) {
+  @keyframes slideToLeft80px {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-10px);
+    }
+  }
+  @keyframes slideToLeft100px {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-65px);
+    }
+  }
+  @keyframes slideToLeft60px {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-40px);
+    }
+  }
+}
 .slideToLeftAfter2500ms {
   animation: slideToLeft80px 0.5s ease-in-out 2.5s forwards;
 }

@@ -28,7 +28,7 @@ function Skill() {
     >
       <h1
         ref={refs[0]}
-        className={`text-3xl font-semibold mb-16 z-10 fadeInUpAfter250ms md:text-4xl ${
+        className={`text-2xl font-semibold mb-16 z-10 fadeInUpAfter250ms md:text-4xl sm:text-3xl ${
           showElements[0] ? "show" : ""
         }`}
       >
