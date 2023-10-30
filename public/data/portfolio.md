@@ -2,7 +2,7 @@
 
 ###### TECHNOLOGY
 
-##### React.js · TypeScript · Recoil
+##### React.js · TypeScript · Recoil · Tailwind CSS
 
 ###
 

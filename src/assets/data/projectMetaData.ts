@@ -11,8 +11,8 @@ export const projectMetaDatas: projectMetaDatasType = {
       start: "23. 10",
       end: "진행중",
     },
-    github: ["https://github.com/GaebalLog/GaebalLog_front"],
-    service: ["https://gaebal-log.vercel.app/home"],
+    github: ["https://github.com/jhchoi1182/portfolio"],
+    service: ["https://jhchoi1182.github.io/portfolio"],
   },
   "gaebal-log": {
     exp: "2",
