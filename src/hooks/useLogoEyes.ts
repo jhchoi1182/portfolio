@@ -51,7 +51,7 @@ const useLogoEyes = () => {
       const innerHeight = window.innerHeight;
       const scrollHeight = document.body.scrollHeight;
 
-      if (scrollTop + innerHeight >= scrollHeight) {
+      if (scrollTop + innerHeight + 1 >= scrollHeight) {
         setIsBottom(true);
       } else return setIsBottom(false);
     };

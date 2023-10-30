@@ -8,8 +8,9 @@ import "../css/animation.css";
 
 function Experience() {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const scrollDivRef = useRef<HTMLDivElement | null>(null);
 
-  const { translatePercentage } = useScrollX(containerRef);
+  useScrollX(containerRef, scrollDivRef);
 
   return (
     <div ref={containerRef} className="h-[400vh]">
@@ -18,12 +19,7 @@ function Experience() {
           <h1 className="absolute top-[15%] left-1/2 -translate-x-1/2 text-2xl font-bold z-10 md:text-4xl sm:text-3xl">
             Experience
           </h1>
-          <div
-            className="flex h-full pt-[95px]"
-            style={{
-              transform: `translateX(-${translatePercentage}%)`,
-            }}
-          >
+          <div ref={scrollDivRef} className="flex h-full pt-[95px]">
             <PerformanceOptimizer />
             <CICD />
             <UIDesign />
