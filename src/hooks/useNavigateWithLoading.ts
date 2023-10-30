@@ -6,12 +6,16 @@ const useNavigateWithLoading = () => {
   const [toggleLoading, setToggleLoading] = useRecoilState(toggleLoadingAtom);
   const navigate = useNavigate();
 
-  const navigateAfter500ms = (pathname: string) => {
+  const navigateAfter500ms = (pathname: string | number) => {
     if (toggleLoading) return;
     setToggleLoading(true);
 
     const navigateTimeout = setTimeout(() => {
-      navigate(pathname);
+      if (typeof pathname === "number") {
+        navigate(pathname);
+      } else {
+        navigate(pathname);
+      }
       window.scrollTo(0, 0);
     }, 500);
     const loadingTimeout = setTimeout(() => {

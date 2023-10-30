@@ -5,7 +5,6 @@ import Router from "./shared/Router";
 
 function App() {
   const { handleMouseMove } = useLogoEyes();
-
   return (
     <div
       className="text-black dark:text-white scroll-hidden"
