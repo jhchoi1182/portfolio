@@ -6,7 +6,7 @@ function HeartBeat() {
 
   return (
     <svg
-      className="absolute top-0 left-[30%] w-[1100px] -translate-x-1/2 z-0 overflow-hidden heartbeat 2xl:left-1/2 lg:w-[1919px] lg:left-[40%] md:w-[1500px] sm:w-[1300px]"
+      className="absolute top-0 left-[30%] w-[1100px] -translate-x-1/2 z-0 heartbeat 2xl:left-1/2 lg:w-[1919px] lg:left-[40%] md:w-[1500px] md:max-w-[1500px] sm:w-[1300px]"
       width="1919"
       height="531"
       viewBox="0 0 1919 531"
