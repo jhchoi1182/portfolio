@@ -1,15 +1,26 @@
 import { useRef, useState } from "react";
-import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
+import Highlight from "./Highlight";
 import userTest from "../../../assets/images/about/userTest.webp";
-import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
-import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
-import { darkModeAtom } from "../../../libs/atoms";
 import { center } from "../../../styles/classNames";
 
+const textInfos: experienceText[] = [
+  {
+    text: "**2주간의 45개 피드백을 통한 UI/UX 개선**",
+    highlightIndex: 1,
+    topLeft: "-top-4 left-0",
+    highlightLength: "long",
+  },
+  {
+    text: "UT 결과 문서화",
+  },
+  {
+    text: "프로젝트 품질 향상에 기여",
+  },
+];
+
 function UserFeedback() {
-  const isDark = useRecoilValue(darkModeAtom);
   const [showElements, setShowElements] = useState(Array(1).fill(null));
   const refs = [useRef<HTMLImageElement | null>(null)];
 
@@ -28,23 +39,31 @@ function UserFeedback() {
       }
       descriptions={
         <>
-          <li>
-            <span className="relative">
-              <span className="relative z-10">
-                2주간의 45개 피드백을 통한 UI/UX 개선
-              </span>
-              <img
-                ref={refs[0]}
-                className={`absolute -top-4 left-0 z-0 hidden hiddenInitially 3xl:block 2xl:hidden sm:block ${
-                  showElements[0] ? "revealBrushAfter250ms" : ""
-                }`}
-                src={isDark ? highlightLongDark : highlightLongLight}
-                alt="highlightLong"
-              />
-            </span>
-          </li>
-          <li>UT 결과 문서화</li>
-          <li>프로젝트 품질 향상에 기여</li>
+          {textInfos.map((info, i) => {
+            const splitText = info.text.split("**");
+            if (!info.highlightIndex)
+              return (
+                <li key={i}>
+                  <span>{info.text}</span>
+                </li>
+              );
+            else
+              return (
+                <li key={i}>
+                  <span>{splitText[0]}</span>
+                  <Highlight
+                    highlightIndex={info.highlightIndex}
+                    highlightRef={refs[info.highlightIndex - 1]}
+                    topLeft={info.topLeft}
+                    isVisible={showElements[info.highlightIndex - 1]}
+                    highlightLength={info.highlightLength}
+                  >
+                    {splitText[1]}
+                  </Highlight>
+                  <span>{splitText[2]}</span>
+                </li>
+              );
+          })}
         </>
       }
     />

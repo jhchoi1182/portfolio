@@ -3,6 +3,13 @@ declare module "*.md" {
   export default content;
 }
 
+interface experienceText {
+  text: string;
+  highlightIndex?: number;
+  topLeft?: string;
+  highlightLength?: "short" | "long";
+}
+
 interface projectCard {
   path: string;
   exp: string;

@@ -7,11 +7,11 @@ import highlightShortLight from "../../../assets/images/highlights/highlight_sho
 import { darkModeAtom } from "../../../libs/atoms";
 
 interface Props {
-  highlightIndex: number;
-  highlightRef: React.MutableRefObject<HTMLImageElement | null>;
-  topLeft: string;
-  isVisible: boolean;
-  highlightLength: "short" | "long";
+  highlightIndex?: number;
+  highlightRef?: React.MutableRefObject<HTMLImageElement | null>;
+  topLeft?: string;
+  isVisible?: boolean;
+  highlightLength?: "short" | "long";
   children: string;
 }
 
@@ -38,7 +38,9 @@ function Highlight({
       <img
         ref={highlightRef}
         className={`absolute ${topLeft} z-0 hiddenInitially ${
-          isVisible ? reavealAnimation[highlightIndex - 1] : ""
+          isVisible
+            ? reavealAnimation[highlightIndex ? highlightIndex - 1 : 0]
+            : ""
         }`}
         src={highlightLength === "short" ? highlightShort : highlightLong}
         alt={isDark ? "highlightDark" : "highlightLight"}

@@ -6,6 +6,27 @@ import profiler2 from "../../../assets/images/about/profiler2.webp";
 import webVitals from "../../../assets/images/about/webVitals.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 
+const textInfos: experienceText[] = [
+  {
+    text: "초기 렌더링 속도 **53% 단축**",
+    highlightIndex: 1,
+    topLeft: "-top-2 -left-1",
+    highlightLength: "short",
+  },
+  {
+    text: "리렌더링 시간 **80.61% 개선**",
+    highlightIndex: 2,
+    topLeft: "-top-4 -left-1",
+    highlightLength: "short",
+  },
+  {
+    text: "**Web Vitals 성능 향상**",
+    highlightIndex: 3,
+    topLeft: "-top-0 left-0",
+    highlightLength: "long",
+  },
+];
+
 function PerformanceOptimizer() {
   const [showElements, setShowElements] = useState(Array(3).fill(null));
   const refs = [
@@ -40,41 +61,31 @@ function PerformanceOptimizer() {
       }
       descriptions={
         <>
-          <li>
-            <span>초기 렌더링 속도 </span>
-            <Highlight
-              highlightIndex={1}
-              highlightRef={refs[0]}
-              topLeft={`-top-2 -left-1`}
-              isVisible={showElements[0]}
-              highlightLength="short"
-            >
-              53% 단축
-            </Highlight>
-          </li>
-          <li>
-            <span>리렌더링 시간 </span>
-            <Highlight
-              highlightIndex={2}
-              highlightRef={refs[1]}
-              topLeft={`-top-4 -left-1`}
-              isVisible={showElements[1]}
-              highlightLength="short"
-            >
-              80.61% 개선
-            </Highlight>
-          </li>
-          <li>
-            <Highlight
-              highlightIndex={3}
-              highlightRef={refs[2]}
-              topLeft={`-top-0 left-0`}
-              isVisible={showElements[2]}
-              highlightLength="long"
-            >
-              Web Vitals 성능 향상
-            </Highlight>
-          </li>
+          {textInfos.map((info, i) => {
+            const splitText = info.text.split("**");
+            if (!info.highlightIndex)
+              return (
+                <li key={i}>
+                  <span>{info.text}</span>
+                </li>
+              );
+            else
+              return (
+                <li key={i}>
+                  <span>{splitText[0]}</span>
+                  <Highlight
+                    highlightIndex={info.highlightIndex}
+                    highlightRef={refs[info.highlightIndex - 1]}
+                    topLeft={info.topLeft}
+                    isVisible={showElements[info.highlightIndex - 1]}
+                    highlightLength={info.highlightLength}
+                  >
+                    {splitText[1]}
+                  </Highlight>
+                  <span>{splitText[2]}</span>
+                </li>
+              );
+          })}
         </>
       }
     />

@@ -1,15 +1,26 @@
 import { useRef, useState } from "react";
-import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
-import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
-import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
+import Highlight from "./Highlight";
 import consolog from "../../../assets/images/project/consolog.webp";
 import jjabflix from "../../../assets/images/project/jjabflix.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
-import { darkModeAtom } from "../../../libs/atoms";
+
+const textInfos: experienceText[] = [
+  {
+    text: "**1px단위까지** 기울이는 웹 개발",
+    highlightIndex: 1,
+    topLeft: "-top-3 -left-3",
+    highlightLength: "short",
+  },
+  {
+    text: "미디어 쿼리, vw, rem, %를 활용한 **반응형 웹** 작업",
+    highlightIndex: 2,
+    topLeft: "-top-2 -left-1",
+    highlightLength: "short",
+  },
+];
 
 function UIDesign() {
-  const isDark = useRecoilValue(darkModeAtom);
   const [showElements, setShowElements] = useState(Array(2).fill(null));
   const refs = [
     useRef<HTMLImageElement | null>(null),
@@ -37,35 +48,31 @@ function UIDesign() {
       }
       descriptions={
         <>
-          <li>
-            <span className="relative">
-              <span className="relative z-10">1px단위까지 </span>
-              <img
-                ref={refs[0]}
-                className={`absolute -top-3 -left-3 z-0 hiddenInitially ${
-                  showElements[0] ? "revealBrushAfter250ms" : ""
-                }`}
-                src={isDark ? highlightShortDark : highlightShortLight}
-                alt="highlightShort"
-              />
-            </span>
-            기울이는 웹 개발
-          </li>
-          <li>
-            미디어 쿼리, vw, rem, %를 활용한
-            <span className="relative">
-              <span className="relative z-10"> 반응형 웹 </span>
-              <img
-                ref={refs[1]}
-                className={`absolute -top-2 left-0 z-0 hiddenInitially ${
-                  showElements[1] ? "revealBrushAfter450ms" : ""
-                }`}
-                src={isDark ? highlightShortDark : highlightShortLight}
-                alt="highlightShort"
-              />
-            </span>
-            작업
-          </li>
+          {textInfos.map((info, i) => {
+            const splitText = info.text.split("**");
+            if (!info.highlightIndex)
+              return (
+                <li key={i}>
+                  <span>{info.text}</span>
+                </li>
+              );
+            else
+              return (
+                <li key={i}>
+                  <span>{splitText[0]}</span>
+                  <Highlight
+                    highlightIndex={info.highlightIndex}
+                    highlightRef={refs[info.highlightIndex - 1]}
+                    topLeft={info.topLeft}
+                    isVisible={showElements[info.highlightIndex - 1]}
+                    highlightLength={info.highlightLength}
+                  >
+                    {splitText[1]}
+                  </Highlight>
+                  <span>{splitText[2]}</span>
+                </li>
+              );
+          })}
         </>
       }
     />

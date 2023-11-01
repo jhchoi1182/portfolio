@@ -1,17 +1,32 @@
 import { useRef, useState } from "react";
-import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
+import Highlight from "./Highlight";
 import cicd from "../../../assets/images/about/cicd.svg";
-import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
-import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
-import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
-import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
-import { darkModeAtom } from "../../../libs/atoms";
 import { center } from "../../../styles/classNames";
 
+const textInfos: experienceText[] = [
+  {
+    text: "GitHub Actions를 이용한 **테스트 자동화**",
+    highlightIndex: 1,
+    topLeft: "-top-4 -left-1",
+    highlightLength: "short",
+  },
+  {
+    text: "자동 병합 설정",
+  },
+  {
+    text: "정적 배포를 통한 CI/CD",
+  },
+  {
+    text: "**개발 생산성 개선**",
+    highlightIndex: 2,
+    topLeft: "-top-0 left-0",
+    highlightLength: "long",
+  },
+];
+
 function CICD() {
-  const isDark = useRecoilValue(darkModeAtom);
   const [showElements, setShowElements] = useState(Array(2).fill(null));
   const refs = [
     useRef<HTMLImageElement | null>(null),
@@ -34,36 +49,31 @@ function CICD() {
       }
       descriptions={
         <>
-          <li>
-            GitHub Actions를 이용한
-            <span className="relative">
-              <span className="relative z-10"> 테스트 자동화</span>
-              <img
-                ref={refs[0]}
-                className={`absolute -top-4 left-0 z-0 block hiddenInitially 3xl:block 2xl:hidden ${
-                  showElements[0] ? "revealBrushAfter250ms" : ""
-                }`}
-                src={isDark ? highlightShortDark : highlightShortLight}
-                alt="highlightShort"
-              />
-            </span>
-          </li>
-          <li></li>
-          <li>자동 병합 설정</li>
-          <li>정적 배포를 통한 CI/CD</li>
-          <li>
-            <span className="relative">
-              <span className="relative z-10">개발 생산성 개선</span>
-              <img
-                ref={refs[1]}
-                className={`absolute -top-0 left-0 z-0 hiddenInitially ${
-                  showElements[1] ? "revealBrushAfter450ms" : ""
-                }`}
-                src={isDark ? highlightLongDark : highlightLongLight}
-                alt="highlightLong"
-              />
-            </span>
-          </li>
+          {textInfos.map((info, i) => {
+            const splitText = info.text.split("**");
+            if (!info.highlightIndex)
+              return (
+                <li key={i}>
+                  <span>{info.text}</span>
+                </li>
+              );
+            else
+              return (
+                <li key={i}>
+                  <span>{splitText[0]}</span>
+                  <Highlight
+                    highlightIndex={info.highlightIndex}
+                    highlightRef={refs[info.highlightIndex - 1]}
+                    topLeft={info.topLeft}
+                    isVisible={showElements[info.highlightIndex - 1]}
+                    highlightLength={info.highlightLength}
+                  >
+                    {splitText[1]}
+                  </Highlight>
+                  <span>{splitText[2]}</span>
+                </li>
+              );
+          })}
         </>
       }
     />
