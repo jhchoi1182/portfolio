@@ -1,8 +1,3 @@
-declare module "*.md" {
-  const content: string;
-  export default content;
-}
-
 interface experienceText {
   text: string;
   highlightIndex?: number;
