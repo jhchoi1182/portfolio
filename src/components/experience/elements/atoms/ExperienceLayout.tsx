@@ -1,4 +1,4 @@
-import { center } from "../../../styles/classNames";
+import { center } from "../../../../styles/classNames";
 
 interface props {
   title: string;

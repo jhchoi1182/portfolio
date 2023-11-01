@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import ExperienceLayout from "./ExperienceLayout";
-import Highlight from "./Highlight";
+import ExperienceLayout from "./atoms/ExperienceLayout";
+import ExperienceText from "./atoms/ExperienceText";
 import userTest from "../../../assets/images/about/userTest.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
 import { center } from "../../../styles/classNames";
@@ -11,6 +11,7 @@ const textInfos: experienceText[] = [
     highlightIndex: 1,
     topLeft: "-top-4 left-0",
     highlightLength: "long",
+    hiddenSize: "hidden 3xl:block 2xl:hidden sm:block",
   },
   {
     text: "UT 결과 문서화",
@@ -38,33 +39,11 @@ function UserFeedback() {
         </div>
       }
       descriptions={
-        <>
-          {textInfos.map((info, i) => {
-            const splitText = info.text.split("**");
-            if (!info.highlightIndex)
-              return (
-                <li key={i}>
-                  <span>{info.text}</span>
-                </li>
-              );
-            else
-              return (
-                <li key={i}>
-                  <span>{splitText[0]}</span>
-                  <Highlight
-                    highlightIndex={info.highlightIndex}
-                    highlightRef={refs[info.highlightIndex - 1]}
-                    topLeft={info.topLeft}
-                    isVisible={showElements[info.highlightIndex - 1]}
-                    highlightLength={info.highlightLength}
-                  >
-                    {splitText[1]}
-                  </Highlight>
-                  <span>{splitText[2]}</span>
-                </li>
-              );
-          })}
-        </>
+        <ExperienceText
+          textInfos={textInfos}
+          refs={refs}
+          showElements={showElements}
+        />
       }
     />
   );

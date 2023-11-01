@@ -8,6 +8,7 @@ interface experienceText {
   highlightIndex?: number;
   topLeft?: string;
   highlightLength?: "short" | "long";
+  hiddenSize?: string;
 }
 
 interface projectCard {

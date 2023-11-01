@@ -1,10 +1,10 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
-import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
-import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
-import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
-import { darkModeAtom } from "../../../libs/atoms";
+import highlightLongDark from "../../../../assets/images/highlights/highlight_long_dark.webp";
+import highlightLongLight from "../../../../assets/images/highlights/highlight_long_light.webp";
+import highlightShortDark from "../../../../assets/images/highlights/highlight_short_dark.webp";
+import highlightShortLight from "../../../../assets/images/highlights/highlight_short_light.webp";
+import { darkModeAtom } from "../../../../libs/atoms";
 
 interface Props {
   highlightIndex?: number;
@@ -12,6 +12,7 @@ interface Props {
   topLeft?: string;
   isVisible?: boolean;
   highlightLength?: "short" | "long";
+  hiddenSize?: string;
   children: string;
 }
 
@@ -21,6 +22,7 @@ function Highlight({
   topLeft,
   isVisible,
   highlightLength,
+  hiddenSize,
   children,
 }: Props) {
   const isDark = useRecoilValue(darkModeAtom);
@@ -38,6 +40,8 @@ function Highlight({
       <img
         ref={highlightRef}
         className={`absolute ${topLeft} z-0 hiddenInitially ${
+          hiddenSize ? hiddenSize : ""
+        } ${
           isVisible
             ? reavealAnimation[highlightIndex ? highlightIndex - 1 : 0]
             : ""

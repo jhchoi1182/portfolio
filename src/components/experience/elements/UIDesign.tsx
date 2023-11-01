@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import ExperienceLayout from "./ExperienceLayout";
-import Highlight from "./Highlight";
+import ExperienceLayout from "./atoms/ExperienceLayout";
+import ExperienceText from "./atoms/ExperienceText";
 import consolog from "../../../assets/images/project/consolog.webp";
 import jjabflix from "../../../assets/images/project/jjabflix.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
@@ -47,33 +47,11 @@ function UIDesign() {
         </div>
       }
       descriptions={
-        <>
-          {textInfos.map((info, i) => {
-            const splitText = info.text.split("**");
-            if (!info.highlightIndex)
-              return (
-                <li key={i}>
-                  <span>{info.text}</span>
-                </li>
-              );
-            else
-              return (
-                <li key={i}>
-                  <span>{splitText[0]}</span>
-                  <Highlight
-                    highlightIndex={info.highlightIndex}
-                    highlightRef={refs[info.highlightIndex - 1]}
-                    topLeft={info.topLeft}
-                    isVisible={showElements[info.highlightIndex - 1]}
-                    highlightLength={info.highlightLength}
-                  >
-                    {splitText[1]}
-                  </Highlight>
-                  <span>{splitText[2]}</span>
-                </li>
-              );
-          })}
-        </>
+        <ExperienceText
+          textInfos={textInfos}
+          refs={refs}
+          showElements={showElements}
+        />
       }
     />
   );
