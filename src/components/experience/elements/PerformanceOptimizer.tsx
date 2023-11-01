@@ -1,18 +1,12 @@
 import { useRef, useState } from "react";
-import { useRecoilValue } from "recoil";
 import ExperienceLayout from "./ExperienceLayout";
+import Highlight from "./Highlight";
 import profiler from "../../../assets/images/about/profiler.webp";
 import profiler2 from "../../../assets/images/about/profiler2.webp";
 import webVitals from "../../../assets/images/about/webVitals.webp";
-import highlightLongDark from "../../../assets/images/highlights/highlight_long_dark.webp";
-import highlightLongLight from "../../../assets/images/highlights/highlight_long_light.webp";
-import highlightShortDark from "../../../assets/images/highlights/highlight_short_dark.webp";
-import highlightShortLight from "../../../assets/images/highlights/highlight_short_light.webp";
 import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
-import { darkModeAtom } from "../../../libs/atoms";
 
 function PerformanceOptimizer() {
-  const isDark = useRecoilValue(darkModeAtom);
   const [showElements, setShowElements] = useState(Array(3).fill(null));
   const refs = [
     useRef<HTMLImageElement | null>(null),
@@ -47,45 +41,39 @@ function PerformanceOptimizer() {
       descriptions={
         <>
           <li>
-            초기 렌더링 속도
-            <span className="relative">
-              <span className="relative z-10"> 53% 단축</span>
-              <img
-                ref={refs[0]}
-                className={`absolute -top-2 left-0 z-0 hiddenInitially ${
-                  showElements[0] ? "revealBrushAfter250ms" : ""
-                }`}
-                src={isDark ? highlightShortDark : highlightShortLight}
-                alt="highlightShort"
-              />
-            </span>
+            <span>초기 렌더링 속도 </span>
+            <Highlight
+              highlightIndex={1}
+              highlightRef={refs[0]}
+              topLeft={`-top-2 -left-1`}
+              isVisible={showElements[0]}
+              highlightLength="short"
+            >
+              53% 단축
+            </Highlight>
           </li>
           <li>
-            리렌더링 시간
-            <span className="relative">
-              <span className="relative z-10"> 80.61% 개선</span>
-              <img
-                ref={refs[1]}
-                className={`absolute -top-4 left-0 z-0 hiddenInitially ${
-                  showElements[1] ? "revealBrushAfter450ms" : ""
-                }`}
-                src={isDark ? highlightShortDark : highlightShortLight}
-                alt="highlightShort"
-              />
-            </span>
+            <span>리렌더링 시간 </span>
+            <Highlight
+              highlightIndex={2}
+              highlightRef={refs[1]}
+              topLeft={`-top-4 -left-1`}
+              isVisible={showElements[1]}
+              highlightLength="short"
+            >
+              80.61% 개선
+            </Highlight>
           </li>
           <li>
-            <span className="relative">
-              <span className="relative z-10">Web Vitals 성능 향상</span>
-              <img
-                ref={refs[2]}
-                className={`absolute -top-0 left-0 z-0 hiddenInitially ${
-                  showElements[2] ? "revealBrushAfter650ms" : ""
-                }`}
-                src={isDark ? highlightLongDark : highlightLongLight}
-                alt="highlightLong"
-              />
-            </span>
+            <Highlight
+              highlightIndex={3}
+              highlightRef={refs[2]}
+              topLeft={`-top-0 left-0`}
+              isVisible={showElements[2]}
+              highlightLength="long"
+            >
+              Web Vitals 성능 향상
+            </Highlight>
           </li>
         </>
       }
