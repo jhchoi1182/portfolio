@@ -6,6 +6,7 @@ import "../css/animation.css";
 function Logo() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [eyeMode, setEyeMode] = useState<boolean | null>(null);
+  const eyeModeTransitioning = eyeMode === false;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,14 +36,14 @@ function Logo() {
       ) : (
         <div
           className={`${center} w-full h-full bg-inverse dark:bg-primary rounded-md ${
-            eyeMode === false ? "shrink" : ""
+            eyeModeTransitioning ? "shrink" : ""
           }`}
         >
           <div>
             {Array.from("JIHYEON").map((char, i) => (
               <span
                 key={i}
-                className={`${eyeMode === false ? `charFadeOut-${i}` : ""}`}
+                className={`${eyeModeTransitioning ? `charFadeOut-${i}` : ""}`}
               >
                 {char}
               </span>

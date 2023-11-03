@@ -5,6 +5,19 @@ function StartupLoading() {
   const isHundredPercent = count === 99;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.style.overflow = "hidden";
+
+    let timeout: ReturnType<typeof setTimeout>;
+    if (isHundredPercent) {
+      timeout = setTimeout(() => {
+        document.body.style.overflow = "auto";
+      }, 1500);
+    }
+    return () => clearTimeout(timeout);
+  }, [isHundredPercent]);
+
+  useEffect(() => {
     const duration = 1500;
     const totalCount = 99;
     const intervalTime = duration / totalCount;
@@ -22,19 +35,6 @@ function StartupLoading() {
 
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.style.overflow = "hidden";
-
-    let timeout: ReturnType<typeof setTimeout>;
-    if (isHundredPercent) {
-      timeout = setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 1500);
-    }
-    return () => clearTimeout(timeout);
-  }, [isHundredPercent]);
 
   return (
     <div

@@ -9,11 +9,9 @@ interface Props {
   data: projectCard;
 }
 
-type TextColor = {
+const textColor: {
   [key: string]: string;
-};
-
-const textColor: TextColor = {
+} = {
   "Jihyeon's Portfolio": "text-black",
   개발로그: "text-black",
   "개인 기술 블로그 & Next Todo List": "text-black",

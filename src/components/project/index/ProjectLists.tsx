@@ -5,8 +5,6 @@ import useScrollToTop from "../../../hooks/useScrollToTop";
 import { center } from "../../../styles/classNames";
 import ProjectList from "../elements/ProjectList";
 
-const projectList = projectCards;
-
 function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
@@ -21,11 +19,11 @@ function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
           <div
             className={`${center} w-10 h-6 rounded-full text-xl font-bold bg-inverse dark:bg-primary text-white dark:text-black`}
           >
-            {projectList.length}
+            {projectCards.length}
           </div>
         </div>
         <ul className="pt-[1%]" onMouseLeave={() => setHoveredItem(null)}>
-          {projectList.map((project, i) => (
+          {projectCards.map((project, i) => (
             <li
               key={i}
               onClick={() =>

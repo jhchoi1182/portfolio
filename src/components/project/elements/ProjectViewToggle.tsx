@@ -6,6 +6,8 @@ interface Props {
   setToggleAnimation: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const GRID = "GRID";
+const LIST = "LIST";
 const styles = {
   selectedText: `text-white dark:text-black`,
   text: `text-black dark:text-white`,
@@ -15,8 +17,6 @@ function ProjectViewToggle({ setToggleAnimation }: Props) {
   const [toggleProjectView, setToggleProjectView] = useRecoilState(
     toggleProjectViewAtom,
   );
-  const GRID = "GRID";
-  const LIST = "LIST";
 
   const toggle = () => {
     setToggleAnimation((prev) => !prev);
