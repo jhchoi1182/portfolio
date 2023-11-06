@@ -43,7 +43,7 @@ function ContactModal({
       <Backdrop isVisible={isVisible} handleClose={handleClose} />
       <div
         className={`absolute bottom-0 w-full bg-primary text-black font-chosunilbo ${
-          isVisible ? "slideToTop" : "slideToDown"
+          isVisible ? "animate-slideToTop" : "animate-slideToDown"
         }`}
       >
         <ul className="block lg:hidden">

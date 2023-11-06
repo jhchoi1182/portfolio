@@ -10,8 +10,8 @@ function SkillLayout({ title, li, showElement, divRef }: Props) {
     <>
       <div
         ref={divRef}
-        className={`block w-[250px] fadeInUpAfter250ms 2xl:w-[910px] lg:flex lg:w-[810px] md:w-[520px] sm:w-[400px] ${
-          showElement ? "show" : ""
+        className={`block w-[250px] animate-fadeInUpAfter250ms 2xl:w-[910px] lg:flex lg:w-[810px] md:w-[520px] sm:w-[400px] ${
+          showElement ? "animate-show" : ""
         }`}
       >
         <div className="w-[290px] mb-5 text-xl font-semibold 2xl:text-2xl lg:mb-0">

@@ -28,13 +28,13 @@ function DarkmodeToggle() {
     >
       <div className="flex flex-col h-7 overflow-hidden">
         <span
-          className={`font-semibold slidingText ${JdarkMode ? "moveUp" : ""}`}
+          className={`font-semibold transition-slidingText ${JdarkMode ? "transform-moveUp" : ""}`}
         >
           W
         </span>
         <span
-          className={`font-semibold slidingText ${
-            JdarkMode ? "moveUp" : "moveDown"
+          className={`font-semibold transition-slidingText ${
+            JdarkMode ? "transform-moveUp" : "transform-moveDown"
           }`}
         >
           B

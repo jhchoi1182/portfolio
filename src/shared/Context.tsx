@@ -21,7 +21,11 @@ function Context() {
   return (
     <>
       {toggleLoading && <Loading />}
-      <div className={toggleLoading ? "relative z-30 fadeOutInLoading" : ""}>
+      <div
+        className={
+          toggleLoading ? "relative z-30 animate-fadeOutInLoading" : ""
+        }
+      >
         <Outlet />
       </div>
     </>

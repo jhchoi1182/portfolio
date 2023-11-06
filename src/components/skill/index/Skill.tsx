@@ -28,8 +28,8 @@ function Skill() {
     >
       <h1
         ref={refs[0]}
-        className={`text-2xl font-semibold mb-16 z-10 fadeInUpAfter250ms md:text-4xl sm:text-3xl ${
-          showElements[0] ? "show" : ""
+        className={`text-2xl font-semibold mb-16 z-10 animate-fadeInUpAfter250ms md:text-4xl sm:text-3xl ${
+          showElements[0] ? "animate-show" : ""
         }`}
       >
         Skills

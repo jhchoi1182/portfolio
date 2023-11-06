@@ -1,11 +1,11 @@
-.fadeInUpAfter250ms {
+.animate-fadeInUpAfter250ms {
   opacity: 0;
   transform: translateY(50px);
   transition:
     opacity 1s 0.25s,
     transform 1s 0.25s;
 }
-.show {
+.animate-show {
   opacity: 1;
   transform: translateY(0);
 }
@@ -24,6 +24,6 @@
     opacity: 1;
   }
 }
-.fadeOutInLoading {
+.animate-fadeOutInLoading {
   animation: fadeOutInLoading 2s linear forwards;
 }

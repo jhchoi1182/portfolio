@@ -16,8 +16,8 @@ function Perseverance({ showElements, refs }: Props) {
     <div className="relative text-center mt-24 z-10 sm:mt-40">
       <div
         ref={refs[2]}
-        className={`fadeInUpAfter250ms text-2xl font-bold mb-3 md:text-4xl sm:text-3xl ${
-          showElements[2] ? "show" : ""
+        className={`animate-fadeInUpAfter250ms text-2xl font-bold mb-3 md:text-4xl sm:text-3xl ${
+          showElements[2] ? "animate-show" : ""
         }`}
       >
         Perseverance
@@ -26,7 +26,9 @@ function Perseverance({ showElements, refs }: Props) {
         <div
           key={i}
           ref={refs[3]}
-          className={`fadeInUpAfter250ms ${showElements[3] ? "show" : ""}`}
+          className={`animate-fadeInUpAfter250ms ${
+            showElements[3] ? "animate-show" : ""
+          }`}
         >
           {text}
         </div>

@@ -26,14 +26,14 @@ function NavTab({
   return (
     <>
       <ul className="flex gap-10 text-lg">
-        <li className={`navHover ${isAbout ? textColor : ""}`}>
+        <li className={`transition-navHover ${isAbout ? textColor : ""}`}>
           <button
             onClick={() => !isAbout && navigateAfter500ms("/portfolio/about")}
           >
             ABOUT
           </button>
         </li>
-        <li className={`navHover ${isProject ? textColor : ""}`}>
+        <li className={`transition-navHover ${isProject ? textColor : ""}`}>
           <button
             onClick={() =>
               !isProject && navigateAfter500ms("/portfolio/project")
@@ -42,11 +42,11 @@ function NavTab({
             PROJECT
           </button>
         </li>
-        <li className="navHover">
+        <li className="transition-navHover">
           <button onClick={() => setIsContactModal(true)}>CONTACT</button>
         </li>
         {links.map(({ text, href }, i) => (
-          <li key={i} className="navHover">
+          <li key={i} className="transition-navHover">
             <a
               href={href}
               rel="noopener noreferrer"
@@ -54,7 +54,7 @@ function NavTab({
               className="flex items-center"
             >
               <span>{text}</span>
-              <GoArrowUpRight className="liftOnHover" />
+              <GoArrowUpRight className="transition-liftOnHover" />
             </a>
           </li>
         ))}

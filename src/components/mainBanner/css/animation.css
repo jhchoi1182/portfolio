@@ -48,13 +48,13 @@
     }
   }
 }
-.slideToLeftAfter2500ms {
+.animate-slideToLeftAfter2500ms {
   animation: slideToLeft80px 0.5s ease-in-out 2.5s forwards;
 }
-.slideToLeftAfter2750ms {
+.animate-slideToLeftAfter2750ms {
   animation: slideToLeft100px 0.5s ease-in-out 2.75s forwards;
 }
-.slideToLeftAfter3000ms {
+.animate-slideToLeftAfter3000ms {
   animation: slideToLeft60px 0.5s ease-in-out 3s forwards;
 }
 
@@ -66,19 +66,19 @@
     clip-path: inset(0 0 0 0);
   }
 }
-.revealTextAfter2750ms {
+.animate-revealTextAfter2750ms {
   animation: reveal 1s linear 2.75s backwards;
 }
-.revealTextAfter3000ms {
+.animate-revealTextAfter3000ms {
   animation: reveal 0.25s linear 3s backwards;
 }
-.revealTextAfter3100ms {
+.animate-revealTextAfter3100ms {
   animation: reveal 0.25s linear 3.1s backwards;
 }
-.revealTextAfter3200ms {
+.animate-revealTextAfter3200ms {
   animation: reveal 0.25s linear 3.2s backwards;
 }
-.revealTextAfter3250ms {
+.animate-revealTextAfter3250ms {
   animation: reveal 0.75s linear 3.25s backwards;
 }
 
@@ -90,7 +90,7 @@
     stroke-dashoffset: 0;
   }
 }
-.heartbeat {
+.animate-heartbeat {
   stroke-dasharray: 200 3291;
   stroke-dashoffset: 3491;
   animation: draw 2s ease-in-out infinite;

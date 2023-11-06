@@ -36,14 +36,14 @@ function Logo() {
       ) : (
         <div
           className={`${center} w-full h-full bg-inverse dark:bg-primary rounded-md ${
-            eyeModeTransitioning ? "shrink" : ""
+            eyeModeTransitioning ? "animate-shrink" : ""
           }`}
         >
           <div>
             {Array.from("JIHYEON").map((char, i) => (
               <span
                 key={i}
-                className={`${eyeModeTransitioning ? `charFadeOut-${i}` : ""}`}
+                className={`${eyeModeTransitioning ? `animate-charFadeOut-${i}` : ""}`}
               >
                 {char}
               </span>

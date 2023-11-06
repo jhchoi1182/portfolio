@@ -12,7 +12,7 @@
     width: 48px;
   }
 }
-.shrink {
+.animate-shrink {
   animation: bounceShrink 0.3s ease-in-out 0.75s forwards;
 }
 
@@ -24,32 +24,32 @@
     opacity: 0;
   }
 }
-.charFadeOut-0 {
+.animate-charFadeOut-0 {
   animation: fadeOut 0.0714s linear forwards;
 }
-.charFadeOut-1 {
+.animate-charFadeOut-1 {
   animation: fadeOut 0.1429s linear forwards;
 }
-.charFadeOut-2 {
+.animate-charFadeOut-2 {
   animation: fadeOut 0.2143s linear forwards;
 }
-.charFadeOut-3 {
+.animate-charFadeOut-3 {
   animation: fadeOut 0.2857s linear forwards;
 }
-.charFadeOut-4 {
+.animate-charFadeOut-4 {
   animation: fadeOut 0.3571s linear forwards;
 }
-.charFadeOut-5 {
+.animate-charFadeOut-5 {
   animation: fadeOut 0.4286s linear forwards;
 }
-.charFadeOut-6 {
+.animate-charFadeOut-6 {
   animation: fadeOut 0.5s linear forwards;
 }
 
-.navHover {
+.transition-navHover {
   position: relative;
 }
-.navHover::before {
+.transition-navHover::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -59,25 +59,25 @@
   background-color: currentColor;
   transition: width 0.3s;
 }
-.navHover:hover::before {
+.transition-navHover:hover::before {
   width: 100%;
 }
-.navHover:hover .liftOnHover {
+.transition-navHover:hover .transition-liftOnHover {
   transform: translate(2px, -2px);
   transition: transform 0.3s ease-out;
 }
-.navHover .liftOnHover {
+.transition-navHover .transition-liftOnHover {
   transform: translate(0, 0);
   transition: transform 0.3s ease-out;
 }
 
-.slidingText {
+.transition-slidingText {
   transition: transform 0.3s;
 }
-.moveUp {
+.transform-moveUp {
   transform: translateY(-100%);
 }
-.moveDown {
+.transform-moveDown {
   transform: translateY(0%);
 }
 

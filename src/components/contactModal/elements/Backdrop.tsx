@@ -14,8 +14,8 @@ function Backdrop({ isVisible, handleClose }: props) {
   }, []);
   return (
     <div
-      className={`fixed w-full h-full inset-0 bg-black fadeInOpacity ${
-        isVisible ? "fadeInOpacity" : "fadeOutOpacity"
+      className={`fixed w-full h-full inset-0 bg-black animate-fadeInOpacity ${
+        isVisible ? "animate-fadeInOpacity" : "animate-fadeOutOpacity"
       }`}
       onClick={handleClose}
     />

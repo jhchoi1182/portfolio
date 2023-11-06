@@ -29,9 +29,9 @@ function Highlight({
   const highlightShort = isDark ? highlightShortDark : highlightShortLight;
   const highlightLong = isDark ? highlightLongDark : highlightLongLight;
   const reavealAnimation = [
-    "revealBrushAfter250ms",
-    "revealBrushAfter450ms",
-    "revealBrushAfter650ms",
+    "animate-revealBrushAfter250ms",
+    "animate-revealBrushAfter450ms",
+    "animate-revealBrushAfter650ms",
   ];
 
   return (
@@ -39,7 +39,7 @@ function Highlight({
       <span className="relative z-10">{children}</span>
       <img
         ref={highlightRef}
-        className={`absolute ${topLeft} z-0 hiddenInitially ${
+        className={`absolute ${topLeft} z-0 animate-hiddenInitially ${
           hiddenSize ? hiddenSize : ""
         } ${
           isVisible

@@ -14,10 +14,10 @@
     opacity: 0;
   }
 }
-.fadeInOpacity {
+.animate-fadeInOpacity {
   animation: increaseOpacity 1s forwards;
 }
-.fadeOutOpacity {
+.animate-fadeOutOpacity {
   animation: decreaseOpacity 1s forwards;
 }
 
@@ -37,12 +37,12 @@
     transform: translateY(100%);
   }
 }
-.slideToTop {
+.animate-slideToTop {
   animation: slideToTop 1s forwards;
 }
-.slideToDown {
+.animate-slideToDown {
   animation: slideToDown 1s forwards;
 }
-.slideToDownAfter500ms {
+.animate-slideToDownAfter500ms {
   animation: slideToDown 1s 0.5s forwards;
 }
