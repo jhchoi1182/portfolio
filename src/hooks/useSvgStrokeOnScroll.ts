@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useScrollSvgStroke = (
+const useSvgStrokeOnScroll = (
   containerRef: React.MutableRefObject<HTMLDivElement | null>,
   pathRef: React.MutableRefObject<SVGPathElement | null>,
   length: number,
@@ -39,4 +39,4 @@ const useScrollSvgStroke = (
   }, [length]);
 };
 
-export default useScrollSvgStroke;
+export default useSvgStrokeOnScroll;

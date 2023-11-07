@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import ExperienceLayout from "./atoms/ExperienceLayout";
 import ExperienceText from "./atoms/ExperienceText";
 import userTest from "../../../assets/images/about/userTest.webp";
-import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
+import useFadeInOnScroll from "../../../hooks/useFadeInOnScroll";
 import { center } from "../../../styles/classNames";
 
 const textInfos: experienceText[] = [
@@ -25,7 +25,7 @@ function UserFeedback() {
   const [showElements, setShowElements] = useState(Array(1).fill(null));
   const refs = [useRef<HTMLImageElement | null>(null)];
 
-  useScrollFadeIn(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(showElements, setShowElements, refs, true);
   return (
     <ExperienceLayout
       title="유저 테스트"

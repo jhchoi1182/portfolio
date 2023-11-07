@@ -3,7 +3,7 @@ import ExperienceLayout from "./atoms/ExperienceLayout";
 import ExperienceText from "./atoms/ExperienceText";
 import consolog from "../../../assets/images/project/consolog.webp";
 import jjabflix from "../../../assets/images/project/jjabflix.webp";
-import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
+import useFadeInOnScroll from "../../../hooks/useFadeInOnScroll";
 
 const textInfos: experienceText[] = [
   {
@@ -27,7 +27,7 @@ function UIDesign() {
     useRef<HTMLImageElement | null>(null),
   ];
 
-  useScrollFadeIn(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(showElements, setShowElements, refs, true);
 
   return (
     <ExperienceLayout

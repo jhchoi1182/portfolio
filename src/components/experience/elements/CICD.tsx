@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import ExperienceLayout from "./atoms/ExperienceLayout";
 import ExperienceText from "./atoms/ExperienceText";
 import cicd from "../../../assets/images/about/cicd.svg";
-import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
+import useFadeInOnScroll from "../../../hooks/useFadeInOnScroll";
 import { center } from "../../../styles/classNames";
 
 const textInfos: experienceText[] = [
@@ -34,7 +34,7 @@ function CICD() {
     useRef<HTMLImageElement | null>(null),
   ];
 
-  useScrollFadeIn(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(showElements, setShowElements, refs, true);
 
   return (
     <ExperienceLayout

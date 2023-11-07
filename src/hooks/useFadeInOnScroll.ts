@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useScrollFadeIn = (
+const useFadeInOnScroll = (
   showElements: boolean[],
   setShowElements: React.Dispatch<React.SetStateAction<boolean[]>>,
   refs: React.MutableRefObject<HTMLDivElement | null>[],
@@ -36,4 +36,4 @@ const useScrollFadeIn = (
   }, [showElements]);
 };
 
-export default useScrollFadeIn;
+export default useFadeInOnScroll;

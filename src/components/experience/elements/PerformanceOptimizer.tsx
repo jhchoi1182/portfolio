@@ -4,7 +4,7 @@ import ExperienceText from "./atoms/ExperienceText";
 import profiler from "../../../assets/images/about/profiler.webp";
 import profiler2 from "../../../assets/images/about/profiler2.webp";
 import webVitals from "../../../assets/images/about/webVitals.webp";
-import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
+import useFadeInOnScroll from "../../../hooks/useFadeInOnScroll";
 
 const textInfos: experienceText[] = [
   {
@@ -35,7 +35,7 @@ function PerformanceOptimizer() {
     useRef<HTMLImageElement | null>(null),
   ];
 
-  useScrollFadeIn(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(showElements, setShowElements, refs, true);
 
   return (
     <ExperienceLayout

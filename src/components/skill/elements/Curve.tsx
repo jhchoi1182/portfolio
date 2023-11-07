@@ -1,6 +1,6 @@
 import { useRef, useState, MutableRefObject } from "react";
 import { useRecoilValue } from "recoil";
-import useScrollSvgStroke from "../../../hooks/useScrollSvgStroke";
+import useSvgStrokeOnScroll from "../../../hooks/useSvgStrokeOnScroll";
 import { darkModeAtom } from "../../../libs/atoms";
 
 interface Props {
@@ -12,7 +12,7 @@ const Curve = ({ containerRef }: Props) => {
   const [length, setLength] = useState<number>(0);
   const isDark = useRecoilValue(darkModeAtom);
 
-  useScrollSvgStroke(containerRef, pathRef, length, setLength);
+  useSvgStrokeOnScroll(containerRef, pathRef, length, setLength);
 
   return (
     <svg

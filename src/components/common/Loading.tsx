@@ -1,8 +1,13 @@
-import useBlockScroll from "../../hooks/useBlockScroll";
+import { useEffect } from "react";
 import "./css/animation.css";
 
 function Loading() {
-  useBlockScroll();
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   return (
     <div className="fixed top-0 -left-1/4 z-50 flex flex-col justify-between w-[150%] h-[200vh] bg-white animate-loading">

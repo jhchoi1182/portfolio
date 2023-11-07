@@ -7,12 +7,44 @@ const useInfiniteScroll = (
 ) => {
   const isFetching = useRef(false);
 
-  const setScroll = (addedElementHeight: number) => {
-    window.scrollTo({
-      top: window.scrollY + addedElementHeight,
-      behavior: "instant",
-    });
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewportWidth = window.innerWidth;
+      const scrollTop = document.documentElement.scrollTop;
+      const totalHeight = document.documentElement.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollPosition = (scrollTop + clientHeight) / totalHeight;
+
+      const isTopLoadZone =
+        scrollPosition > 0.35 && scrollPosition < 0.4 && !isFetching.current;
+      const isTopLoadZoneMobile =
+        viewportWidth < 1000 &&
+        scrollPosition > 0.2 &&
+        scrollPosition < 0.25 &&
+        !isFetching.current;
+      const isBottomLoadZone = scrollPosition >= 0.8 && !isFetching.current;
+
+      if (isTopLoadZoneMobile) {
+        isFetching.current = true;
+        moveScrollAfterAdd();
+      }
+      if (isTopLoadZone) {
+        isFetching.current = true;
+        moveScrollAfterAdd();
+      }
+      if (isBottomLoadZone) {
+        setProjectArray((prev) => [...prev, ...projectList]);
+        setTimeout(() => {
+          isFetching.current = false;
+        }, 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const moveScrollAfterAdd = () => {
     if (!listRef.current) return;
@@ -26,43 +58,12 @@ const useInfiniteScroll = (
       isFetching.current = false;
     }, 0);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const viewportWidth = window.innerWidth;
-      const scrollTop = document.documentElement.scrollTop;
-      const totalHeight = document.documentElement.scrollHeight;
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollPosition = (scrollTop + clientHeight) / totalHeight;
-
-      if (
-        viewportWidth < 1000 &&
-        scrollPosition > 0.2 &&
-        scrollPosition < 0.25 &&
-        !isFetching.current
-      ) {
-        isFetching.current = true;
-        moveScrollAfterAdd();
-      } else if (
-        scrollPosition > 0.35 &&
-        scrollPosition < 0.4 &&
-        !isFetching.current
-      ) {
-        isFetching.current = true;
-        moveScrollAfterAdd();
-      } else if (scrollPosition >= 0.8 && !isFetching.current) {
-        setProjectArray((prev) => [...prev, ...projectList]);
-        setTimeout(() => {
-          isFetching.current = false;
-        }, 0);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const setScroll = (addedElementHeight: number) => {
+    window.scrollTo({
+      top: window.scrollY + addedElementHeight,
+      behavior: "instant",
+    });
+  };
 };
 
 export default useInfiniteScroll;

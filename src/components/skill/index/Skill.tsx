@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import useScrollFadeIn from "../../../hooks/useScrollFadeIn";
+import useFadeInOnScroll from "../../../hooks/useFadeInOnScroll";
 import CloudAndDeployment from "../elements/CloudAndDeployment";
 import Collaboration from "../elements/Collaboration";
 import Curve from "../elements/Curve";
@@ -19,7 +19,7 @@ function Skill() {
     useRef<HTMLDivElement | null>(null),
   ];
 
-  useScrollFadeIn(showElements, setShowElements, refs);
+  useFadeInOnScroll(showElements, setShowElements, refs);
 
   return (
     <div
