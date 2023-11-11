@@ -1,6 +1,11 @@
+const cachedImages = new Set();
+
 const preloadDetailImage = (image: string) => {
-  const preLoadImg = new Image();
-  preLoadImg.src = image;
+  if (!cachedImages.has(image)) {
+    const preLoadImg = new Image();
+    preLoadImg.src = image;
+    cachedImages.add(image);
+  }
 };
 
 export default preloadDetailImage;
