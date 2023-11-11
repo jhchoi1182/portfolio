@@ -13,6 +13,7 @@ interface projectCard {
   title: string;
   img: string;
   techs: string[];
+  image: string;
 }
 
 interface projectMetaData {

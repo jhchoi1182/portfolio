@@ -13,6 +13,8 @@ export const projectCards = [
     title: "Jihyeon's Portfolio",
     img: portfolioIcon,
     techs: ["React", "TypeScript"],
+    image:
+      "https://github.com/jhchoi1182/portfolio/assets/116577489/f03fec3a-cae2-4b0b-a53b-26af46239cf9",
   },
   {
     path: "gaebal-log",
@@ -21,6 +23,8 @@ export const projectCards = [
     title: "개발로그",
     img: gaebalLogIcon,
     techs: ["Next", "Jest"],
+    image:
+      "https://github.com/jhchoi1182/portfolio/assets/116577489/54d15845-3c8b-40e2-8b16-3ad34ebd2880",
   },
   {
     path: "vlog-and-todo",
@@ -29,6 +33,8 @@ export const projectCards = [
     title: "개인 기술 블로그 & Next Todo List",
     img: vlogIcon,
     techs: ["Next", "Mongo DB"],
+    image:
+      "https://github.com/jhchoi1182/portfolio/assets/116577489/70ed7fdb-ea95-42d1-ab02-091e3a961e05",
   },
   {
     path: "jjabflix",
@@ -37,6 +43,8 @@ export const projectCards = [
     title: "Jjabflix",
     img: netflixIcon,
     techs: ["React", "TypeScript"],
+    image:
+      "https://github.com/jhchoi1182/portfolio/assets/116577489/ad7a30cb-5c01-4930-a004-5c0efec1ddd8",
   },
   {
     path: "drawingbear",
@@ -45,6 +53,8 @@ export const projectCards = [
     title: "쓰곰그리곰",
     img: drawingBearIcon,
     techs: ["React", "React-Query"],
+    image:
+      "https://github.com/jhchoi1182/portfolio/assets/116577489/db1dd0c5-73b5-4192-918d-74bad07041fd",
   },
   {
     path: "consolog",
@@ -53,5 +63,7 @@ export const projectCards = [
     title: "Consolog",
     img: consolog,
     techs: ["React", "Redux"],
+    image:
+      "https://github.com/jhchoi1182/portfolio/assets/116577489/69fe1384-27fd-4828-97e5-2afb5cbe4e24",
   },
 ];

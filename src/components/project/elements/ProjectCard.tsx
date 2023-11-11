@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import useNavigateWithLoading from "../../../hooks/useNavigateWithLoading";
 import { center, customDot } from "../../../styles/classNames";
+import preloadDetailImage from "../../../utils/preloadDetailImage";
 
 interface Props {
   isDetailPage?: boolean;
@@ -23,15 +24,20 @@ const textColor: {
 function ProjectCard({
   isDetailPage,
   size,
-  data: { path, exp, date, title, img, techs },
+  data: { path, exp, date, title, img, techs, image },
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
   const navigateAfter500ms = useNavigateWithLoading();
 
+  const handleOnMouseEnter = () => {
+    setIsHovered(true);
+    preloadDetailImage(image);
+  };
+
   return (
     <li
       onClick={() => navigateAfter500ms(`/portfolio/project/${path}`)}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={handleOnMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       className={`relative z-30 overflow-hidden ${size} rounded-2xl cursor-pointer ${
         isDetailPage ? "" : "mb-40"

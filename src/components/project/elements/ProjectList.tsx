@@ -1,5 +1,6 @@
 import { GoArrowUpRight } from "react-icons/go";
 import { center, customDot } from "../../../styles/classNames";
+import preloadDetailImage from "../../../utils/preloadDetailImage";
 
 interface Props {
   data: projectCard;
@@ -8,10 +9,15 @@ interface Props {
 }
 
 function ProjectList({
-  data: { exp, date, title, techs },
+  data: { exp, date, title, techs, image },
   hoveredItem,
   setHoveredItem,
 }: Props) {
+  const handleOnMouseEnter = () => {
+    setHoveredItem(exp);
+    preloadDetailImage(image);
+  };
+
   return (
     <div
       className={`flex justify-between items-center py-12 text-base font-notoSans cursor-pointer lg:text-lg ${
@@ -21,7 +27,7 @@ function ProjectList({
           ? "opacity-100"
           : "opacity-30"
       }`}
-      onMouseEnter={() => setHoveredItem(exp)}
+      onMouseEnter={handleOnMouseEnter}
     >
       <div className="block items-center gap-[5%] w-full md:flex">
         <div className="flex">
