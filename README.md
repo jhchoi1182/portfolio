@@ -1,27 +1,21 @@
-# React + TypeScript + Vite
+![image](https://github.com/jhchoi1182/portfolio/assets/116577489/38a03190-dcf0-4b92-ab84-711dfa0d5c6f)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 특징
+* 스크롤 트리거에 의한 각종 애니메이션
+   * 사용자의 스크롤 동작에 반응하여 활성화되는 다채로운 애니메이션을 구현
+* 스크롤 이벤트와 리렌더링을 분리시키고, composite 단계에서의 gpu에 의한 애니메이션 구현
+   * 스크롤 이벤트와 화면 리렌더링을 분리하여 처리
+   * 애니메이션으로 인한 reflow나 repaint가 진행되는 것이 아닌 Composite 단계에서의 gpu에 의한 애니메이션 구현
+* Tailwind CSS를 이용하여 레이아웃과 반응형 웹 디자인을 구축하고, 그 외의 모든 스타일링은 순수 CSS로 작업
+* 위아래 양방향 무한스크롤
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 배운 점
 
-## Expanding the ESLint configuration
+* 애니메이션 기술 향상
+   * 이전에는 애니메이션 부분에서 어려움을 겪었으나, 이 프로젝트를 통해 원하는 대로 애니메이션을 구현할 수 있는 능력을 구비하게 되었습니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+* z-index와 Stacking Context 이해
+   * 요소들 간의 z-index 비교 과정에서 자식 요소들이 부모 Stacking Context에 종속된다는 사실을 배웠습니다.
+   * Stacking Context 내의 자식 요소에는 별도의 position 속성 지정이 필요 없다는 것도 새롭게 알게되었습니다.
