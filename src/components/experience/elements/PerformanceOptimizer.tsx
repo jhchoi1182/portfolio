@@ -8,15 +8,15 @@ import useFadeInOnScroll from "../../../hooks/useFadeInOnScroll";
 
 const textInfos: experienceText[] = [
   {
-    text: "초기 렌더링 속도 **53% 단축**",
+    text: "초기 렌더링 시간 **80.61% 단축**",
     highlightIndex: 1,
-    topLeft: "-top-2 -left-1",
+    topLeft: "-top-4 -left-1",
     highlightLength: "short",
   },
   {
-    text: "리렌더링 시간 **80.61% 개선**",
+    text: "리렌더링 속도 **53% 개선**",
     highlightIndex: 2,
-    topLeft: "-top-4 -left-1",
+    topLeft: "-top-2 -left-1",
     highlightLength: "short",
   },
   {
