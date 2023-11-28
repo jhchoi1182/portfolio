@@ -9,7 +9,7 @@ export const projectMetaDatas: projectMetaDatasType = {
     projectType: "solo",
     date: {
       start: "23. 10",
-      end: "진행중",
+      end: "23. 11",
     },
     github: ["https://github.com/jhchoi1182/portfolio"],
     service: ["https://jhchoi1182.github.io/portfolio"],
@@ -26,7 +26,7 @@ export const projectMetaDatas: projectMetaDatasType = {
     },
     date: {
       start: "23. 07",
-      end: "진행중",
+      end: "23. 10",
     },
     github: ["https://github.com/GaebalLog/GaebalLog_front"],
     service: ["https://gaebal-log.vercel.app/home"],

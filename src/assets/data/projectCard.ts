@@ -9,7 +9,7 @@ export const projectCards = [
   {
     path: "portfolio",
     exp: "1",
-    date: "진행 중",
+    date: "2023.11",
     title: "Jihyeon's Portfolio",
     img: portfolioIcon,
     techs: ["React", "TypeScript"],
@@ -19,7 +19,7 @@ export const projectCards = [
   {
     path: "gaebal-log",
     exp: "2",
-    date: "진행 중",
+    date: "2023.10",
     title: "개발로그",
     img: gaebalLogIcon,
     techs: ["Next", "Jest"],
