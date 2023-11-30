@@ -29,7 +29,17 @@ function ProjectLink({ data }: { data: projectMetaData }) {
               <AiFillGithub className="w-6 h-6" />
             </button>
           </a>
-          <a href={data.service[i]} rel="noreferrer" target="_blank">
+          <a
+            href={data.service ? data.service[i] : "#"}
+            onClick={(e) => {
+              if (!data.service) {
+                e.preventDefault();
+                alert("서비스가 만료되었습니다.");
+              }
+            }}
+            rel="noreferrer"
+            target="_blank"
+          >
             <button
               className={`${center} gap-5 w-32 h-11 bg-inverse dark:bg-primary rounded-full`}
               onMouseEnter={() => setHoveredButton(title)}

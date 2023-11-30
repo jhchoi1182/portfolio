@@ -29,7 +29,6 @@ export const projectMetaDatas: projectMetaDatasType = {
       end: "23. 10",
     },
     github: ["https://github.com/GaebalLog/GaebalLog_front"],
-    service: ["https://gaebal-log.vercel.app/home"],
   },
   "vlog-and-todo": {
     exp: "3",

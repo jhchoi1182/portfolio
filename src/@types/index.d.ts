@@ -27,7 +27,7 @@ interface projectMetaData {
     end: string;
   };
   github: string[];
-  service: string[];
+  service?: string[];
 }
 
 // particlesJS 타입
