@@ -5,20 +5,20 @@ interface Props {
   divRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
-const collaboration = {
-  title: `Collaboration`,
-  li: [`Slack, Notion, Figma`],
+const backEnd = {
+  title: `Back-End`,
+  li: [`Python, Flask`],
 };
 
-function Collaboration({ showElement, divRef }: Props) {
+function BackEnd({ showElement, divRef }: Props) {
   return (
     <SkillLayout
-      title={collaboration.title}
-      li={collaboration.li}
+      title={backEnd.title}
+      li={backEnd.li}
       showElement={showElement}
       divRef={divRef}
     />
   );
 }
 
-export default Collaboration;
+export default BackEnd;
