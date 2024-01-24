@@ -1,7 +1,7 @@
 import ParticlesComponent from "./components/common/ParticlesBackground";
 import StartupLoading from "./components/common/StartupLoading";
 import useLogoEyes from "./hooks/useLogoEyes";
-import Router from "./shared/Router";
+import RootRouter from "./shared/RootRouter";
 
 function App() {
   const { handleMouseMove } = useLogoEyes();
@@ -12,7 +12,7 @@ function App() {
     >
       <StartupLoading />
       <ParticlesComponent />
-      <Router />
+      <RootRouter />
     </div>
   );
 }

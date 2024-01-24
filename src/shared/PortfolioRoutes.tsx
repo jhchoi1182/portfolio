@@ -1,34 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Loading from "../components/common/Loading";
+import useDelayedRouting from "../hooks/useDelayedRouting";
 import About from "../pages/About";
 import Detail from "../pages/Detail";
 import Project from "../pages/Project";
 
-function Context() {
+function PortfolioRoutes() {
   const [toggleLoading, setToggleLoading] = useState(false);
   const [shouldRoute, setShouldRoute] = useState(false);
   const location = useLocation();
   const currentLocation = useRef(location);
 
-  useEffect(() => {
-    window.history.scrollRestoration = "manual";
-    if (location === currentLocation.current || toggleLoading) return;
-    setToggleLoading(true);
-    const goRouting = setTimeout(() => {
-      currentLocation.current = location;
-      setShouldRoute(true);
-    }, 1000);
-    const loadingTimeout = setTimeout(() => {
-      setToggleLoading(false);
-      setShouldRoute(false);
-    }, 2000);
-
-    return () => {
-      clearTimeout(goRouting);
-      clearTimeout(loadingTimeout);
-    };
-  }, [location]);
+  useDelayedRouting(
+    toggleLoading,
+    setToggleLoading,
+    setShouldRoute,
+    currentLocation,
+  );
 
   return (
     <>
@@ -54,4 +43,4 @@ function Context() {
   );
 }
 
-export default Context;
+export default PortfolioRoutes;

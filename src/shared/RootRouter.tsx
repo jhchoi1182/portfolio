@@ -1,14 +1,14 @@
 import { BrowserRouter } from "react-router-dom";
-import Context from "./Context";
+import PortfolioRoutes from "./PortfolioRoutes";
 import Header from "../components/common/header/index/Header";
 
-function Router() {
+function RootRouter() {
   return (
     <BrowserRouter>
       <Header />
-      <Context />
+      <PortfolioRoutes />
     </BrowserRouter>
   );
 }
 
-export default Router;
+export default RootRouter;

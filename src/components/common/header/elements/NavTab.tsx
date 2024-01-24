@@ -1,7 +1,7 @@
 import { GoArrowUpRight } from "react-icons/go";
 import "../css/animation.css";
 import { useNavigate } from "react-router-dom";
-import useRouteNavigate from "../../../../hooks/useRouteNavigation";
+import useRouteNavigate from "../../../../hooks/usePathStatus";
 
 const textColor = "text-[#90999c] dark:text-[#b2bec3]";
 const links = [

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const useRouteNavigation = () => {
+const usePathStatus = () => {
   const [currentPath, setCurrentPath] = useState("about");
   const { pathname } = useLocation();
 
@@ -16,4 +16,4 @@ const useRouteNavigation = () => {
   return { isAbout, isProject };
 };
 
-export default useRouteNavigation;
+export default usePathStatus;
