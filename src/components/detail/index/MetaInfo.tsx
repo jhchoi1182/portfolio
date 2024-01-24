@@ -1,14 +1,22 @@
-import { useParams } from "react-router-dom";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { useNavigate, useParams } from "react-router-dom";
 import { projectMetaDatas } from "../../../assets/data/projectMetaData";
 import ProjectLink from "../elements/ProjectLink";
 
 function MetaInfo() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const data = projectMetaDatas[id ?? "portfolio"];
   const isTeamProject = data.projectType === "team";
 
   return (
-    <div className="flex flex-col justify-between w-full pt-[200px] font-notoSans lg:sticky lg:top-0 lg:w-1/2 lg:h-screen lg:pt-[15%]">
+    <div className="relative flex flex-col justify-between w-full pt-[200px] font-notoSans lg:sticky lg:top-0 lg:w-1/2 lg:h-screen lg:pt-[15%]">
+      <button
+        className="absolute top-32"
+        onClick={() => navigate("/portfolio/project")}
+      >
+        <IoMdArrowRoundBack size="3rem" />
+      </button>
       <div>
         <h5 className="text-xl mb-5">{`EXP 00${data.exp}`}</h5>
         <h1 className="text-6xl mb-5 pr-5 3xl:text-8xl xl:text-7xl">
