@@ -3,9 +3,20 @@ import drawingBearIcon from "../images/project/drawingBearIcon.webp";
 import gaebalLogIcon from "../images/project/gaebalLogIcon.webp";
 import netflixIcon from "../images/project/netflixIcon.png";
 import portfolioIcon from "../images/project/portfolioIcon.png";
+// import todoIcon from "../images/project/todoIcon.webp";
+import todoIcon from "../images/project/todoIcon.png";
 import vlogIcon from "../images/project/vlogIcon.webp";
 
 const projectData = [
+  {
+    path: "todo",
+    date: "2024.01",
+    title: "Todo 게시판 & Todo 게시판 서버",
+    img: todoIcon,
+    techs: ["Next", "Spring Boot", "Docker"],
+    image:
+      "https://github.com/jhchoi1182/next-todo/assets/116577489/c959ef3f-656d-4d22-b713-34fcf3006a44",
+  },
   {
     path: "portfolio",
     date: "2023.11",

@@ -33,7 +33,8 @@ const useInfiniteScroll = (
         moveScrollAfterAdd();
       }
       if (isBottomLoadZone) {
-        setProjectArray((prev) => [...prev, ...projectList]);
+        // setProjectArray((prev) => [...prev, ...projectList]);
+        setProjectArray((prev) => [...prev, ...projectList, ...projectList]);
         setTimeout(() => {
           isFetching.current = false;
         }, 0);
@@ -49,7 +50,8 @@ const useInfiniteScroll = (
   const moveScrollAfterAdd = () => {
     if (!listRef.current) return;
     const previousHeight = listRef.current.getBoundingClientRect().height;
-    setProjectArray((prev) => [...prev, ...projectList]);
+    // setProjectArray((prev) => [...prev, ...projectList]);
+    setProjectArray((prev) => [...prev, ...projectList, ...projectList]);
 
     setTimeout(() => {
       if (!listRef.current) return;

@@ -7,6 +7,20 @@ type projectMetaDatasType = {
 
 const projects: projectMetaData[] = [
   {
+    key: "todo",
+    title: "Todo 게시판 & Todo 게시판 서버",
+    projectType: "solo",
+    date: {
+      start: "24. 01",
+      end: "24. 01",
+    },
+    github: [
+      "https://github.com/jhchoi1182/next-todo",
+      "https://github.com/jhchoi1182/todo-server",
+    ],
+    service: ["https://next-todo-mu.vercel.app/todo"],
+  },
+  {
     key: "portfolio",
     title: "Jihyeon's Portfolio",
     projectType: "solo",

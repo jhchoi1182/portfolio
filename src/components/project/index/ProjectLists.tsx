@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { projectCards } from "../../../assets/data/projectCard";
 import { center } from "../../../styles/classNames";
@@ -7,6 +7,10 @@ import ProjectList from "../elements/ProjectList";
 function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

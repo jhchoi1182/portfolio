@@ -7,6 +7,7 @@ const projectList = projectCards;
 const sizes: {
   [key: string]: string;
 } = {
+  "Todo 게시판 & Todo 게시판 서버": "w-full h-[600px] 2xl:w-[44%] xl:w-[47.5%]",
   "Jihyeon's Portfolio": "w-full h-[600px] 2xl:w-[40%] xl:w-[42.5%]",
   개발로그: "w-full h-[800px] 2xl:w-[45%] xl:w-[47.5%]",
   "Jihyeon's 블로그": "w-full h-[600px] 2xl:w-[45%] xl:w-[47.5%]",
