@@ -24,14 +24,14 @@ const textColor: {
 function ProjectCard({
   isDetailPage,
   size,
-  data: { path, exp, date, title, img, techs, image },
+  data: { path, exp, date, title, img, techs, imageForPreload },
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   const handleOnMouseEnter = () => {
     setIsHovered(true);
-    preloadDetailImage(image);
+    preloadDetailImage(imageForPreload);
   };
 
   return (

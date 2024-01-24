@@ -15,7 +15,7 @@ function MetaInfo() {
         className="absolute top-32"
         onClick={() => navigate("/portfolio/project")}
       >
-        <IoMdArrowRoundBack size="3rem" />
+        <IoMdArrowRoundBack className="text-5xl 2xl:text-5xl 2xl:visible lg:invisible" />
       </button>
       <div>
         <h5 className="text-xl mb-5">{`EXP 00${data.exp}`}</h5>

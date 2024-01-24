@@ -5,7 +5,7 @@ export interface ProjectCard {
   title: string;
   img: string;
   techs: string[];
-  image: string;
+  imageForPreload: string;
 }
 
 export interface ProjectMetaData {

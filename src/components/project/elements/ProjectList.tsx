@@ -9,13 +9,13 @@ interface Props {
 }
 
 function ProjectList({
-  data: { exp, date, title, techs, image },
+  data: { exp, date, title, techs, imageForPreload },
   hoveredItem,
   setHoveredItem,
 }: Props) {
   const handleOnMouseEnter = () => {
     setHoveredItem(exp);
-    preloadDetailImage(image);
+    preloadDetailImage(imageForPreload);
   };
 
   return (
