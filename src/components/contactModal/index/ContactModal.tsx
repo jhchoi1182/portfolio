@@ -18,6 +18,8 @@ function ContactModal({
   const navigateAfter500ms = useNavigateWithLoading();
 
   const handleClose = () => {
+    console.log(1);
+
     setIsVisible(false);
     setTimeout(() => setIsContactModal(false), 1000);
   };
@@ -62,7 +64,7 @@ function ContactModal({
           ))}
         </ul>
         <AiOutlineClose
-          className={`absolute -top-10 right-8 text-white lg:text-black lg:top-8 ${
+          className={`absolute -top-10 right-8 z-10 text-white lg:text-black lg:top-8 ${
             !isVisible ? "hidden lg:block" : ""
           } w-5 h-5 cursor-pointer`}
           onClick={handleClose}
