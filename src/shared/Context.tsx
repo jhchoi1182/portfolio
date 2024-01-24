@@ -12,9 +12,9 @@ function Context() {
   const currentLocation = useRef(location);
 
   useEffect(() => {
+    window.history.scrollRestoration = "manual";
     if (location === currentLocation.current || toggleLoading) return;
     setToggleLoading(true);
-
     const goRouting = setTimeout(() => {
       currentLocation.current = location;
       setShouldRoute(true);
