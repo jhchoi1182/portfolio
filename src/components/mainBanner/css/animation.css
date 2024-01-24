@@ -1,9 +1,9 @@
-@keyframes slideToLeft80px {
+@keyframes slideToLeft140px {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-80px);
+    transform: translateX(-140px);
   }
 }
 @keyframes slideToLeft100px {
@@ -22,8 +22,31 @@
     transform: translateX(-60px);
   }
 }
+
+@media (max-width: 880px) {
+  @keyframes slideToLeft140px {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-90px);
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  @keyframes slideToLeft140px {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-90px);
+    }
+  }
+}
+
 @media (max-width: 550px) {
-  @keyframes slideToLeft80px {
+  @keyframes slideToLeft140px {
     from {
       transform: translateX(0);
     }
@@ -39,17 +62,9 @@
       transform: translateX(-65px);
     }
   }
-  @keyframes slideToLeft60px {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-40px);
-    }
-  }
 }
 .animate-slideToLeftAfter2500ms {
-  animation: slideToLeft80px 0.5s ease-in-out 2.5s forwards;
+  animation: slideToLeft140px 0.5s ease-in-out 2.5s forwards;
 }
 .animate-slideToLeftAfter2750ms {
   animation: slideToLeft100px 0.5s ease-in-out 2.75s forwards;

@@ -1,15 +1,13 @@
 import { center } from "../../../styles/classNames";
 import Developer from "../elements/Developer";
-import End from "../elements/End";
-import Front from "../elements/Front";
+import Full from "../elements/Full";
+import Stack from "../elements/Stack";
 
 function Banner() {
   return (
-    <div
-      className={`${center} flex-col h-screen -mt-[4%] mb-[4%] font-notoSans`}
-    >
-      <Front />
-      <End />
+    <div className={`${center} flex-col h-screen -mt-[4%] mb-[4%] font-notoSans`}>
+      <Full />
+      <Stack />
       <Developer />
     </div>
   );
