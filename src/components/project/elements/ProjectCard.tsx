@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
-import useNavigateWithLoading from "../../../hooks/useNavigateWithLoading";
+import { useNavigate } from "react-router-dom";
 import { center, customDot } from "../../../styles/classNames";
 import preloadDetailImage from "../../../utils/preloadDetailImage";
 
@@ -27,7 +27,7 @@ function ProjectCard({
   data: { path, exp, date, title, img, techs, image },
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
-  const navigateAfter500ms = useNavigateWithLoading();
+  const navigate = useNavigate();
 
   const handleOnMouseEnter = () => {
     setIsHovered(true);
@@ -36,7 +36,7 @@ function ProjectCard({
 
   return (
     <li
-      onClick={() => navigateAfter500ms(`/portfolio/project/${path}`)}
+      onClick={() => navigate(`/portfolio/project/${path}`)}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       className={`relative z-30 overflow-hidden ${size} rounded-2xl cursor-pointer ${

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { GoArrowRight } from "react-icons/go";
-import useNavigateWithLoading from "../../../hooks/useNavigateWithLoading";
+import { useNavigate } from "react-router-dom";
 import useRouteNavigation from "../../../hooks/useRouteNavigation";
 import Footer from "../../common/Footer";
 import Backdrop from "../elements/Backdrop";
@@ -13,20 +13,18 @@ function ContactModal({
   setIsContactModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [isVisible, setIsVisible] = useState(true);
+  const navigate = useNavigate();
 
   const { isAbout, isProject } = useRouteNavigation();
-  const navigateAfter500ms = useNavigateWithLoading();
 
   const handleClose = () => {
-    console.log(1);
-
     setIsVisible(false);
     setTimeout(() => setIsContactModal(false), 1000);
   };
   const handleNavigation = (pathname: string) => {
     setIsVisible(false);
     setTimeout(() => setIsContactModal(false), 1000);
-    navigateAfter500ms(pathname);
+    navigate(pathname);
   };
 
   const links = [

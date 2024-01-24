@@ -1,15 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { projectCards } from "../../../assets/data/projectCard";
-import useNavigateWithLoading from "../../../hooks/useNavigateWithLoading";
-import useScrollToTop from "../../../hooks/useScrollToTop";
 import { center } from "../../../styles/classNames";
 import ProjectList from "../elements/ProjectList";
 
 function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-
-  const navigateAfter500ms = useNavigateWithLoading();
-  useScrollToTop();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -26,9 +23,7 @@ function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
           {projectCards.map((project, i) => (
             <li
               key={i}
-              onClick={() =>
-                navigateAfter500ms(`/portfolio/project/${project.path}`)
-              }
+              onClick={() => navigate(`/portfolio/project/${project.path}`)}
             >
               <ProjectList
                 data={project}

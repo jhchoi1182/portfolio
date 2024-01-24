@@ -23,11 +23,6 @@ export const darkModeAtom = atom({
   default: getCookie() ? true : false,
 });
 
-export const toggleLoadingAtom = atom({
-  key: "toggleLoadingAtom",
-  default: false,
-});
-
 export const toggleProjectViewAtom = atom<"GRID" | "LIST">({
   key: "toggleProjectViewAtom",
   default: "GRID",

@@ -4,8 +4,12 @@ import "./css/animation.css";
 function Loading() {
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    const scrollToTopTimeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1000);
     return () => {
       document.body.style.overflow = "auto";
+      clearTimeout(scrollToTopTimeout);
     };
   }, []);
 

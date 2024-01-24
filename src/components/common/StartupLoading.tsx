@@ -8,17 +8,15 @@ function StartupLoading() {
     window.scrollTo(0, 0);
     document.body.style.overflow = "hidden";
 
-    let timeout: ReturnType<typeof setTimeout>;
-    if (isHundredPercent) {
-      timeout = setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 1500);
-    }
-    return () => clearTimeout(timeout);
+    if (!isHundredPercent) return;
+    const overflowAuto = setTimeout(() => {
+      document.body.style.overflow = "auto";
+    }, 1500);
+    return () => clearTimeout(overflowAuto);
   }, [isHundredPercent]);
 
   useEffect(() => {
-    const duration = 1500;
+    const duration = 1000;
     const totalCount = 99;
     const intervalTime = duration / totalCount;
 

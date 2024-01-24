@@ -1,6 +1,6 @@
 import { GoArrowUpRight } from "react-icons/go";
 import "../css/animation.css";
-import useNavigateWithLoading from "../../../../hooks/useNavigateWithLoading";
+import { useNavigate } from "react-router-dom";
 import useRouteNavigate from "../../../../hooks/useRouteNavigation";
 
 const textColor = "text-[#90999c] dark:text-[#b2bec3]";
@@ -21,24 +21,18 @@ function NavTab({
   setIsContactModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const { isAbout, isProject } = useRouteNavigate();
-  const navigateAfter500ms = useNavigateWithLoading();
+  const navigate = useNavigate();
 
   return (
     <>
       <ul className="flex gap-10 text-lg">
         <li className={`transition-navHover ${isAbout ? textColor : ""}`}>
-          <button
-            onClick={() => !isAbout && navigateAfter500ms("/portfolio/about")}
-          >
+          <button onClick={() => !isAbout && navigate("/portfolio/about")}>
             ABOUT
           </button>
         </li>
         <li className={`transition-navHover ${isProject ? textColor : ""}`}>
-          <button
-            onClick={() =>
-              !isProject && navigateAfter500ms("/portfolio/project")
-            }
-          >
+          <button onClick={() => !isProject && navigate("/portfolio/project")}>
             PROJECT
           </button>
         </li>
