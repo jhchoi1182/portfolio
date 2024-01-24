@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import useScrollX from "../../../hooks/useScrollX";
-import CICD from "../elements/CICD";
+import DevOps from "../elements/DevOps";
 import PerformanceOptimizer from "../elements/PerformanceOptimizer";
 import UIDesign from "../elements/UIDesign";
 import UserFeedback from "../elements/UserFeedback";
@@ -21,7 +21,7 @@ function Experience() {
           </h1>
           <div ref={scrollDivRef} className="flex h-full pt-[95px]">
             <PerformanceOptimizer />
-            <CICD />
+            <DevOps />
             <UIDesign />
             <UserFeedback />
           </div>

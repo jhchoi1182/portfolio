@@ -14,7 +14,7 @@ const textInfos: experienceText[] = [
     highlightLength: "short",
   },
   {
-    text: "리렌더링 속도 **53% 개선**",
+    text: "리렌더링 속도 **46% 개선**",
     highlightIndex: 2,
     topLeft: "-top-2 -left-1",
     highlightLength: "short",
@@ -24,6 +24,9 @@ const textInfos: experienceText[] = [
     highlightIndex: 3,
     topLeft: "-top-0 left-0",
     highlightLength: "long",
+  },
+  {
+    text: "쿼리 요청 횟수 최적화",
   },
 ];
 

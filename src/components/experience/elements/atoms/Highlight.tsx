@@ -32,6 +32,7 @@ function Highlight({
     "animate-revealBrushAfter250ms",
     "animate-revealBrushAfter450ms",
     "animate-revealBrushAfter650ms",
+    "animate-revealBrushAfter850ms",
   ];
 
   return (

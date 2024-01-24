@@ -17,19 +17,30 @@ const textInfos: experienceText[] = [
     text: "자동 병합 설정",
   },
   {
-    text: "정적 배포를 통한 CI/CD",
+    text: "**CI/CD 파이프라인** 구축",
+    highlightIndex: 2,
+    topLeft: "-top-0 left-0",
+    highlightLength: "long",
+  },
+  {
+    text: "Docker Compose로 멀티 **컨테이너 관리**",
+    highlightIndex: 3,
+    topLeft: "-top-4 -left-1",
+    highlightLength: "short",
   },
   {
     text: "**개발 생산성 개선**",
-    highlightIndex: 2,
+    highlightIndex: 4,
     topLeft: "-top-0 left-0",
     highlightLength: "long",
   },
 ];
 
-function CICD() {
-  const [showElements, setShowElements] = useState(Array(2).fill(null));
+function DevOps() {
+  const [showElements, setShowElements] = useState(Array(4).fill(null));
   const refs = [
+    useRef<HTMLImageElement | null>(null),
+    useRef<HTMLImageElement | null>(null),
     useRef<HTMLImageElement | null>(null),
     useRef<HTMLImageElement | null>(null),
   ];
@@ -38,25 +49,17 @@ function CICD() {
 
   return (
     <ExperienceLayout
-      title="CI/CD 파이프라인 구축"
+      title="자동화 프로세스의 DevOps"
       img={
         <div className={`relative ${center} w-[700px] h-[600px]`}>
-          <img
-            className="w-[500px] h-[250px] bg-primary shadow-xl z-10"
-            src={cicd}
-            alt="cicd"
-          />
+          <img className="w-[500px] h-[250px] bg-primary shadow-xl z-10" src={cicd} alt="cicd" />
         </div>
       }
       descriptions={
-        <ExperienceText
-          textInfos={textInfos}
-          refs={refs}
-          showElements={showElements}
-        />
+        <ExperienceText textInfos={textInfos} refs={refs} showElements={showElements} />
       }
     />
   );
 }
 
-export default CICD;
+export default DevOps;

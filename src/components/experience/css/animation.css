@@ -20,3 +20,6 @@
 .animate-revealBrushAfter650ms {
   animation: reveal 0.25s ease-in-out 0.65s forwards;
 }
+.animate-revealBrushAfter850ms {
+  animation: reveal 0.25s ease-in-out 0.85s forwards;
+}
