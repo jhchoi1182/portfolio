@@ -7,7 +7,7 @@ interface Props {
 
 const data = {
   title: `Data`,
-  li: [`Mongo DB`, `Sanity`],
+  li: [`Mongo DB`, `MySQL`],
 };
 
 function Data({ showElement, divRef }: Props) {

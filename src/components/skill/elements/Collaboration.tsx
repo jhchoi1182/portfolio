@@ -7,7 +7,7 @@ interface Props {
 
 const collaboration = {
   title: `Collaboration`,
-  li: [`Slack, Notion, Figma`],
+  li: [`Git/Github, Slack, Notion, Figma`, `Swagger`],
 };
 
 function Collaboration({ showElement, divRef }: Props) {

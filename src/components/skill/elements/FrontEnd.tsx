@@ -10,6 +10,7 @@ const frontEnd = {
   li: [
     `HTML5, CSS3, Javascript (ES6), Typescript`,
     `React.js, Next.js`,
+    `React Native (EXPO)`,
     `Redux, React-query, Recoil, Styled-Components, Tailwind CSS`,
   ],
 };
