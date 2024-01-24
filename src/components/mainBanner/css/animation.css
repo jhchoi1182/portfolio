@@ -3,7 +3,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-140px);
+    transform: translateX(-60px);
   }
 }
 @keyframes slideToLeft100px {
@@ -40,7 +40,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-90px);
+      transform: translateX(-50px);
     }
   }
 }
@@ -63,14 +63,14 @@
     }
   }
 }
+.animate-slideToLeftAfter2000ms {
+  animation: slideToLeft140px 0.5s ease-in-out 2s forwards;
+}
+.animate-slideToLeftAfter2250ms {
+  animation: slideToLeft100px 0.5s ease-in-out 2.25s forwards;
+}
 .animate-slideToLeftAfter2500ms {
-  animation: slideToLeft140px 0.5s ease-in-out 2.5s forwards;
-}
-.animate-slideToLeftAfter2750ms {
-  animation: slideToLeft100px 0.5s ease-in-out 2.75s forwards;
-}
-.animate-slideToLeftAfter3000ms {
-  animation: slideToLeft60px 0.5s ease-in-out 3s forwards;
+  animation: slideToLeft60px 0.5s ease-in-out 2.5s forwards;
 }
 
 @keyframes reveal {
@@ -81,20 +81,20 @@
     clip-path: inset(0 0 0 0);
   }
 }
+.animate-revealTextAfter2250ms {
+  animation: reveal 1s linear 2.25s backwards;
+}
+.animate-revealTextAfter2500ms {
+  animation: reveal 0.25s linear 2.5s backwards;
+}
+.animate-revealTextAfter2600ms {
+  animation: reveal 0.25s linear 2.6s backwards;
+}
+.animate-revealTextAfter2700ms {
+  animation: reveal 0.25s linear 2.7s backwards;
+}
 .animate-revealTextAfter2750ms {
-  animation: reveal 1s linear 2.75s backwards;
-}
-.animate-revealTextAfter3000ms {
-  animation: reveal 0.25s linear 3s backwards;
-}
-.animate-revealTextAfter3100ms {
-  animation: reveal 0.25s linear 3.1s backwards;
-}
-.animate-revealTextAfter3200ms {
-  animation: reveal 0.25s linear 3.2s backwards;
-}
-.animate-revealTextAfter3250ms {
-  animation: reveal 0.75s linear 3.25s backwards;
+  animation: reveal 0.75s linear 2.75s backwards;
 }
 
 @keyframes draw {
