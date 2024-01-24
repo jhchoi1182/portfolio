@@ -5,10 +5,9 @@ import netflixIcon from "../images/project/netflixIcon.png";
 import portfolioIcon from "../images/project/portfolioIcon.png";
 import vlogIcon from "../images/project/vlogIcon.webp";
 
-export const projectCards = [
+const projectData = [
   {
     path: "portfolio",
-    exp: "1",
     date: "2023.11",
     title: "Jihyeon's Portfolio",
     img: portfolioIcon,
@@ -18,7 +17,6 @@ export const projectCards = [
   },
   {
     path: "gaebal-log",
-    exp: "2",
     date: "2023.10",
     title: "개발로그",
     img: gaebalLogIcon,
@@ -27,18 +25,16 @@ export const projectCards = [
       "https://github.com/jhchoi1182/portfolio/assets/116577489/54d15845-3c8b-40e2-8b16-3ad34ebd2880",
   },
   {
-    path: "vlog-and-todo",
-    exp: "3",
+    path: "vlog",
     date: "2023.06",
-    title: "개인 기술 블로그 & Next Todo List",
+    title: "Jihyeon's 블로그",
     img: vlogIcon,
-    techs: ["Next", "Mongo DB"],
+    techs: ["Next"],
     image:
       "https://github.com/jhchoi1182/portfolio/assets/116577489/70ed7fdb-ea95-42d1-ab02-091e3a961e05",
   },
   {
     path: "jjabflix",
-    exp: "4",
     date: "2023.05",
     title: "Jjabflix",
     img: netflixIcon,
@@ -48,7 +44,6 @@ export const projectCards = [
   },
   {
     path: "drawingbear",
-    exp: "5",
     date: "2023.02",
     title: "쓰곰그리곰",
     img: drawingBearIcon,
@@ -58,7 +53,6 @@ export const projectCards = [
   },
   {
     path: "consolog",
-    exp: "6",
     date: "2022.12",
     title: "Consolog",
     img: consolog,
@@ -67,3 +61,8 @@ export const projectCards = [
       "https://github.com/jhchoi1182/portfolio/assets/116577489/69fe1384-27fd-4828-97e5-2afb5cbe4e24",
   },
 ];
+
+export const projectCards = projectData.map((project, index) => ({
+  ...project,
+  exp: index + 1,
+}));

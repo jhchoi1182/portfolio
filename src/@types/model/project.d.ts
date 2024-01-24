@@ -1,6 +1,6 @@
 export interface ProjectCard {
   path: string;
-  exp: string;
+  exp: number;
   date: string;
   title: string;
   img: string;
@@ -9,7 +9,7 @@ export interface ProjectCard {
 }
 
 export interface ProjectMetaData {
-  exp: string;
+  key: string;
   title: string;
   projectType: "team" | "solo";
   contribution?: string;

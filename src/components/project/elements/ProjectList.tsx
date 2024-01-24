@@ -4,8 +4,8 @@ import preloadDetailImage from "../../../utils/preloadDetailImage";
 
 interface Props {
   data: projectCard;
-  hoveredItem: string | null;
-  setHoveredItem: React.Dispatch<React.SetStateAction<string | null>>;
+  hoveredItem: number | null;
+  setHoveredItem: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 function ProjectList({

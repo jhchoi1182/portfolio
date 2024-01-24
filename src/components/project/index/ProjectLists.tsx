@@ -5,7 +5,7 @@ import { center } from "../../../styles/classNames";
 import ProjectList from "../elements/ProjectList";
 
 function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const navigate = useNavigate();
 
   return (

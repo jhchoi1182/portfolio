@@ -1,10 +1,13 @@
+interface ExtendedProjectMetaData extends projectMetaData {
+  exp: number;
+}
 type projectMetaDatasType = {
-  [key: string]: projectMetaData;
+  [key: string]: ExtendedProjectMetaData;
 };
 
-export const projectMetaDatas: projectMetaDatasType = {
-  portfolio: {
-    exp: "1",
+const projects: projectMetaData[] = [
+  {
+    key: "portfolio",
     title: "Jihyeon's Portfolio",
     projectType: "solo",
     date: {
@@ -14,8 +17,8 @@ export const projectMetaDatas: projectMetaDatasType = {
     github: ["https://github.com/jhchoi1182/portfolio"],
     service: ["https://jhchoi1182.github.io/portfolio"],
   },
-  "gaebal-log": {
-    exp: "2",
+  {
+    key: "gaebal-log",
     title: "개발로그",
     projectType: "team",
     contribution: "63%",
@@ -30,25 +33,19 @@ export const projectMetaDatas: projectMetaDatasType = {
     },
     github: ["https://github.com/GaebalLog/GaebalLog_front"],
   },
-  "vlog-and-todo": {
-    exp: "3",
-    title: "개인 기술 블로그 & Next Todo List",
+  {
+    key: "vlog",
+    title: "Jihyeon's 블로그",
     projectType: "solo",
     date: {
       start: "23. 06",
       end: "23. 06",
     },
-    github: [
-      "https://github.com/jhchoi1182/jihyeon_blog",
-      "https://github.com/jhchoi1182/next-todo",
-    ],
-    service: [
-      "https://www.jihyeon-blog.shop/",
-      "https://next-todo-mu.vercel.app/",
-    ],
+    github: ["https://github.com/jhchoi1182/jihyeon_blog"],
+    service: ["https://www.jihyeon-blog.shop/"],
   },
-  jjabflix: {
-    exp: "4",
+  {
+    key: "jjabflix",
     title: "Jjabflix",
     projectType: "solo",
     date: {
@@ -58,8 +55,8 @@ export const projectMetaDatas: projectMetaDatasType = {
     github: ["https://github.com/jhchoi1182/jjabflix"],
     service: ["https://jjabflix.vercel.app/"],
   },
-  drawingbear: {
-    exp: "5",
+  {
+    key: "drawingbear",
     title: "쓰곰그리곰",
     projectType: "team",
     contribution: "55%",
@@ -75,8 +72,8 @@ export const projectMetaDatas: projectMetaDatasType = {
     github: ["https://github.com/jhchoi1182/DrawingBear"],
     service: ["https://www.youtube.com/watch?v=6lDclos5mA8&feature=youtu.be"],
   },
-  consolog: {
-    exp: "6",
+  {
+    key: "consolog",
     title: "Consolog",
     projectType: "team",
     contribution: "40%",
@@ -91,4 +88,15 @@ export const projectMetaDatas: projectMetaDatasType = {
     github: ["https://github.com/saehwa95/clone-velog"],
     service: ["https://www.youtube.com/watch?v=aPGRNPumqjs"],
   },
-};
+];
+
+export const projectMetaDatas = projects.reduce<projectMetaDatasType>(
+  (acc, project, index) => {
+    acc[project.key] = {
+      ...project,
+      exp: index + 1,
+    };
+    return acc;
+  },
+  {},
+);
