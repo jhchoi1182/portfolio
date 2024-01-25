@@ -26,7 +26,7 @@ const textInfos: experienceText[] = [
     highlightLength: "long",
   },
   {
-    text: "쿼리 요청 횟수 최적화",
+    text: "SQL 쿼리 요청 횟수 최적화",
   },
 ];
 

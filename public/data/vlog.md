@@ -50,5 +50,6 @@
 
 ###### CONCLUSION
 
-- Google Search Console 사용 및 사이트맵 등록을 통해 검색 엔진 최적화 기법 학습
-- ReactDOMServer API를 사용해 서버에서 컴포넌트를 HTML로 렌더링하고, 클라이언트에서 hydration하는 **리액트에서의 SSR 동작 방식에 대해 학습**
+Google Search Console 사용 및 사이트맵 등록을 통해 검색 엔진 최적화 기법을 학습했습니다.
+
+ReactDOMServer API를 사용해 서버에서 컴포넌트를 HTML로 렌더링하고, 클라이언트에서 hydration하는 **리액트에서의 SSR 동작 방식에 대해 이해**할 수 있었습니다.

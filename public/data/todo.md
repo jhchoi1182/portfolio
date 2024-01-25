@@ -12,7 +12,7 @@
 
 ###### INTRODUCTION
 
-React와 Spring Boot로 개발한 게시판 형식의 Todo 서비스로, 사용자, 할 일 목록, 댓글 기능을 포함합니다.
+React와 Spring Boot로 개발한 게시판 형식의 Todo 서비스로, 사용자, 할 일 목록, 댓글 기능이 포함된 서비스입니다.
 
 백엔드와 프론트엔드 간의 효율적인 상호작용을 제공하며, **현대적인 웹 개발 아키텍처를 구현**했습니다.
 
@@ -23,6 +23,7 @@ React와 Spring Boot로 개발한 게시판 형식의 Todo 서비스로, 사용�
 #### 풀스택 개발
 
 - **Next.js와 Spring Boot**를 활용해 사용자 친화적인 인터페이스와 강력한 백엔드 기능을 결합한 풀스택 웹 애플리케이션 개발
+- Next.js 서버사이드 환경에서의 MongoDB 데이터를 Spring Boot **서버** API로 **마이그레이션 (렌더링 속도 46% 개선)**
 
 ###
 
@@ -35,6 +36,8 @@ React와 Spring Boot로 개발한 게시판 형식의 Todo 서비스로, 사용�
 
 #### 배포 프로세스 구축
 
+- 프로젝트 일관성 유지를 위해 Docker 도입
+- Docker 배포 시 메모리 부족으로 인한 **CPU 과부하 문제를 추가적인 스왑 공간 할당을 통해 해결**
 - **Docker Compose**를 도입하여 Spring Boot와 MySQL **컨테이너의 관리를 간소화**
 - GitHub Actions를 이용한 **CI/CD 파이프라인 구축으로 개발 생산성 향상**
 

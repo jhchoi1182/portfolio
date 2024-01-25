@@ -7,7 +7,7 @@ interface Props {
 
 const backEnd = {
   title: `Back-End`,
-  li: [`Python, Flask`, `Java, Spring Boot, Spring Data JPA, Spring Security`],
+  li: [`Python, Java`, `Flask, Spring Boot, Spring Data JPA, Spring Security`],
 };
 
 function BackEnd({ showElement, divRef }: Props) {
