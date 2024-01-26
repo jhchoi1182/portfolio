@@ -48,6 +48,10 @@
 
 ###
 
+**더 자세한 기능 설명은 Github README를 통해 확인하실 수 있습니다.**
+
+###
+
 ###### CONCLUSION
 
 Google Search Console 사용 및 사이트맵 등록을 통해 검색 엔진 최적화 기법을 학습했습니다.
