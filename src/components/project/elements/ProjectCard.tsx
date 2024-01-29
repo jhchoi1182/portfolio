@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
+import { projectNames } from "../../../assets/data/projectName";
 import { center, customDot } from "../../../styles/classNames";
 import preloadDetailImage from "../../../utils/preloadDetailImage";
 
@@ -13,12 +14,13 @@ interface Props {
 const textColor: {
   [key: string]: string;
 } = {
-  "Jihyeon's Portfolio": "text-black",
-  개발로그: "text-black",
-  "개인 기술 블로그 & Next Todo List": "text-black",
-  Jjabflix: "text-white",
-  쓰곰그리곰: "text-black",
-  Consolog: "text-white",
+  [projectNames.petProject]: "text-black",
+  [projectNames.portfolio]: "text-black",
+  [projectNames.gaebalLog]: "text-black",
+  [projectNames.vlog]: "text-black",
+  [projectNames.jjabflix]: "text-white",
+  [projectNames.drawingBear]: "text-black",
+  [projectNames.consolog]: "text-white",
 };
 
 function ProjectCard({

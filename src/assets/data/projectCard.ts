@@ -1,3 +1,4 @@
+import { projectNames } from "./projectName";
 import consolog from "../images/project/consolog.webp";
 import drawingBearIcon from "../images/project/drawingBearIcon.webp";
 import gaebalLogIcon from "../images/project/gaebalLogIcon.webp";
@@ -8,9 +9,9 @@ import vlogIcon from "../images/project/vlogIcon.webp";
 
 const projectData = [
   {
-    path: "todo",
+    path: "petProject",
     date: "2024.01",
-    title: "Todo 게시판 & Todo 게시판 서버",
+    title: projectNames.petProject,
     img: todoIcon,
     techs: ["Next", "Spring Boot", "Docker"],
     imageForPreload:
@@ -19,7 +20,7 @@ const projectData = [
   {
     path: "portfolio",
     date: "2023.11",
-    title: "Jihyeon's Portfolio",
+    title: projectNames.portfolio,
     img: portfolioIcon,
     techs: ["React", "TypeScript"],
     imageForPreload:
@@ -28,7 +29,7 @@ const projectData = [
   {
     path: "gaebal-log",
     date: "2023.10",
-    title: "개발로그",
+    title: projectNames.gaebalLog,
     img: gaebalLogIcon,
     techs: ["Next", "Jest"],
     imageForPreload:
@@ -37,7 +38,7 @@ const projectData = [
   {
     path: "vlog",
     date: "2023.06",
-    title: "Jihyeon's 블로그",
+    title: projectNames.vlog,
     img: vlogIcon,
     techs: ["Next"],
     imageForPreload:
@@ -46,7 +47,7 @@ const projectData = [
   {
     path: "jjabflix",
     date: "2023.05",
-    title: "Jjabflix",
+    title: projectNames.jjabflix,
     img: netflixIcon,
     techs: ["React", "TypeScript"],
     imageForPreload:
@@ -55,7 +56,7 @@ const projectData = [
   {
     path: "drawingbear",
     date: "2023.02",
-    title: "쓰곰그리곰",
+    title: projectNames.drawingBear,
     img: drawingBearIcon,
     techs: ["React", "React-Query"],
     imageForPreload:
@@ -64,7 +65,7 @@ const projectData = [
   {
     path: "consolog",
     date: "2022.12",
-    title: "Consolog",
+    title: projectNames.consolog,
     img: consolog,
     techs: ["React", "Redux"],
     imageForPreload:

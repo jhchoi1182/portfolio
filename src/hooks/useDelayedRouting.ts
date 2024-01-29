@@ -16,7 +16,7 @@ const useDelayedRouting = (
     if (location === currentLocation.current || toggleLoading) return;
     setToggleLoading(true);
 
-    const goRouting = setTimeout(() => {
+    const goRoutingTimeout = setTimeout(() => {
       currentLocation.current = location;
       setShouldRoute(true);
     }, 1000);
@@ -26,7 +26,7 @@ const useDelayedRouting = (
     }, 2000);
 
     return () => {
-      clearTimeout(goRouting);
+      clearTimeout(goRoutingTimeout);
       clearTimeout(loadingTimeout);
     };
   }, [location]);

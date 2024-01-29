@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { projectCards } from "../../../assets/data/projectCard";
+import { projectNames } from "../../../assets/data/projectName";
 import useInfiniteScroll from "../../../hooks/useInfiniteScroll";
 import ProjectCard from "../elements/ProjectCard";
 
@@ -7,13 +8,13 @@ const projectList = projectCards;
 const sizes: {
   [key: string]: string;
 } = {
-  "Todo 게시판 & Todo 게시판 서버": "w-full h-[600px] 2xl:w-[44%] xl:w-[47.5%]",
-  "Jihyeon's Portfolio": "w-full h-[600px] 2xl:w-[40%] xl:w-[42.5%]",
-  개발로그: "w-full h-[800px] 2xl:w-[45%] xl:w-[47.5%]",
-  "Jihyeon's 블로그": "w-full h-[600px] 2xl:w-[45%] xl:w-[47.5%]",
-  Jjabflix: "w-full h-[900px] 2xl:w-[40%] xl:w-[42.5%]",
-  쓰곰그리곰: "w-full h-[700px] 2xl:w-[45%] xl:w-[47.5%]",
-  Consolog: "w-full h-[500px] 2xl:w-[45%] xl:w-[47.5%]",
+  [projectNames.petProject]: "w-full h-[600px] 2xl:w-[44%] xl:w-[47.5%]",
+  [projectNames.portfolio]: "w-full h-[600px] 2xl:w-[40%] xl:w-[42.5%]",
+  [projectNames.gaebalLog]: "w-full h-[800px] 2xl:w-[45%] xl:w-[47.5%]",
+  [projectNames.vlog]: "w-full h-[600px] 2xl:w-[45%] xl:w-[47.5%]",
+  [projectNames.jjabflix]: "w-full h-[900px] 2xl:w-[40%] xl:w-[42.5%]",
+  [projectNames.drawingBear]: "w-full h-[700px] 2xl:w-[45%] xl:w-[47.5%]",
+  [projectNames.consolog]: "w-full h-[500px] 2xl:w-[45%] xl:w-[47.5%]",
 };
 
 function ProjectGrid() {

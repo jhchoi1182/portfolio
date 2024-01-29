@@ -1,3 +1,5 @@
+import { projectNames } from "./projectName";
+
 interface ExtendedProjectMetaData extends projectMetaData {
   exp: number;
 }
@@ -7,22 +9,22 @@ type projectMetaDatasType = {
 
 const projects: projectMetaData[] = [
   {
-    key: "todo",
-    title: "Todo 게시판 & Todo 게시판 서버",
+    key: "petProject",
+    title: projectNames.petProject,
     projectType: "solo",
     date: {
       start: "24. 01",
       end: "24. 01",
     },
     github: [
-      "https://github.com/jhchoi1182/next-todo",
-      "https://github.com/jhchoi1182/todo-server",
+      "https://github.com/jhchoi1182/pet-project-front",
+      "https://github.com/jhchoi1182/pet-project-back",
     ],
-    service: ["https://next-todo-mu.vercel.app/todo"],
+    service: ["https://jihyeon-pet-project.vercel.app/todo"],
   },
   {
     key: "portfolio",
-    title: "Jihyeon's Portfolio",
+    title: projectNames.portfolio,
     projectType: "solo",
     date: {
       start: "23. 10",
@@ -33,7 +35,7 @@ const projects: projectMetaData[] = [
   },
   {
     key: "gaebal-log",
-    title: "개발로그",
+    title: projectNames.gaebalLog,
     projectType: "team",
     contribution: "63%",
     member: {
@@ -49,7 +51,7 @@ const projects: projectMetaData[] = [
   },
   {
     key: "vlog",
-    title: "Jihyeon's 블로그",
+    title: projectNames.vlog,
     projectType: "solo",
     date: {
       start: "23. 06",
@@ -60,7 +62,7 @@ const projects: projectMetaData[] = [
   },
   {
     key: "jjabflix",
-    title: "Jjabflix",
+    title: projectNames.jjabflix,
     projectType: "solo",
     date: {
       start: "23. 04",
@@ -71,7 +73,7 @@ const projects: projectMetaData[] = [
   },
   {
     key: "drawingbear",
-    title: "쓰곰그리곰",
+    title: projectNames.drawingBear,
     projectType: "team",
     contribution: "55%",
     member: {
@@ -88,7 +90,7 @@ const projects: projectMetaData[] = [
   },
   {
     key: "consolog",
-    title: "Consolog",
+    title: projectNames.consolog,
     projectType: "team",
     contribution: "40%",
     member: {
