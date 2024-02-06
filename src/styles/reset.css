@@ -10,6 +10,18 @@
   font-style: normal;
 }
 
+@-moz-document url-prefix() {
+  :root {
+    scrollbar-width: none;
+  }
+}
+:root {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+}
+
 html,
 body,
 div,
@@ -115,11 +127,6 @@ section {
 body {
   font-family: "inter", sans-serif;
   line-height: 1;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 ol,
 ul {

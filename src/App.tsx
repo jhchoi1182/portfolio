@@ -6,10 +6,7 @@ import RootRouter from "./shared/RootRouter";
 function App() {
   const { handleMouseMove } = useLogoEyes();
   return (
-    <div
-      className="text-black dark:text-white scroll-hidden"
-      onMouseMove={handleMouseMove}
-    >
+    <div className="text-black dark:text-white" onMouseMove={handleMouseMove}>
       <StartupLoading />
       <ParticlesComponent />
       <RootRouter />

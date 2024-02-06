@@ -2,11 +2,11 @@ import { useEffect } from "react";
 
 const useScrollX = (
   containerRef: React.MutableRefObject<HTMLDivElement | null>,
-  scrollDivRef: React.MutableRefObject<HTMLDivElement | null>
+  scrollDivRef: React.MutableRefObject<HTMLDivElement | null>,
 ) => {
   const handleScroll = () => {
     const sectionStart = (containerRef.current?.offsetTop ?? 0) + 100;
-    const sectionEnd = sectionStart + window.innerHeight * 4 - 200;
+    const sectionEnd = sectionStart + window.innerHeight * 4 - 180;
     const isOutsideSection = window.scrollY + window.innerHeight >= sectionEnd;
 
     const sectionHeight = sectionEnd - sectionStart;
