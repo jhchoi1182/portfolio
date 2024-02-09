@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  showElements: boolean[];
+  elementsVisible: boolean[];
   refs: React.MutableRefObject<HTMLDivElement | null>[];
 }
 
@@ -11,13 +11,13 @@ const texts = [
   `로직이나 문제가 복잡하다면, 오히려 더 깊게 파고들 수 있는 기회라고 생각합니다.`,
 ];
 
-function DeepDive({ showElements, refs }: Props) {
+function DeepDive({ elementsVisible, refs }: Props) {
   return (
     <div className="relative z-10 text-center px-[2%]">
       <div
         ref={refs[0]}
         className={`animate-fadeInUpAfter250ms text-2xl font-bold mb-3 md:text-4xl sm:text-3xl ${
-          showElements[0] ? "animate-show" : ""
+          elementsVisible[0] ? "animate-show" : ""
         }`}
       >
         DeepDive
@@ -27,7 +27,7 @@ function DeepDive({ showElements, refs }: Props) {
           key={i}
           ref={refs[1]}
           className={`animate-fadeInUpAfter250ms ${
-            showElements[1] ? "animate-show" : ""
+            elementsVisible[1] ? "animate-show" : ""
           }`}
         >
           {text}

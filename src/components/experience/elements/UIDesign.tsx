@@ -21,13 +21,13 @@ const textInfos: experienceText[] = [
 ];
 
 function UIDesign() {
-  const [showElements, setShowElements] = useState(Array(2).fill(null));
+  const [elementsVisible, setElementsVisible] = useState(Array(2).fill(null));
   const refs = [
     useRef<HTMLImageElement | null>(null),
     useRef<HTMLImageElement | null>(null),
   ];
 
-  useFadeInOnScroll(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(elementsVisible, setElementsVisible, refs, true);
 
   return (
     <ExperienceLayout
@@ -50,7 +50,7 @@ function UIDesign() {
         <ExperienceText
           textInfos={textInfos}
           refs={refs}
-          showElements={showElements}
+          elementsVisible={elementsVisible}
         />
       }
     />

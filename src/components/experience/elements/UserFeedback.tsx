@@ -22,10 +22,10 @@ const textInfos: experienceText[] = [
 ];
 
 function UserFeedback() {
-  const [showElements, setShowElements] = useState(Array(1).fill(null));
+  const [elementsVisible, setElementsVisible] = useState(Array(1).fill(false));
   const refs = [useRef<HTMLImageElement | null>(null)];
 
-  useFadeInOnScroll(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(elementsVisible, setElementsVisible, refs, true);
   return (
     <ExperienceLayout
       title="유저 테스트"
@@ -42,7 +42,7 @@ function UserFeedback() {
         <ExperienceText
           textInfos={textInfos}
           refs={refs}
-          showElements={showElements}
+          elementsVisible={elementsVisible}
         />
       }
     />

@@ -37,7 +37,7 @@ const textInfos: experienceText[] = [
 ];
 
 function DevOps() {
-  const [showElements, setShowElements] = useState(Array(4).fill(null));
+  const [elementsVisible, setElementsVisible] = useState(Array(4).fill(null));
   const refs = [
     useRef<HTMLImageElement | null>(null),
     useRef<HTMLImageElement | null>(null),
@@ -45,7 +45,7 @@ function DevOps() {
     useRef<HTMLImageElement | null>(null),
   ];
 
-  useFadeInOnScroll(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(elementsVisible, setElementsVisible, refs, true);
 
   return (
     <ExperienceLayout
@@ -63,7 +63,7 @@ function DevOps() {
         <ExperienceText
           textInfos={textInfos}
           refs={refs}
-          showElements={showElements}
+          elementsVisible={elementsVisible}
         />
       }
     />

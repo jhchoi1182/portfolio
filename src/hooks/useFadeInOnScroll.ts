@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 
 const useFadeInOnScroll = (
-  showElements: boolean[],
-  setShowElements: React.Dispatch<React.SetStateAction<boolean[]>>,
+  elementsVisible: boolean[],
+  setElementsVisible: React.Dispatch<React.SetStateAction<boolean[]>>,
   refs: React.MutableRefObject<HTMLDivElement | null>[],
-  xAxis?: boolean,
+  isXAxis?: boolean,
 ) => {
   useEffect(() => {
-    const checkScroll = () => {
-      if (showElements.every((value) => value === true)) return;
+    const handleScroll = () => {
+      if (elementsVisible.every((isVisible) => isVisible)) return;
 
-      const newShowElements = showElements.map((isShown, index) => {
+      const updatedVisibility = elementsVisible.map((isShown, index) => {
         if (isShown) return true;
 
         const currentRef = refs[index].current;
@@ -21,19 +21,18 @@ const useFadeInOnScroll = (
         const isHorizontallyHalfVisible =
           rect.left <= window.innerWidth - rect.width / 2;
 
-        if (xAxis) {
-          return isVerticallyHalfVisible && isHorizontallyHalfVisible;
-        }
-        return isVerticallyHalfVisible;
+        return isXAxis
+          ? isVerticallyHalfVisible && isHorizontallyHalfVisible
+          : isVerticallyHalfVisible;
       });
 
-      if (newShowElements.every((value) => value === null)) return;
-      setShowElements(newShowElements);
+      if (updatedVisibility.every((isVisible) => isVisible === false)) return;
+      setElementsVisible(updatedVisibility);
     };
 
-    window.addEventListener("scroll", checkScroll);
-    return () => window.removeEventListener("scroll", checkScroll);
-  }, [showElements]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [elementsVisible]);
 };
 
 export default useFadeInOnScroll;

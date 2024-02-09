@@ -31,14 +31,14 @@ const textInfos: experienceText[] = [
 ];
 
 function PerformanceOptimizer() {
-  const [showElements, setShowElements] = useState(Array(3).fill(null));
+  const [elementsVisible, setElementsVisible] = useState(Array(3).fill(null));
   const refs = [
     useRef<HTMLImageElement | null>(null),
     useRef<HTMLImageElement | null>(null),
     useRef<HTMLImageElement | null>(null),
   ];
 
-  useFadeInOnScroll(showElements, setShowElements, refs, true);
+  useFadeInOnScroll(elementsVisible, setElementsVisible, refs, true);
 
   return (
     <ExperienceLayout
@@ -66,7 +66,7 @@ function PerformanceOptimizer() {
         <ExperienceText
           textInfos={textInfos}
           refs={refs}
-          showElements={showElements}
+          elementsVisible={elementsVisible}
         />
       }
     />

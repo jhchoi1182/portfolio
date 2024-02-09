@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  showElements: boolean[];
+  elementsVisible: boolean[];
   refs: React.MutableRefObject<HTMLDivElement | null>[];
 }
 
@@ -11,13 +11,13 @@ const texts = [
   `이 과정에서 배운 것들을 기록하는 습관이 있습니다.`,
 ];
 
-function Perseverance({ showElements, refs }: Props) {
+function Perseverance({ elementsVisible, refs }: Props) {
   return (
     <div className="relative text-center mt-24 z-10 sm:mt-40">
       <div
         ref={refs[2]}
         className={`animate-fadeInUpAfter250ms text-2xl font-bold mb-3 md:text-4xl sm:text-3xl ${
-          showElements[2] ? "animate-show" : ""
+          elementsVisible[2] ? "animate-show" : ""
         }`}
       >
         Perseverance
@@ -27,7 +27,7 @@ function Perseverance({ showElements, refs }: Props) {
           key={i}
           ref={refs[3]}
           className={`animate-fadeInUpAfter250ms ${
-            showElements[3] ? "animate-show" : ""
+            elementsVisible[3] ? "animate-show" : ""
           }`}
         >
           {text}
