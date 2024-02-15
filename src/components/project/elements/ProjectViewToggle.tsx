@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { toggleProjectViewAtom } from "../../../libs/atoms";
 import { REACTIVE_COLOR } from "../../../styles/colors";
@@ -15,17 +15,21 @@ const styles = {
 };
 
 function ProjectViewToggle({ setToggleAnimation }: Props) {
+  const [isToggling, setIsToggling] = useState(false);
   const [toggleProjectView, setToggleProjectView] = useRecoilState(
     toggleProjectViewAtom,
   );
 
   const toggle = () => {
-    setToggleAnimation((prev) => !prev);
+    if (isToggling) return;
+    setIsToggling(true);
+    setToggleAnimation(true);
     setTimeout(() => {
       setToggleProjectView((prev) => (prev === GRID ? LIST : GRID));
     }, 500);
     setTimeout(() => {
-      setToggleAnimation((prev) => !prev);
+      setToggleAnimation(false);
+      setIsToggling(false);
     }, 1000);
   };
 
