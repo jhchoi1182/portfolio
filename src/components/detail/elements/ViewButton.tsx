@@ -1,6 +1,7 @@
 import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import { center } from "../../../styles/classNames";
+import { REACTIVE_COLOR } from "../../../styles/colors";
 
 interface Props {
   data: projectMetaData;
@@ -24,16 +25,18 @@ function ViewButton({
       target="_blank"
     >
       <button
-        className={`${center} gap-5 w-32 h-11 bg-inverse dark:bg-primary rounded-full`}
+        className={`${center} gap-5 w-32 h-11 ${REACTIVE_COLOR.inverseBg} rounded-full`}
         onMouseEnter={() => setHoveredButton(title)}
         onMouseLeave={() => setHoveredButton(null)}
       >
         {hoveredButton === title ? (
-          <GoArrowUpRight className="w-5 h-5 -ml-1 -mr-1 text-white dark:text-black" />
+          <GoArrowUpRight
+            className={`w-5 h-5 -ml-1 -mr-1 ${REACTIVE_COLOR.inverseText}`}
+          />
         ) : (
-          <div className="w-3 h-3 bg-white dark:bg-black rounded-full" />
+          <div className={`w-3 h-3 ${REACTIVE_COLOR.whiteBg} rounded-full`} />
         )}
-        <span className="text-xl font-semibold text-white dark:text-black">
+        <span className={`text-xl font-semibold ${REACTIVE_COLOR.inverseText}`}>
           View
         </span>
       </button>

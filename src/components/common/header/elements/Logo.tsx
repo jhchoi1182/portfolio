@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import LogoEyes from "./LogoEyes";
 import { center } from "../../../../styles/classNames";
 import "../css/animation.css";
+import { REACTIVE_COLOR } from "../../../../styles/colors";
 
 function Logo() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,20 +31,24 @@ function Logo() {
   }, [isScrolled]);
 
   return (
-    <div className="w-36 h-12 text-white dark:text-black text-xl font-semibold lg:text-2xl">
+    <div
+      className={`w-36 h-12 ${REACTIVE_COLOR.inverseText} text-xl font-semibold lg:text-2xl`}
+    >
       {eyeMode ? (
         <LogoEyes />
       ) : (
         <div
-          className={`${center} w-full h-full bg-inverse dark:bg-primary rounded-md ${
-            eyeModeTransitioning ? "animate-shrink" : ""
-          }`}
+          className={`${center} w-full h-full ${
+            REACTIVE_COLOR.inverseBg
+          } rounded-md ${eyeModeTransitioning ? "animate-shrink" : ""}`}
         >
           <div>
             {Array.from("JIHYEON").map((char, i) => (
               <span
                 key={i}
-                className={`${eyeModeTransitioning ? `animate-charFadeOut-${i}` : ""}`}
+                className={`${
+                  eyeModeTransitioning ? `animate-charFadeOut-${i}` : ""
+                }`}
               >
                 {char}
               </span>

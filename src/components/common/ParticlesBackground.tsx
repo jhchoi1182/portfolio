@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { darkModeAtom } from "../../libs/atoms";
+import { REACTIVE_COLOR } from "../../styles/colors";
 
 function ParticlesBackground() {
   const isDark = useRecoilValue(darkModeAtom);
@@ -123,7 +124,7 @@ function ParticlesBackground() {
   return (
     <div
       id="particles-js"
-      className="fixed inset-0 w-full h-full bg-center bg-no-repeat bg-cover bg-primary dark:bg-inverse z-10"
+      className={`fixed inset-0 w-full h-full bg-center bg-no-repeat bg-cover ${REACTIVE_COLOR.primaryBg} z-10`}
       style={{ backgroundImage: 'url("")' }}
     ></div>
   );

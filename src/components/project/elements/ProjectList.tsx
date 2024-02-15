@@ -1,5 +1,6 @@
 import { GoArrowUpRight } from "react-icons/go";
 import { center, customDot } from "../../../styles/classNames";
+import { BG_COLOR, TEXT_COLOR } from "../../../styles/colors";
 import preloadDetailImage from "../../../utils/preloadDetailImage";
 
 interface Props {
@@ -35,7 +36,7 @@ function ProjectList({
             <h3>EXP</h3>
             <h3>{`00${exp}`}</h3>
           </div>
-          <div className="w-[65px]">{date}</div>
+          <time className="w-[65px]">{date}</time>
         </div>
         <div className="w-auto h-auto text-lg font-semibold lg:text-xl lg:w-[25%]">
           {title}
@@ -52,12 +53,12 @@ function ProjectList({
         </ul>
       </div>
       <div
-        className={`hidden ${center} w-12 h-12 bg-black rounded-full lg:w-14 lg:h-14 md:flex`}
+        className={`hidden ${center} w-12 h-12 ${BG_COLOR.black} rounded-full lg:w-14 lg:h-14 md:flex`}
       >
         {hoveredItem === exp ? (
-          <GoArrowUpRight className="w-6 h-6 text-white" />
+          <GoArrowUpRight className={`w-6 h-6 ${TEXT_COLOR.inverse}`} />
         ) : (
-          <div className="w-4 h-4 bg-white rounded-full" />
+          <div className={`w-4 h-4 ${BG_COLOR.white} rounded-full`} />
         )}
       </div>
     </div>

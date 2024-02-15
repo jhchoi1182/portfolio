@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { BG_COLOR } from "../../../styles/colors";
 
 interface props {
   isVisible: boolean;
@@ -14,7 +15,9 @@ function Backdrop({ isVisible, handleClose }: props) {
   }, []);
   return (
     <div
-      className={`fixed w-full h-full inset-0 bg-black animate-fadeInOpacity ${
+      className={`fixed w-full h-full inset-0 ${
+        BG_COLOR.black
+      } animate-fadeInOpacity ${
         isVisible ? "animate-fadeInOpacity" : "animate-fadeOutOpacity"
       }`}
       onClick={handleClose}

@@ -3,6 +3,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import { projectNames } from "../../../assets/data/projectName";
 import { center, customDot } from "../../../styles/classNames";
+import { BG_COLOR, TEXT_COLOR } from "../../../styles/colors";
 import preloadDetailImage from "../../../utils/preloadDetailImage";
 
 interface Props {
@@ -14,13 +15,13 @@ interface Props {
 const textColor: {
   [key: string]: string;
 } = {
-  [projectNames.petProject]: "text-black",
-  [projectNames.portfolio]: "text-black",
-  [projectNames.gaebalLog]: "text-black",
-  [projectNames.vlog]: "text-black",
-  [projectNames.jjabflix]: "text-white",
-  [projectNames.drawingBear]: "text-black",
-  [projectNames.consolog]: "text-white",
+  [projectNames.petProject]: TEXT_COLOR.primary,
+  [projectNames.portfolio]: TEXT_COLOR.primary,
+  [projectNames.gaebalLog]: TEXT_COLOR.primary,
+  [projectNames.vlog]: TEXT_COLOR.primary,
+  [projectNames.jjabflix]: TEXT_COLOR.inverse,
+  [projectNames.drawingBear]: TEXT_COLOR.primary,
+  [projectNames.consolog]: TEXT_COLOR.inverse,
 };
 
 function ProjectCard({
@@ -48,7 +49,7 @@ function ProjectCard({
       <img
         src={img}
         alt="Project"
-        className={`absolute inset-0 object-cover w-full h-full
+        className={`absolute inset-0 text- object-cover w-full h-full
         transform transition-all duration-300 ease-in-out
         ${isHovered ? "scale-105" : "filter grayscale"}`}
       />
@@ -61,13 +62,13 @@ function ProjectCard({
               <h3>EXP</h3>
               <h3>{`00${exp}`}</h3>
             </div>
-            <h3>{date}</h3>
+            <time>{date}</time>
           </div>
-          <div className={`${center} w-14 h-14 bg-black rounded-full`}>
+          <div className={`${center} w-14 h-14 ${BG_COLOR.black} rounded-full`}>
             {isHovered ? (
-              <GoArrowUpRight className="w-6 h-6 text-white" />
+              <GoArrowUpRight className={`w-6 h-6 ${TEXT_COLOR.inverse}`} />
             ) : (
-              <div className="w-4 h-4 bg-white rounded-full" />
+              <div className={`w-4 h-4 ${BG_COLOR.white} rounded-full`} />
             )}
           </div>
         </div>
@@ -80,7 +81,9 @@ function ProjectCard({
                 className={`relative ${
                   i !== 0 ? `pl-[15px] ${customDot}` : ""
                 } ${
-                  textColor[title] === "text-white" ? "before:bg-white" : ""
+                  textColor[title] === TEXT_COLOR.inverse
+                    ? `before:${BG_COLOR.white}`
+                    : ""
                 }`}
               >
                 {tech}

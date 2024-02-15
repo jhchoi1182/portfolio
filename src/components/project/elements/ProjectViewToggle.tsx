@@ -1,6 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { toggleProjectViewAtom } from "../../../libs/atoms";
+import { REACTIVE_COLOR } from "../../../styles/colors";
 
 interface Props {
   setToggleAnimation: React.Dispatch<React.SetStateAction<boolean>>;
@@ -9,8 +10,8 @@ interface Props {
 const GRID = "GRID";
 const LIST = "LIST";
 const styles = {
-  selectedText: `text-white dark:text-black`,
-  text: `text-black dark:text-white`,
+  selectedText: REACTIVE_COLOR.inverseText,
+  text: REACTIVE_COLOR.primaryText,
 };
 
 function ProjectViewToggle({ setToggleAnimation }: Props) {
@@ -31,7 +32,7 @@ function ProjectViewToggle({ setToggleAnimation }: Props) {
   return (
     <div className="fixed top-[13%] right-[5%] z-40 lg:right-[10%]">
       <button
-        className={`relative flex justify-between items-center w-[105px] h-8 border border-black dark:border-white px-2 font-bold rounded-full`}
+        className={`relative flex justify-between items-center w-[105px] h-8 border ${REACTIVE_COLOR.primaryBorder} px-2 font-bold rounded-full`}
         onClick={toggle}
       >
         <span
@@ -51,7 +52,9 @@ function ProjectViewToggle({ setToggleAnimation }: Props) {
         <div
           className={`absolute top-0 ${
             toggleProjectView === GRID ? "left-0" : "left-[calc(100%-53px)]"
-          } transition-left duration-300 ease-in-out w-[53px] h-full bg-black dark:bg-white rounded-full`}
+          } transition-left duration-300 ease-in-out w-[53px] h-full ${
+            REACTIVE_COLOR.blackBg
+          } rounded-full`}
         />
       </button>
     </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { projectCards } from "../../../assets/data/projectCard";
 import { center } from "../../../styles/classNames";
+import { REACTIVE_COLOR } from "../../../styles/colors";
 import ProjectList from "../elements/ProjectList";
 
 function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
@@ -18,7 +19,7 @@ function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
         <div className="flex gap-2 items-center">
           <span className="text-2xl font-bold">All</span>
           <div
-            className={`${center} w-10 h-6 rounded-full text-xl font-bold bg-inverse dark:bg-primary text-white dark:text-black`}
+            className={`${center} w-10 h-6 rounded-full text-xl font-bold ${REACTIVE_COLOR.inverseBg} ${REACTIVE_COLOR.inverseText}`}
           >
             {projectCards.length}
           </div>
@@ -37,10 +38,10 @@ function ProjectLists({ toggleAnimation }: { toggleAnimation: boolean }) {
               <hr
                 className={`w-full h-[2px] ${
                   hoveredItem === null
-                    ? "bg-gray-300 dark:bg-zinc-900"
+                    ? REACTIVE_COLOR.primaryLine
                     : hoveredItem === project.exp
-                    ? "bg-zinc-900 dark:bg-gray-300"
-                    : "bg-gray-300 dark:bg-zinc-900"
+                    ? REACTIVE_COLOR.inverseLine
+                    : REACTIVE_COLOR.primaryLine
                 }`}
               />
             </li>

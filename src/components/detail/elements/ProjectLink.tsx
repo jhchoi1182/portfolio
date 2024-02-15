@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import ViewButton from "./ViewButton";
 import { center } from "../../../styles/classNames";
+import { REACTIVE_COLOR } from "../../../styles/colors";
 
 function ProjectLink({ data }: { data: projectMetaData }) {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
@@ -24,7 +25,7 @@ function ProjectLink({ data }: { data: projectMetaData }) {
             target="_blank"
           >
             <button
-              className={`${center} w-14 h-14 border border-black rounded-full`}
+              className={`${center} w-14 h-14 border ${REACTIVE_COLOR.primaryBorder} rounded-full`}
             >
               <AiFillGithub className="w-6 h-6" />
             </button>

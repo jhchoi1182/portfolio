@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import useLogoEyes from "../../../../hooks/useLogoEyes";
 import { center } from "../../../../styles/classNames";
+import { REACTIVE_COLOR } from "../../../../styles/colors";
 
 const styles = {
-  box: `${center} w-12 h-full bg-inverse dark:bg-primary rounded-md select-none`,
+  box: `${center} w-12 h-full ${REACTIVE_COLOR.inverseBg} rounded-md select-none`,
 };
 
 function LogoEyes() {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { REACTIVE_COLOR } from "../../styles/colors";
 
 function StartupLoading() {
   const [count, setCount] = useState(0);
@@ -36,7 +37,9 @@ function StartupLoading() {
 
   return (
     <div
-      className={`fixed z-[9999] w-full h-full bg-white dark:bg-black text-[100px] sm:text-[200px] ${
+      className={`fixed z-[9999] w-full h-full ${
+        REACTIVE_COLOR.whiteBg
+      } text-[100px] sm:text-[200px] ${
         isHundredPercent ? "animate-slideToDownAfter500ms" : ""
       }`}
     >

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { useParams } from "react-router-dom";
+import { REACTIVE_COLOR, TEXT_COLOR } from "../../../styles/colors";
 
 const baseURL =
   process.env.NODE_ENV === "production"
@@ -20,7 +21,7 @@ function Contents() {
   return (
     <div className="w-full pt-[100px] font-notoSans lg:w-1/2 lg:pt-[15%]">
       <Markdown
-        className="prose dark:prose-invert max-w-none text-black dark:text-white"
+        className={`prose dark:prose-invert max-w-none ${REACTIVE_COLOR.primaryText}`}
         components={{
           img: (image) => (
             <img
@@ -37,12 +38,12 @@ function Contents() {
             <li className="list-none text-2xl font-montserrat">{children}</li>
           ),
           h6: ({ children }) => (
-            <h6 className="text-xs text-[#636e72] dark:text-[#b2bec3] mt-32 mb-10">
+            <h6 className={`text-xs ${REACTIVE_COLOR.subjectText} mt-32 mb-10`}>
               {children}
             </h6>
           ),
           a: ({ children, href }) => (
-            <a className="text-[#3498db]" href={href}>
+            <a className={TEXT_COLOR.link} href={href}>
               {children}
             </a>
           ),

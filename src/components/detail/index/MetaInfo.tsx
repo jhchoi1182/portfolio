@@ -1,6 +1,7 @@
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
 import { projectMetaDatas } from "../../../assets/data/projectMetaData";
+import { REACTIVE_COLOR } from "../../../styles/colors";
 import ProjectLink from "../elements/ProjectLink";
 
 function MetaInfo() {
@@ -37,9 +38,9 @@ function MetaInfo() {
           )}
         </div>
         {isTeamProject && <h5>{`Contribution ${data.contribution}`}</h5>}
-        <span className="text-[#636e72] dark:text-[#b2bec3]">{`'${
-          data.date.start
-        } - ${data.date.end !== "진행중" ? "'" : ""}${data.date.end}`}</span>
+        <time className={REACTIVE_COLOR.subjectText}>{`'${data.date.start} - ${
+          data.date.end !== "진행중" ? "'" : ""
+        }${data.date.end}`}</time>
         <ProjectLink data={data} />
       </div>
     </div>

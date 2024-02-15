@@ -1,3 +1,5 @@
+import { REACTIVE_COLOR } from "../../../styles/colors";
+
 interface Props {
   title: string;
   li: string[];
@@ -23,7 +25,9 @@ function SkillLayout({ title, li, showElement, divRef }: Props) {
           ))}
         </ul>
       </div>
-      <hr className="block w-full h-[2px] -my-2 bg-gray-300 dark:bg-zinc-900 lg:hidden md:my-0" />
+      <hr
+        className={`block w-full h-[2px] -my-2 ${REACTIVE_COLOR.primaryLine} lg:hidden md:my-0`}
+      />
     </>
   );
 }

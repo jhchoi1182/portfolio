@@ -2,6 +2,7 @@ import ToTopButton from "../components/detail/elements/ToTopButton";
 import Contents from "../components/detail/index/Contents";
 import MetaInfo from "../components/detail/index/MetaInfo";
 import More from "../components/detail/index/More";
+import { REACTIVE_COLOR } from "../styles/colors";
 
 function Detail() {
   return (
@@ -10,7 +11,7 @@ function Detail() {
         <MetaInfo />
         <Contents />
       </div>
-      <hr className="w-full h-[2px] my-36 bg-gray-300 dark:bg-zinc-900" />
+      <hr className={`w-full h-[2px] my-36 ${REACTIVE_COLOR.primaryLine}`} />
       <div className="px-[5%]">
         <More />
       </div>

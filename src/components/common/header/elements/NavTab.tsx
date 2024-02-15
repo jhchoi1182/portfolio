@@ -2,8 +2,9 @@ import { GoArrowUpRight } from "react-icons/go";
 import "../css/animation.css";
 import { useNavigate } from "react-router-dom";
 import useRouteNavigate from "../../../../hooks/usePathStatus";
+import { REACTIVE_COLOR } from "../../../../styles/colors";
 
-const textColor = "text-[#90999c] dark:text-[#b2bec3]";
+const textColor = REACTIVE_COLOR.navText;
 const links = [
   {
     text: "BLOG",

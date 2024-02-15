@@ -4,6 +4,7 @@ import ExperienceText from "./atoms/ExperienceText";
 import cicd from "../../../assets/images/about/cicd.svg";
 import useFadeInOnScroll from "../../../hooks/useFadeInOnScroll";
 import { center } from "../../../styles/classNames";
+import { BG_COLOR } from "../../../styles/colors";
 
 const textInfos: experienceText[] = [
   {
@@ -53,7 +54,7 @@ function DevOps() {
       img={
         <div className={`relative ${center} w-[700px] h-[600px]`}>
           <img
-            className="w-[500px] h-[250px] bg-primary shadow-xl z-10"
+            className={`w-[500px] h-[250px] ${BG_COLOR.primary} shadow-xl z-10`}
             src={cicd}
             alt="cicd"
           />
