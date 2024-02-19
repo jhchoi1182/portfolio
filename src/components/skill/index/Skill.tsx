@@ -6,7 +6,7 @@ import Collaboration from "../elements/Collaboration";
 import Curve from "../elements/Curve";
 import Data from "../elements/Data";
 import FrontEnd from "../elements/FrontEnd";
-import TestingLibraries from "../elements/TestingLibraries";
+import TestingFrameworks from "../elements/TestingFrameworks";
 
 function Skill() {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -41,7 +41,7 @@ function Skill() {
         <BackEnd showElement={elementsVisible[2]} divRef={refs[2]} />
         <Data showElement={elementsVisible[3]} divRef={refs[3]} />
         <CloudAndDeployment showElement={elementsVisible[4]} divRef={refs[4]} />
-        <TestingLibraries showElement={elementsVisible[5]} divRef={refs[5]} />
+        <TestingFrameworks showElement={elementsVisible[5]} divRef={refs[5]} />
         <Collaboration showElement={elementsVisible[6]} divRef={refs[6]} />
       </div>
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full overflow-hidden z-0 lg:top-0 lg:left-0 lg:translate-y-0">

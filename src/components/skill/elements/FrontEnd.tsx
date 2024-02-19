@@ -8,7 +8,7 @@ interface Props {
 const frontEnd = {
   title: `Front-End`,
   li: [
-    `HTML5, CSS3, Javascript (ES6), Typescript`,
+    `HTML5, CSS3, Javascript (ES6), Typescript, JQuery, Ajax`,
     `React.js, Next.js`,
     `React Native (EXPO)`,
     `Redux, React-query, Recoil, Styled-Components, Tailwind CSS`,
