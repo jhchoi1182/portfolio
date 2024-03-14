@@ -6,11 +6,11 @@ interface Props {
 }
 
 const data = {
-  title: `Data`,
+  title: `DBMS`,
   li: [`Mongo DB`, `MySQL`],
 };
 
-function Data({ showElement, divRef }: Props) {
+function DBMS({ showElement, divRef }: Props) {
   return (
     <SkillLayout
       title={data.title}
@@ -21,4 +21,4 @@ function Data({ showElement, divRef }: Props) {
   );
 }
 
-export default Data;
+export default DBMS;
