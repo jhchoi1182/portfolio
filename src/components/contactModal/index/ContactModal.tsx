@@ -8,11 +8,7 @@ import Footer from "../../common/Footer";
 import Backdrop from "../elements/Backdrop";
 import "../css/animation.css";
 
-function ContactModal({
-  setIsContactModal,
-}: {
-  setIsContactModal: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+function ContactModal({ setIsContactModal }: { setIsContactModal: React.Dispatch<React.SetStateAction<boolean>> }) {
   const [isVisible, setIsVisible] = useState(true);
   const navigate = useNavigate();
 
@@ -43,9 +39,7 @@ function ContactModal({
     <div className="fixed z-50 inset-0 w-full h-full">
       <Backdrop isVisible={isVisible} handleClose={handleClose} />
       <div
-        className={`absolute bottom-0 w-full ${BG_COLOR.primary} ${
-          TEXT_COLOR.primary
-        } font-chosunilbo ${
+        className={`absolute bottom-0 w-full ${BG_COLOR.primary} ${TEXT_COLOR.primary} font-chosunilbo ${
           isVisible ? "animate-slideToTop" : "animate-slideToDown"
         }`}
       >
@@ -65,11 +59,7 @@ function ContactModal({
           ))}
         </ul>
         <AiOutlineClose
-          className={`absolute -top-10 right-8 z-10 ${TEXT_COLOR.inverse} lg:${
-            TEXT_COLOR.primary
-          } lg:top-8 ${
-            !isVisible ? "hidden lg:block" : ""
-          } w-5 h-5 cursor-pointer`}
+          className={`absolute -top-10 right-8 z-10 ${TEXT_COLOR.inverse} lg:text-black lg:top-8 ${!isVisible ? "hidden lg:block" : ""} w-5 h-5 cursor-pointer`}
           onClick={handleClose}
         />
         <Footer />
