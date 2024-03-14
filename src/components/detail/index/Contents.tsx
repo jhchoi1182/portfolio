@@ -30,6 +30,7 @@ function Contents() {
               alt={image.alt}
             />
           ),
+          h2: () => <div className="w-full h-2" />,
           h3: ({ children }) => <h2 className="text-3xl">{children}</h2>,
           h4: ({ children }) => (
             <h4 className="text-xl sm:text-2xl">{children}</h4>

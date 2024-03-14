@@ -15,7 +15,7 @@ interface Props {
 const textColor: {
   [key: string]: string;
 } = {
-  [projectNames.petProject]: TEXT_COLOR.primary,
+  [projectNames.petProject]: TEXT_COLOR.inverse,
   [projectNames.portfolio]: TEXT_COLOR.primary,
   [projectNames.gaebalLog]: TEXT_COLOR.primary,
   [projectNames.vlog]: TEXT_COLOR.primary,

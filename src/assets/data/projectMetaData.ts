@@ -13,14 +13,11 @@ const projects: projectMetaData[] = [
     title: projectNames.petProject,
     projectType: "solo",
     date: {
-      start: "24. 01",
-      end: "24. 01",
+      start: "23. 06",
+      end: "진행 중",
     },
-    github: [
-      "https://github.com/jhchoi1182/pet-project-front",
-      "https://github.com/jhchoi1182/pet-project-back",
-    ],
-    service: ["https://jihyeon-pet-project.vercel.app/todo"],
+    github: ["https://github.com/jhchoi1182/pet-project-front", "https://github.com/jhchoi1182/pet-project-back"],
+    service: ["https://www.studysync.store/home"],
   },
   {
     key: "portfolio",

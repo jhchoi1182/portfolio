@@ -4,7 +4,7 @@ import drawingBearIcon from "../images/project/drawingBearIcon.webp";
 import gaebalLogIcon from "../images/project/gaebalLogIcon.webp";
 import netflixIcon from "../images/project/netflixIcon.png";
 import portfolioIcon from "../images/project/portfolioIcon.png";
-import todoIcon from "../images/project/todoIcon.png";
+import studySyncIcon from "../images/project/studySyncIcon.png";
 import vlogIcon from "../images/project/vlogIcon.webp";
 
 const projectData = [
@@ -12,7 +12,7 @@ const projectData = [
     path: "petProject",
     date: "2024.01",
     title: projectNames.petProject,
-    img: todoIcon,
+    img: studySyncIcon,
     techs: ["Next", "Spring Boot", "Docker"],
     imageForPreload:
       "https://github.com/jhchoi1182/next-todo/assets/116577489/c959ef3f-656d-4d22-b713-34fcf3006a44",
