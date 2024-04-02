@@ -1,12 +1,18 @@
-![todo](https://github.com/jhchoi1182/next-todo/assets/116577489/c959ef3f-656d-4d22-b713-34fcf3006a44)
+![image](https://github.com/jhchoi1182/pet-project-front/assets/116577489/9d9e9a3e-ef7f-4032-a656-401389b101dc)
 
 ###### TECHNOLOGY
 
-##### **Frontend** - Next.js · TypeScript · React-Query · Tailwind CSS
+##### **Frontend**
 
-##### **Backend** - Spring Boot · Spring Security · Spring Data JPA · MySQL
+##### - Next.js · TypeScript · React-Query · Redux Toolkit · Tailwind CSS
 
-##### **Infrastructure** - AWS EC2 · Docker Compose · Nginx · GitHub Actions
+##### **Backend**
+
+##### - Spring Boot · Spring Security · Spring Data JPA · JWT · MySQL · S3
+
+##### **Infrastructure**
+
+##### - AWS EC2 · Docker Compose · Nginx · GitHub Actions
 
 ###
 
@@ -14,9 +20,7 @@
 
 이 프로젝트는 배운 기술을 실제로 적용하며 점진적으로 기능을 추가해 나가는 것을 목표로 진행되고 있는 개인 프로젝트입니다.
 
-현재 구현된 기능은 React와 Spring Boot로 개발한 게시판 형식의 서비스로, 사용자, 게시글, 댓글 기능을 포함하고 있습니다.
-
-백엔드와 프론트엔드 간의 효율적인 상호작용을 제공하며, **현대적인 웹 개발 아키텍처를 구현**했습니다.
+Next.js와 Spring Boot로 개발한 게시판 형식의 서비스입니다.
 
 ###
 
@@ -64,6 +68,7 @@
 #### 기타 기능
 
 - **PWA 적용**
+- **위지윅 에디터(CKEditor5) 프로젝트에 맞게 커스텀**
 
 ##
 
@@ -71,7 +76,8 @@
 
 #### 불필요한 쿼리 요청 최적화
 
-- Todo 삭제 시 벌크 업데이트를 실행하여 **Comment 삭제에 대한 쿼리 요청을 단일화**함으로써 데이터 처리 효율성을 증대시키고 서버 부하를 감소시킴
+- 게시글 삭제 시 **벌크 업데이트**를 통해 데이터 처리 효율성을 증대시키고 서버 부하를 감소시킴
+- **JOIN FETCH**를 통해 **JPA의 N+1문제 해결**
 - **Spring Security를 통한 전역적 인증 절차** 구축과 추가적인 인증 절차 최소화로 **API 응답 시간 단축 및 쿼리 최적화**
 
 ###
@@ -89,12 +95,14 @@
 - **Nginx를 이용한 HTTPS 프로토콜을 구성**해 리버스 프록시를 통해 컨테이너에 연결, 사용자 데이터 보호 및 통신 보안 강화
 - **Spring Security와 JWT 토큰**을 활용하여 사용자 인증 정보의 보안성 강화 및 접근 제어 메커니즘 구현
 - 인증 쿠키에 httpOnly, secure, sameSite 설정을 통해 **XSS, CSRF 공격 대비**
+  - 서버 URL을 프론트 엔드의 서브 도메인 주소로 전환하여 Chrome 서드 파티 쿠키 제한 이슈 해결
 
 ###
 
 #### 기타 기능
 
 - 계층 간 데이터 관리의 효율성을 높여 안정적이고 간소화된 API 작업을 위해 **DTO 사용**
+- **S3**에 연결하여 **이미지 파일 관리**
 - Swagger를 통해 API 문서화
 
 ###
