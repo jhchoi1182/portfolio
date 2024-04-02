@@ -8,9 +8,8 @@ interface Props {
 const backEnd = {
   title: `Back-End`,
   li: [
-    `Python, Java`,
-    `Spring Boot, Spring Data JPA, Spring Security, JSP`,
-    `Flask`,
+    `Java`,
+    `Spring Boot, Spring Data JPA, Spring Security`,
   ],
 };
 
