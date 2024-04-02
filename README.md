@@ -1,4 +1,4 @@
-![image](https://github.com/jhchoi1182/portfolio/assets/116577489/38a03190-dcf0-4b92-ab84-711dfa0d5c6f)
+![image](https://github.com/jhchoi1182/portfolio/assets/116577489/a10cdad3-17e9-42a6-b82f-0cacc78c9b85)
 
 ## 특징
 * **스크롤 트리거에 의한 각종 애니메이션**
