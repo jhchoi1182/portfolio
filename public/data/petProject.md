@@ -55,13 +55,13 @@ Next.js와 Spring Boot로 개발한 게시판 형식의 서비스입니다.
 
 #### 성능 최적화
 
-- **페이지네이션에 데이터 캐싱** 전략을 적용해 **페이지 이동 간 API 호출 최적화** 및 **리렌더링 속도70.86% 개선**
+- **페이지네이션에 데이터 캐싱** 전략을 적용해 **페이지 이동 간 API 호출 최적화** 및 **리렌더링 속도 76.82% 개선**
 - JavaScript로 정의된 CSS 스타일을 Tailwind CSS의 설정으로 이전하여 **FCP 속도 개선**(약 3~5%)
-- promise.all 대신 React-query를 사용하여 상세 페이지 **API 요청 병렬처리 (최종 TTI 시간 28.38% 단축)**
+- promise.all 대신 React-query를 사용하여 상세 페이지 **API 요청 병렬처리 (최종 TTI 시간 31.73% 단축)**
 - invalidateQueries를 **optimistic uptade**로 대체
   - patch, get요청 이후 리렌더링 → 변경과 동시에 patch 요청, 실패 시 롤백
   - **리렌더링 속도 69.64% 개선**
-  - get요청 제거로 **불필요한 api 호출 횟수 감소**
+  - get요청 제거로 **불필요한 api 호출 횟수 감소 (2회 → 1회)**
 
 ###
 
@@ -96,6 +96,14 @@ Next.js와 Spring Boot로 개발한 게시판 형식의 서비스입니다.
 - **Spring Security와 JWT 토큰**을 활용하여 사용자 인증 정보의 보안성 강화 및 접근 제어 메커니즘 구현
 - 인증 쿠키에 httpOnly, secure, sameSite 설정을 통해 **XSS, CSRF 공격 대비**
   - 서버 URL을 프론트 엔드의 서브 도메인 주소로 전환하여 Chrome 서드 파티 쿠키 제한 이슈 해결
+
+###
+
+#### 조회수, 좋아요 기능 구현
+
+- userID와 IP를 저장하는 entity를 각각 생성 후 post 테이블에 JOIN
+- 로그인 유저의 경우 userId를, 비로그인 유저의 경우 IP를 DB에 저장하여 어뷰징 방지
+- 좋아요의 경우 로그인한 유저만 가능하도록 하여 어뷰징 방지
 
 ###
 
