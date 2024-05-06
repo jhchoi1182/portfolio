@@ -1,4 +1,4 @@
-![image](https://github.com/jhchoi1182/pet-project-front/assets/116577489/9d9e9a3e-ef7f-4032-a656-401389b101dc)
+![image](https://github.com/jhchoi1182/pet-project-front/assets/116577489/3048682b-6ede-4a83-8fa5-3893bd142d0a)
 
 ###### TECHNOLOGY
 
